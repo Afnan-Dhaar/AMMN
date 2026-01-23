@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How Our Motor Insurance Works</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
         .motor-insurance-works-container {
-            padding: 80px 40px;
+            padding: 40px 80px;
         }
 
         .motor-insurance-works-header {
@@ -285,110 +276,3 @@
             font-size: 11px;
             font-weight: 600;
         }
-    </style>
-</head>
-<body>
-    <div class="motor-insurance-works-container">
-        <div class="motor-insurance-works-header">
-            <h1>How Our Motor Insurance Works</h1>
-            <p>A simple, three-step process to get your KSA motor insurance in minutes.</p>
-        </div>
-
-        <div class="motor-insurance-cards-wrapper" id="motorCardsWrapper">
-            <!-- Card 1 -->
-            <div class="motor-insurance-card-container">
-                <div class="motor-insurance-card-wrapper">
-                    <div class="motor-insurance-step-label">STEP 1</div>
-                    <div class="motor-insurance-card motor-card-1">
-                        <div class="motor-insurance-icon-wrapper">
-                            <div class="motor-input-field">Your Insurance Number</div>
-                            <div class="motor-input-field">Your Car...</div>
-                        </div>
-                        <h2>Enter Your Vehicle Details</h2>
-                        <p>Provide basic information such as car type, model, year, and other key details in a user-friendly form designed to deliver everything needed in just a few steps.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="motor-insurance-card-container">
-                <div class="motor-insurance-card-wrapper">
-                    <div class="motor-insurance-step-label">STEP 2</div>
-                    <div class="motor-insurance-card motor-card-2">
-                        <div class="motor-insurance-icon-wrapper">
-                            <div class="motor-price-box">
-                                <div class="motor-price-icon"></div>
-                                <div class="motor-price-text">﷼1500</div>
-                            </div>
-                            <div class="motor-compare-icon">⇄</div>
-                            <div class="motor-price-box">
-                                <div class="motor-price-icon"></div>
-                                <div class="motor-price-text">﷼1800</div>
-                            </div>
-                        </div>
-                        <h2>Compare Motor Insurance Quotes</h2>
-                        <p>Instantly view multiple quotes from top insurers across KSA. Compare coverage, prices, benefits, and policy features side-by-side to find the best plan.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="motor-insurance-card-container">
-                <div class="motor-insurance-card-wrapper">
-                    <div class="motor-insurance-step-label">STEP 3</div>
-                    <div class="motor-insurance-card motor-card-3">
-                        <div class="motor-insurance-icon-wrapper">
-                            <div class="motor-payment-icon">M</div>
-                            <div class="motor-payment-icon">S</div>
-                            <div class="motor-payment-icon">T</div>
-                            <div class="motor-payment-btn">Pay Now</div>
-                        </div>
-                        <h2>Choose And Pay Online</h2>
-                        <p>Select your preferred insurance plan and complete the purchase securely online. Enjoy fast processing, safe payment options, and immediate policy activation.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Intersection Observer for scroll animations
-        const motorObserverOptions = {
-            root: null,
-            threshold: [0.3, 0.6, 0.9],
-            rootMargin: '0px'
-        };
-
-        let motorCardsRevealed = [false, false, false];
-
-        const motorObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const ratio = entry.intersectionRatio;
-                    const cards = document.querySelectorAll('.motor-insurance-card-container');
-                    
-                    // Reveal cards based on intersection ratio
-                    if (ratio >= 0.3 && !motorCardsRevealed[0]) {
-                        cards[0].classList.add('motor-card-visible');
-                        motorCardsRevealed[0] = true;
-                    }
-                    
-                    if (ratio >= 0.6 && !motorCardsRevealed[1]) {
-                        cards[1].classList.add('motor-card-visible');
-                        motorCardsRevealed[1] = true;
-                    }
-                    
-                    if (ratio >= 0.9 && !motorCardsRevealed[2]) {
-                        cards[2].classList.add('motor-card-visible');
-                        motorCardsRevealed[2] = true;
-                    }
-                }
-            });
-        }, motorObserverOptions);
-
-        // Observe the cards wrapper
-        const motorCardsWrapper = document.getElementById('motorCardsWrapper');
-        motorObserver.observe(motorCardsWrapper);
-    </script>
-</body>
-</html>

@@ -1,0 +1,151 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .after-insurance-main-wrapper {
+        }
+
+        .after-insurance-container {
+            padding-left: 80px;
+        }
+
+        .after-insurance-header {
+            margin-bottom: 50px;
+        }
+
+        .after-insurance-header h2 {
+            font-size: 42px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .after-insurance-header p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .after-insurance-carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .after-insurance-carousel-container {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .after-insurance-carousel-slide {
+            flex: 0 0 600px;
+            margin-right: 20px;
+            min-width: 600px;
+        }
+
+        .after-insurance-service-card {
+            background: linear-gradient(135deg, #d0f4f7 0%, #a8e6ed 100%);
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .after-insurance-service-card:active {
+            cursor: grabbing;
+        }
+
+        .after-insurance-service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .after-insurance-service-card.after-insurance-card-nana {
+            background: linear-gradient(135deg, #c8f4d4 0%, #a0e7b8 100%);
+        }
+
+        .after-insurance-logo-wrapper {
+            height: 60px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .after-insurance-logo-wrapper img {
+            max-height: 60px;
+            max-width: 200px;
+            object-fit: contain;
+        }
+
+        .after-insurance-service-card h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .after-insurance-service-card p {
+            font-size: 16px;
+            color: #4a4a4a;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .after-insurance-know-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #00d9a3;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .after-insurance-know-more-btn:hover {
+            background: #00c493;
+            transform: translateX(5px);
+        }
+
+        .after-insurance-arrow-icon {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .after-insurance-know-more-btn:hover .after-insurance-arrow-icon {
+            transform: translateX(3px);
+        }
+
+        .after-insurance-carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .after-insurance-indicator-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .after-insurance-indicator-dot.after-insurance-dot-active {
+            width: 30px;
+            border-radius: 5px;
+            background: #00d9a3;
+        }
