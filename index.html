@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMMN</title>
+    <link rel="stylesheet" href="faq-section.css">
+    <link rel="stylesheet" href="cta-section.css">
+    <link rel="stylesheet" href="why-choose-section.css">
+    <link rel="stylesheet" href="company-logo.css">
+    <link rel="stylesheet" href="hero-section.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+
+</head>
+<body>
+        <!-- HEADER SECTION -->
+     <header id="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo-placeholder">
+                    <img src="media/images/Frame 30.png" alt="">
+                </div>
+            </div>
+
+            <nav id="nav">
+                <a href="#about">About</a>
+                <a href="#insurance">Insurance Services</a>
+                <a href="#faq">FAQ</a>
+                <a href="#partners">Partners</a>
+            </nav>
+
+            <div class="right-section">
+                <button class="lang-btn">العربية</button>
+                <button class="login-btn">SME Login</button>
+                <button class="mobile-menu-btn" id="menuBtn">☰</button>
+            </div>
+        </div>
+    </header>
+    <!-- HERO SECTION  -->
+     <section>
+        <div class="hero-section">
+        <div class="hero-container">
+            <!-- Static Content -->
+            <div class="hero-content">
+                <h1 class="hero-title">Your Trusted Insurance<br>Broker in Saudi Arabia</h1>
+                <p class="hero-subtitle">AMNN connects you with licensed insurance companies, helping you compare real offers, choose the right coverage, and buy securely all in one place.</p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Find Best Coverage</button>
+                    <button class="btn btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        How it works
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carousel for Images Only -->
+            <div class="carousel-section">
+                <div class="carousel-container">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide active">
+                        <div class="slide-content">
+                            <div class="decorative-shape shape-1"></div>
+                            <div class="decorative-shape shape-2"></div>
+
+                            <div class="slide-image">
+                                <img src="media/images/Frame 1984078276.png" alt="Insurance Professional">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <div class="slide-content">
+                            <div class="decorative-shape shape-1"></div>
+                            <div class="decorative-shape shape-2"></div>
+
+                            <div class="slide-image">
+                                <img src="media/images/Frame 1984078276.png" alt="Insurance Professional">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide">
+                        <div class="slide-content">
+                            <div class="decorative-shape shape-1"></div>
+                            <div class="decorative-shape shape-2"></div>
+
+                            <div class="slide-image">
+                                <img src="media/images/Frame 1984078276.png" alt="Insurance Professional">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <div class="carousel-nav nav-left" onclick="prevSlide()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </div>
+                <div class="carousel-nav nav-right" onclick="nextSlide()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+
+                <!-- Dots Navigation -->
+                <div class="carousel-dots">
+                    <div class="dot active" onclick="goToSlide(0)"></div>
+                    <div class="dot" onclick="goToSlide(1)"></div>
+                    <div class="dot" onclick="goToSlide(2)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     </section>
+
+    <!-- COMPANY LOGO CAROUSEL SECTION -->
+     <section>
+        <div class="company-logo-carousel-container">
+        <div class="company-logo-header">
+            <img src="media/images/image 1244.png" alt="">
+            <p style="color: #333; font-size: 14px; ">
+                <strong>Authorised by</strong><br>
+                Insurance Authority
+            </p>
+        </div>
+
+        <div class="company-logo-carousel-wrapper">
+            <div class="company-logo-carousel-track" id="carouselTrack">
+                <!-- Original set of logos -->
+                <div class="company-logo-logo-item"><img src="media/images/image 841.png" alt="Al Jazira Takaful"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 841.png" alt="Salama"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 842.png" alt="ACIG"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 843.png" alt="AICC"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 846.png" alt="Nasser Insurance"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 973.png" alt="MedGulf"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 979.png" alt="Gulf Takaful"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 980.png" alt="Tree"></div>
+                
+                <!-- Duplicate set for seamless infinite scroll -->
+                <div class="company-logo-logo-item"><img src="media/images/image 841.png" alt="Al Jazira Takaful"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 841.png" alt="Salama"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 842.png" alt="ACIG"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 843.png" alt="AICC"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 846.png" alt="Nasser Insurance"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 973.png" alt="MedGulf"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 979.png" alt="Gulf Takaful"></div>
+                <div class="company-logo-logo-item"><img src="media/images/image 980.png" alt="Tree"></div>
+            </div>
+        </div>
+    </div>
+     </section>
+
+    <!-- WHY CHOOSE US SECTION  -->
+    <section>
+<div class="why-choose-container">
+        <div class="why-choose-header">
+            <h2>Why Choose AMMN?</h2>
+            <p>AMMN is a trusted insurance broker in Saudi Arabia, dedicated to simplifying the way customers find and
+                purchase insurance. We act as a neutral mediator between insurance companies and customers, ensuring
+                transparent comparisons, fair pricing, and unbiased recommendations. Our mission is to make insurance
+                shopping easy, fast, and fully reliable whether you are looking for motor, health, travel, home, or
+                business insurance. With AMMN, you get professional support, simplified processes, and access to top
+                insurers across the Kingdom all through one convenient platform.</p>
+        </div>
+
+        <div class="why-choose-carousel-container">
+            <div class="why-choose-carousel-track" id="why-choose-carouselTrack">
+                <!-- Cards will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    </section>
+  <!-- FAQ SECTION -->
+    <section>
+        <div class="faq-wrapper">
+   <!-- Left Section -->
+  <div class="faq-left">
+    <h2 class="faq-heading">Frequently Asked Questions</h2>
+    <p class="faq-subheading">
+      Here are some common questions to help you understand how AMMN works and
+      how we make your insurance experience simple, secure, and transparent.
+    </p>
+  </div>
+
+  <!-- Right Section -->
+  <div class="faq-right">
+    <div class="faq-item active">
+      <button class="faq-question">
+        <span>What is AMMN?</span>
+        <span class="faq-icon">−</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Is AMMN an insurance company?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Is it safe to buy insurance online through AMMN?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>How long does it take to receive my insurance policy?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>What types of insurance can I buy through AMMN?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>What payment methods do you accept?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Is AMMN approved by the Saudi Insurance Authority?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Do I need to visit any insurance company’s office?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </section>
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+  <div class="cta-section-content">
+
+    <!-- Logos -->
+    <div class="cta-section-logos">
+      <span><img src="media/svg/Mis_Logo.svg" alt=""></span>
+      <span><img src="media/svg/Sadad_Logo.svg" alt=""></span>
+      <span><img src="media/svg/Mastercard_logo.svg" alt=""></span>
+      <span><img src="media/svg/Mada_Logo.svg" alt=""></span>
+      <span><img src="media/svg/Morni_Logo.svg" alt=""></span>
+      <span><img src="media/svg/Mastercard_logo.svg" alt=""></span>
+      <span><img src="media/svg/Tabby_logo.svg" alt=""></span>
+    </div>
+
+    <!-- Text -->
+    <h2>
+      Start Your Motor Insurance<br>
+      Quote in KSA Today
+    </h2>
+
+    <p>
+      Get the best prices, trusted coverage, and instant policy issuance —
+      all in one place
+    </p>
+
+    <!-- Buttons -->
+    <div class="cta-section-buttons">
+      <a href="" class="cta-btn cta-btn-primary">Buy Insurance</a>
+      <a href="" class="cta-btn cta-btn-secondary">Get a Quote</a>
+    </div>
+
+  </div>
+
+  <!-- Image -->
+  <div class="cta-section-right-image">
+    <img src="media/images/Frame 1984078046.png" alt="Insurance Authority Card">
+  </div>
+</section>
+
+    <!-- FOOTER SECTION  -->
+     <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-grid">
+                    <!-- Column 1: App Download -->
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <span class="logo-text">AMMN</span>
+                            <div class="logo-icon">S</div>
+                        </div>
+                        <h3>Download Our Mobile App</h3>
+                        <p>We are live on google play store as well as Apple App Store, Scan QR Below</p>
+                        <div class="qr-codes">
+                            <div class="qr-box">
+                                <div class="qr-pattern"></div>
+                            </div>
+                            <div class="qr-box">
+                                <div class="qr-pattern apple"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Quick Links -->
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Home <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">About <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Contact <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Blog <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">FAQ <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Job <i class="fas fa-arrow-right"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Insurance Types -->
+                    <div class="footer-column">
+                        <h3>Insurance Types</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Motor Insurance <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Domestic Insurance <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">SME Insurance <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Medical Malpractice Insurance <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Vehicle Insurance <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">House Insurance <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Travel Insurance <i class="fas fa-arrow-right"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Social Media -->
+                    <div class="footer-column">
+                        <h3>Follow us on</h3>
+                        <div class="social-links">
+                            <div class="social-icon facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <div class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="social-icon linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div class="social-icon pinterest">
+                                <i class="fab fa-pinterest-p"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <i class="far fa-copyright"></i>
+                        <i class="fas fa-shield-alt"></i>
+                        <span>2025 - All rights reserved</span>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">T&C</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="faq-section.js"></script>
+    <script src="why-choose-section.js"></script>
+    <script src="hero-section.js"></script>
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>

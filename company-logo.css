@@ -1,0 +1,94 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .company-logo-carousel-container {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .company-logo-header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .company-logo-header img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .company-logo-carousel-wrapper {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .company-logo-carousel-wrapper::before,
+        .company-logo-carousel-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .company-logo-carousel-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, white, transparent);
+        }
+
+        .company-logo-carousel-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, white, transparent);
+        }
+
+        .company-logo-carousel-track {
+            display: flex;
+            gap: 60px;
+            animation: scroll 30s linear infinite;
+            width: fit-content;
+        }
+
+        .company-logo-carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        .company-logo-logo-item {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+        }
+
+        .company-logo-logo-item img {
+            max-height: 60px;
+            max-width: 150px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .company-logo-logo-item img:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }

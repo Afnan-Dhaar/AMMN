@@ -1,0 +1,171 @@
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        header {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.12);
+            padding: 15px 40px;
+            border-radius: 35px;
+            backdrop-filter: blur(20px);
+            box-shadow: 1px 2px 1px 0px rgba(255, 255, 255, 0.16) inset;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            margin-right: 80px;
+            margin-left: 80px;
+            
+        }
+
+        header.scrolled {
+            padding: 10px 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-placeholder {
+            width: 60px;
+            height: 40px;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            margin-left: 7rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #4a90e2;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4a90e2;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .right-section {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: white;
+            color: #2c3e50;
+            border: none;
+            padding: 13px 16px;
+            border-radius: 99px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .lang-btn:hover {
+            background: #20b858;
+            transform: translateY(-2px);
+        }
+
+        .login-btn {
+            background: white;
+            color: #2c3e50;
+            border: 2px solid #ddd;
+            padding: 13px 16px;
+            border-radius: 99px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            border-color: #4a90e2;
+            color: #4a90e2;
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #2c3e50;
+        }
+
+    
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s ease;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .right-section {
+                gap: 10px;
+            }
+
+            .lang-btn, .login-btn {
+                padding: 6px 15px;
+                font-size: 13px;
+            }
+        }
