@@ -1,321 +1,609 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="why-choose-section.css">
-    <link rel="stylesheet" href="benefits-section.css">
-    <link rel="stylesheet" href="hero-section.css">
-    <link rel="stylesheet" href="right-coverage-section.css">
-    <link rel="stylesheet" href="video-section.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="why-choose-section.css">
+  <link rel="stylesheet" href="benefits-section.css">
+  <link rel="stylesheet" href="hero-section.css">
+  <link rel="stylesheet" href="right-coverage-section.css">
+  <link rel="stylesheet" href="video-section.css">
+  <link rel="stylesheet" href="product-header.css">
+  <link rel="stylesheet" href="product-logo-carousel.css">
+  <link rel="stylesheet" href="product-faq.css">
+  <link rel="stylesheet" href="product-footer.css">
 </head>
+
 <body>
-    <!-- HERO SECTION -->
-     <section class="sme-hero">
-  <div class="sme-hero__container">
+  <!-- HEADER SECTION -->
+  <header id="header">
+    <div class="header-container">
+      <div class="logo-section">
+        <div class="logo-placeholder">
+          <img src="media/images/Frame 30.png" alt="">
+        </div>
+      </div>
 
-    <!-- Left Content -->
-    <div class="sme-hero__content">
-      <h1 class="sme-hero__title">
-        Affordable & Reliable SME<br>
-        Insurance in Saudi Arabia
-      </h1>
+      <nav id="nav">
+        <a href="#about">About</a>
+        <a href="#insurance">Insurance Services</a>
+        <a href="#faq">FAQ</a>
+        <a href="#partners">Partners</a>
+      </nav>
 
-      <p class="sme-hero__description">
-        Small and medium-sized enterprises can benefit from many
-        opportunities and face many risks.
+      <div class="right-section">
+        <button class="lang-btn">العربية</button>
+        <button class="login-btn">SME Login</button>
+        <button class="mobile-menu-btn" id="menuBtn">☰</button>
+      </div>
+    </div>
+  </header>
+  <!-- HERO SECTION -->
+  <section class="sme-hero">
+    <div class="sme-hero__container">
+
+      <!-- Left Content -->
+      <div class="sme-hero__content">
+        <h1 class="sme-hero__title">
+          Affordable & Reliable SME<br>
+          Insurance in Saudi Arabia
+        </h1>
+
+        <p class="sme-hero__description">
+          Small and medium-sized enterprises can benefit from many
+          opportunities and face many risks.
+        </p>
+
+        <div class="sme-hero__actions">
+          <a href="#" class="sme-hero__btn sme-hero__btn--primary">
+            Buy Now
+          </a>
+
+          <a href="#" class="sme-hero__btn sme-hero__btn--secondary">
+            ▶ How it works
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="sme-hero__image">
+        <img src="media/images/Frame 2121454320 (1).png" alt="SME Insurance">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPANY LOGO CAROUSEL SECTION -->
+  <section>
+    <div class="company-logo-carousel-container">
+      <div class="company-logo-header">
+        <img src="media/images/image 1244.png" alt="">
+        <p style="color: #333; font-size: 14px; ">
+          <strong>Authorised by</strong><br>
+          Insurance Authority
+        </p>
+      </div>
+
+      <div class="company-logo-carousel-wrapper">
+        <div class="company-logo-carousel-track" id="carouselTrack">
+          <!-- Original set of logos -->
+          <div class="company-logo-logo-item"><img src="media/images/image 841.png" alt="Al Jazira Takaful"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 841.png" alt="Salama"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 842.png" alt="ACIG"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 843.png" alt="AICC"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 846.png" alt="Nasser Insurance"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 973.png" alt="MedGulf"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 979.png" alt="Gulf Takaful"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 980.png" alt="Tree"></div>
+
+          <!-- Duplicate set for seamless infinite scroll -->
+          <div class="company-logo-logo-item"><img src="media/images/image 841.png" alt="Al Jazira Takaful"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 841.png" alt="Salama"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 842.png" alt="ACIG"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 843.png" alt="AICC"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 846.png" alt="Nasser Insurance"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 973.png" alt="MedGulf"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 979.png" alt="Gulf Takaful"></div>
+          <div class="company-logo-logo-item"><img src="media/images/image 980.png" alt="Tree"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE SECTION -->
+  <section class="sme-why-us">
+    <div class="sme-why-us__container">
+
+      <h2 class="sme-why-us__title">
+        Why Choose Us for SME Insurance in KSA
+      </h2>
+
+      <p class="sme-why-us__subtitle">
+        SME Insurance Solutions Built to Protect and Grow Your Business
       </p>
 
-      <div class="sme-hero__actions">
-        <a href="#" class="sme-hero__btn sme-hero__btn--primary">
-          Buy Now
-        </a>
+      <div class="sme-why-us__grid">
 
-        <a href="#" class="sme-hero__btn sme-hero__btn--secondary">
-          ▶ How it works
-        </a>
+        <div class="sme-why-us__card">
+          <div class="sme-why-us__icon">
+            <img src="media/icons/Icon.svg" alt="">
+          </div>
+          <h3>Customized for Your Business</h3>
+          <p>
+            Based on your business size and operations, you can choose extra layers of protection, including vehicle
+            coverage, extended liability, specialized equipment, and enhanced medical insurance SME add-ons.
+          </p>
+        </div>
+
+        <div class="sme-why-us__card">
+          <div class="sme-why-us__icon">
+            <img src="media/icons/Icon0.svg" alt="">
+          </div>
+          <h3>Broad Range of Coverage</h3>
+          <p>
+            Our SME insurance protects your business with coverage for assets, equipment, liabilities, employee health,
+            legal risks, and business interruption, ensuring complete support and confidence during unexpected losses.
+          </p>
+        </div>
+
+        <div class="sme-why-us__card">
+          <div class="sme-why-us__icon">
+            <img src="media/icons/Icon (1).svg" alt="">
+          </div>
+          <h3>Flexible Employee Coverage</h3>
+          <p>
+            Our SME insurance offers flexible employee and dependent coverage, helping you support your staff better
+            while improving satisfaction, loyalty, and retention as your business grows and evolves.
+          </p>
+        </div>
+
+        <div class="sme-why-us__card">
+          <div class="sme-why-us__icon">
+            <img src="media/icons/Icon (2).svg" alt="">
+          </div>
+          <h3>Easy, Fast Onboarding</h3>
+          <p>
+            From quote to activation, our streamlined onboarding reduces paperwork, shortens waiting times, and
+            simplifies add-ons or renewals, ensuring your business receives fast, hassle-free protection without
+            complications.
+          </p>
+        </div>
+
+        <div class="sme-why-us__card">
+          <div class="sme-why-us__icon">
+            <img src="media/icons/Icon (3).svg" alt="">
+          </div>
+          <h3>Claims Support and Assistance</h3>
+          <p>
+            We provide responsive support for claims, policy adjustments, and employee updates, ensuring smooth handling
+            of every request so your business experiences minimal disruption and reliable peace of mind.
+          </p>
+        </div>
+
+        <div class="sme-why-us__card">
+          <div class="sme-why-us__icon">
+            <img src="media/icons/Icon (4).svg" alt="">
+          </div>
+          <h3>Tailored Protection Options</h3>
+          <p>
+            Based on your business size and operations, you can choose extra layers of protection, including vehicle
+            coverage, extended liability, specialized equipment, and enhanced medical insurance SME add-ons.
+          </p>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <!-- Right Image -->
-    <div class="sme-hero__image">
-      <img src="media/images/b9319b8a65ccb9e756dd016af72f647141b20b2a.png" alt="SME Insurance">
-    </div>
+  
 
-  </div>
-</section>
-
-    <!-- WHY CHOOSE SECTION -->
-     <section class="sme-why-us">
-  <div class="sme-why-us__container">
-
-    <h2 class="sme-why-us__title">
-      Why Choose Us for SME Insurance in KSA
-    </h2>
-
-    <p class="sme-why-us__subtitle">
-      SME Insurance Solutions Built to Protect and Grow Your Business
-    </p>
-
-    <div class="sme-why-us__grid">
-
-      <div class="sme-why-us__card">
-        <div class="sme-why-us__icon">
-          <img src="media/icons/Icon.png" alt="">
-        </div>
-        <h3>Customized for Your Business</h3>
-        <p>
-          Based on your business size and operations, you can choose extra layers
-          of protection including vehicle coverage, extended liability and
-          enhanced medical SME add-ons.
-        </p>
-      </div>
-
-      <div class="sme-why-us__card">
-        <div class="sme-why-us__icon">
-          <img src="media/icons/Icon.png" alt="">
-        </div>
-        <h3>Broad Range of Coverage</h3>
-        <p>
-          Coverage for assets, equipment, liabilities, employee health, legal
-          risks, and business interruption.
-        </p>
-      </div>
-
-      <div class="sme-why-us__card">
-        <div class="sme-why-us__icon">
-          <img src="media/icons/Icon.png" alt="">
-        </div>
-        <h3>Flexible Employee Coverage</h3>
-        <p>
-          Flexible employee and dependent coverage to improve satisfaction and
-          retention as your business grows.
-        </p>
-      </div>
-
-      <div class="sme-why-us__card">
-        <div class="sme-why-us__icon">
-          <img src="media/icons/Icon.png" alt="">
-        </div>
-        <h3>Easy, Fast Onboarding</h3>
-        <p>
-          Streamlined onboarding reduces paperwork, shortens waiting times and
-          simplifies renewals.
-        </p>
-      </div>
-
-      <div class="sme-why-us__card">
-        <div class="sme-why-us__icon">
-          <img src="media/icons/Icon.png" alt="">
-        </div>
-        <h3>Claims Support and Assistance</h3>
-        <p>
-          Responsive support for claims and policy adjustments with minimal
-          business disruption.
-        </p>
-      </div>
-
-      <div class="sme-why-us__card">
-        <div class="sme-why-us__icon">
-          <img src="media/icons/Icon.png" alt="">
-        </div>
-        <h3>Tailored Protection Options</h3>
-        <p>
-          Vehicle insurance, extended liability, specialized equipment and
-          enhanced medical coverage.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- BENEFITS SECTION -->
-     <section class="sme-benefits">
-  <div class="sme-benefits__container">
-
-    <h2 class="sme-benefits__title">
-      Benefits of Using AMMN Platform for<br>SME Health Insurance
-    </h2>
-
-    <p class="sme-benefits__subtitle">
-      Advantages of SME Insurance in Safeguarding Your Business and Workforce
-    </p>
-
-    <div class="sme-benefits__grid">
-
-      <div class="sme-benefits__card">
-        <div class="sme-benefits__icon">
-          <img src="media/icons/Vector.png" alt="">
-        </div>
-        <h3>Easy Comparison</h3>
-        <p>
-          Compare multiple policies from different insurance companies instantly.
-        </p>
-      </div>
-
-      <div class="sme-benefits__card">
-        <div class="sme-benefits__icon">
-          <img src="media/icons/Vector.png" alt="">
-        </div>
-        <h3>Save Time</h3>
-        <p>
-          Purchase your company’s health insurance policy online in a few steps.
-        </p>
-      </div>
-
-      <div class="sme-benefits__card">
-        <div class="sme-benefits__icon">
-          <img src="media/icons/Vector.png" alt="">
-        </div>
-        <h3>Detailed Information</h3>
-        <p>
-          Transparent pricing, coverage limits and provider details.
-        </p>
-      </div>
-
-      <div class="sme-benefits__card">
-        <div class="sme-benefits__icon">
-          <img src="media/icons/Vector.png" alt="">
-        </div>
-        <h3>Providers List</h3>
-        <p>
-          Search hospitals, clinics and pharmacies by city or provider name.
-        </p>
-      </div>
-
-      <div class="sme-benefits__card">
-        <div class="sme-benefits__icon">
-          <img src="media/icons/Vector.png" alt="">
-        </div>
-        <h3>Multiple Classes</h3>
-        <p>
-          Choose insurance classes like VIP, A, B, C or Basic.
-        </p>
-      </div>
-
-      <div class="sme-benefits__card">
-        <div class="sme-benefits__icon">
-          <img src="media/icons/Vector.png" alt="">
-        </div>
-        <h3>Multiple Classes</h3>
-        <p>
-          Choose insurance classes like VIP, A, B, C or Basic.
-        </p>
-      </div>
-
-      <div class="sme-benefits__card">
-        <div class="sme-benefits__icon">
-          <img src="media/icons/Vector.png" alt="">
-        </div>
-        <h3>Multiple Classes</h3>
-        <p>
-          Choose insurance classes like VIP, A, B, C or Basic.
-        </p>
-      </div>
-
-      <div class="sme-benefits__card">
-        <div class="sme-benefits__icon">
-          <img src="media/icons/Vector.png" alt="">
-        </div>
-        <h3>Coverage Limits & Benefits</h3>
-        <p>
-          Know exactly what each plan covers including emergency care.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- RIGHT COVERAGE SECTION -->
-<section>
+  <!-- RIGHT COVERAGE SECTION -->
+  <section>
     <div class="containeer">
-    <!-- Header Section -->
-    <div class="insurance-header">
+      <!-- Header Section -->
+      <div class="insurance-header">
         <h1>Choosing the Right Coverage and<br>Category for Your Employees</h1>
-        <p>With AMMN, you can select from multiple insurance classes tailored to your employees' needs. Once you assign a class to each member, the platform provides detailed insights into available providers, coverage options, and pricing breakdowns, helping you make informed decisions.</p>
-    </div>
+        <p>With AMMN, you can select from multiple insurance classes tailored to your employees' needs. Once you assign
+          a class to each member, the platform provides detailed insights into available providers, coverage options,
+          and pricing breakdowns, helping you make informed decisions.</p>
+      </div>
 
-    <!-- Carousel Section -->
-    <div class="coverage-carousel-section">
+      <!-- Carousel Section -->
+      <div class="coverage-carousel-section">
         <div class="coverage-track" id="insuranceCarouselTrack">
-            <div class="coverage-card position-left" data-index="0">
-                <img src="media/images/Vector.png" alt="" class="card-decoration">
-                <h3>Medical Care Providers</h3>
-                <p>Our database includes a comprehensive list of hospitals, clinics, and pharmacies covered under a policy. You can easily check if a provider is included for a specific insurance class or if referrals is required, ensuring your employees know exactly where they can access care</p>
-            </div>
-            
-            <div class="coverage-card active-center" data-index="1">
-                <img src="media/images/Vector.png" alt="" class="card-decoration">
-                <h3>Manage Policies</h3>
-                <p>The AMMN app allows you to monitor employee coverage, receive real-time notifications about policy updates or claims, and track usage easily. Employees can also access their benefits, provider lists, and coverage details through the app, making policy management effortless and efficient.</p>
-            </div>
-            
-            <div class="coverage-card position-right" data-index="2">
-                <img src="media/images/Vector.png" alt="" class="card-decoration">
-                <h3>Coverage Limits and Benefits</h3>
-                <p>AMMN provides transparent information for each plan, including coverage percentages for consultations, dental treatments, optical services, specialist visits, and other benefits. This clarity helps you choose the most suitable plan for your employees' healthcare needs</p>
-            </div>
+          <div class="coverage-card position-left" data-index="0">
+            <img src="media/images/Vector.png" alt="" class="card-decoration">
+            <h3>Medical Care Providers</h3>
+            <p>Our database includes a comprehensive list of hospitals, clinics, and pharmacies covered under a policy.
+              You can easily check if a provider is included for a specific insurance class or if referrals is required,
+              ensuring your employees know exactly where they can access care</p>
+          </div>
+
+          <div class="coverage-card active-center" data-index="1">
+            <img src="media/images/Vector.png" alt="" class="card-decoration">
+            <h3>Manage Policies</h3>
+            <p>The AMMN app allows you to monitor employee coverage, receive real-time notifications about policy
+              updates or claims, and track usage easily. Employees can also access their benefits, provider lists, and
+              coverage details through the app, making policy management effortless and efficient.</p>
+          </div>
+
+          <div class="coverage-card position-right" data-index="2">
+            <img src="media/images/Vector.png" alt="" class="card-decoration">
+            <h3>Coverage Limits and Benefits</h3>
+            <p>AMMN provides transparent information for each plan, including coverage percentages for consultations,
+              dental treatments, optical services, specialist visits, and other benefits. This clarity helps you choose
+              the most suitable plan for your employees' healthcare needs</p>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-</section>
+  </section>
 
-    <!-- VIDEO SECTION -->
-      <section class="app-section">
-        <div class="app-container">
-            <!-- Left Content -->
-            <div class="app-content">
-                <h2>Insurance Made Easier with the AMMN Mobile App</h2>
-                <p>Enjoy a smoother experience with instant notifications that keep you informed and secure. Plus, exclusive offers are available only on the app!</p>
+  <!-- VIDEO SECTION -->
+  <section class="app-section">
+    <div class="app-container">
+      <!-- Left Content -->
+      <div class="app-content">
+        <h2>Insurance Made Easier with the AMMN Mobile App</h2>
+        <p>Enjoy a smoother experience with instant notifications that keep you informed and secure. Plus, exclusive
+          offers are available only on the app!</p>
+      </div>
+
+      <!-- Right Video Card -->
+      <div class="video-card" id="videoCard">
+        <!-- Background Image (replace with your actual image) -->
+        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=1000&fit=crop" alt="Mobile App"
+          class="video-background" id="videoBackground">
+
+        <!-- Video Overlay -->
+        <div class="video-overlay">
+          <!-- Play Button -->
+          <div class="play-button" id="playButton"></div>
+
+          <!-- Download Section -->
+          <div class="download-section">
+            <div class="download-text">Download our App now...</div>
+            <div class="app-badges">
+              <!-- App Store Badge -->
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                alt="App Store" class="app-badge">
+
+              <!-- Google Play Badge -->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Google Play" class="app-badge">
+
+              <!-- App Gallery Badge (Create a simple one with HTML/CSS) -->
+              <div class="app-badge"
+                style="background: linear-gradient(135deg, #C8102E 0%, #E4032E 100%); display: flex; align-items: center; justify-content: center; padding: 0 20px; gap: 8px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 2L2 7v10c0 5.5 3.8 9.7 9 11 5.2-1.3 9-5.5 9-11V7l-10-5z" />
+                </svg>
+                <div style="text-align: left;">
+                  <div style="font-size: 9px; color: white; opacity: 0.9;">EXPLORE IT ON</div>
+                  <div style="font-size: 14px; color: white; font-weight: 600;">AppGallery</div>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <!-- Right Video Card -->
-            <div class="video-card" id="videoCard">
-                <!-- Background Image (replace with your actual image) -->
-                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=1000&fit=crop" alt="Mobile App" class="video-background" id="videoBackground">
-                
-                <!-- Video Overlay -->
-                <div class="video-overlay">
-                    <!-- Play Button -->
-                    <div class="play-button" id="playButton"></div>
+          <!-- Downloads Counter -->
+          <div class="downloads-counter">
+            <div class="downloads-number" id="downloadCount">0</div>
+            <div class="downloads-label">Downloads</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                    <!-- Download Section -->
-                    <div class="download-section">
-                        <div class="download-text">Download our App now...</div>
-                        <div class="app-badges">
-                            <!-- App Store Badge -->
-                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="app-badge">
-                            
-                            <!-- Google Play Badge -->
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="app-badge">
-                            
-                            <!-- App Gallery Badge (Create a simple one with HTML/CSS) -->
-                            <div class="app-badge" style="background: linear-gradient(135deg, #C8102E 0%, #E4032E 100%); display: flex; align-items: center; justify-content: center; padding: 0 20px; gap: 8px;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                                    <path d="M12 2L2 7v10c0 5.5 3.8 9.7 9 11 5.2-1.3 9-5.5 9-11V7l-10-5z"/>
-                                </svg>
-                                <div style="text-align: left;">
-                                    <div style="font-size: 9px; color: white; opacity: 0.9;">EXPLORE IT ON</div>
-                                    <div style="font-size: 14px; color: white; font-weight: 600;">AppGallery</div>
-                                </div>
+  <!-- BENEFITS SECTION -->
+  <section class="sme-benefits">
+    <div class="sme-benefits__container">
+
+      <h2 class="sme-benefits__title">
+        Benefits of Using AMMN Platform for<br>SME Health Insurance
+      </h2>
+
+      <p class="sme-benefits__subtitle">
+        Advantages of SME Insurance in Safeguarding Your Business and Workforce
+      </p>
+
+      <div class="sme-benefits__grid">
+
+        <div class="sme-benefits__card">
+          <div class="sme-benefits__icon">
+            <img src="media/icons/Vector.png" alt="">
+          </div>
+          <h3>Easy Comparison</h3>
+          <p>
+            Instantly compare multiple policies from different insurance companies on the platform, making it simple to find coverage that suits your budget and employee needs.
+          </p>
+        </div>
+
+        <div class="sme-benefits__card">
+          <div class="sme-benefits__icon">
+            <img src="media/icons/Vector.png" alt="">
+          </div>
+          <h3>Save Time</h3>
+          <p>
+             Purchase your company’s health insurance policy online in a few simple steps using the platform, saving hours of paperwork and follow-ups.
+          </p>
+        </div>
+
+        <div class="sme-benefits__card">
+          <div class="sme-benefits__icon">
+            <img src="media/icons/Vector.png" alt="">
+          </div>
+          <h3>Save Time</h3>
+          <p>
+             Purchase your company’s health insurance policy online in a few simple steps using the platform, saving hours of paperwork and follow-ups.
+          </p>
+        </div>
+
+        <div class="sme-benefits__card">
+          <div class="sme-benefits__icon">
+            <img src="media/icons/Vector.png" alt="">
+          </div>
+          <h3>Detailed Information</h3>
+          <p>
+            Our platform provides full transparency with the price of each insured member, coverage limits, and lists of medical care providers
+          </p>
+        </div>
+
+        <div class="sme-benefits__card">
+          <div class="sme-benefits__icon">
+            <img src="media/icons/Vector.png" alt="">
+          </div>
+          <h3>Providers List</h3>
+          <p>
+            Search hospitals, medical centers, and pharmacies by city or provider name to see which are included in your plan.
+          </p>
+        </div>
+
+        <div class="sme-benefits__card">
+          <div class="sme-benefits__icon">
+            <img src="media/icons/Vector.png" alt="">
+          </div>
+          <h3>Multiple Classes</h3>
+          <p>
+            Choose from various insurance classes for each employee: VIP, A, B, C, and Basic.
+          </p>
+        </div>
+
+        <div class="sme-benefits__card">
+          <div class="sme-benefits__icon">
+            <img src="media/icons/Vector.png" alt="">
+          </div>
+          <h3>Coverage Limits & Benefits</h3>
+          <p>
+            Know exactly what each plan covers, from dental treatment and medical glasses to specialist consultations, diagnostic tests, and emergency care
+          </p>
+        </div>
+
+        <div class="sme-benefits__card">
+          <div class="sme-benefits__icon">
+            <img src="media/icons/Vector.png" alt="">
+          </div>
+          <h3>Insured Members Prices</h3>
+          <p>
+            Compare prices for each insured member across multiple quotes and companies directly on the platform.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- FAQ SECTION -->
+    <section>
+        <div class="faq-wrapper">
+   <!-- Left Section -->
+  <div class="faq-left">
+    <h2 class="faq-heading">Frequently Asked Questions</h2>
+    <p class="faq-subheading">
+      Here are some common questions to help you understand how AMMN works and
+      how we make your insurance experience simple, secure, and transparent.
+    </p>
+  </div>
+
+  <!-- Right Section -->
+  <div class="faq-right">
+    <div class="faq-item active">
+      <button class="faq-question">
+        <span>What is AMMN?</span>
+        <span class="faq-icon">−</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Is AMMN an insurance company?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Is it safe to buy insurance online through AMMN?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>How long does it take to receive my insurance policy?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>What types of insurance can I buy through AMMN?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>What payment methods do you accept?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Is AMMN approved by the Saudi Insurance Authority?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Do I need to visit any insurance company’s office?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>AMMN is an online insurance brokerage platform licensed by the Saudi
+          Insurance Authority. It allows you to compare real-time insurance
+          offers from multiple trusted companies, pay online, and receive your
+          policy instantly — all in one place.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+     <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+              <div class="footer-logo">
+                            <img src="media/icons/Frame 1171279848 (1).svg">
+                            <img src="media/icons/Vector 2.svg">
+                        </div>
+                <div class="footer-grid">
+                    <!-- Column 1: App Download -->
+                    <div class="footer-column">
+                        <h3>Download Our Mobile App</h3>
+                        <p>We are live on google play store as well as Apple App Store, Scan QR Below</p>
+                        <div class="qr-codes">
+                            <div class="qr-box">
+                                <img src="media/icons/image 829.svg">
+                            </div>
+                            <div class="qr-box">
+                                <img src="media/icons/image 828.svg">
                             </div>
                         </div>
                     </div>
-
-                    <!-- Downloads Counter -->
-                    <div class="downloads-counter">
-                        <div class="downloads-number" id="downloadCount">0</div>
-                        <div class="downloads-label">Downloads</div>
+ 
+                    <!-- Column 2: Quick Links -->
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Home<img src="media/icons/Vector 15.svg"> <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">About<img src="media/icons/Vector 15.svg"> <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Contact<img src="media/icons/Vector 15.svg"> <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Blog<img src="media/icons/Vector 15.svg"> <i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">FAQ <img src="media/icons/Vector 15.svg"><i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Job<img src="media/icons/Vector 15.svg"> <i class="fas fa-arrow-right"></i></a></li>
+                        </ul>
+                    </div>
+ 
+                    <!-- Column 3: Insurance Types -->
+                    <div class="footer-column">
+                        <h3>Insurance Types</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Motor Insurance <img src="media/icons/Vector 15.svg"><i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Domestic Insurance <img src="media/icons/Vector 15.svg"><i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">SME Insurance <img src="media/icons/Vector 15.svg"><i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Medical Malpractice Insurance <img src="media/icons/Vector 15.svg"><i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Vehicle Insurance <img src="media/icons/Vector 15.svg"><i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">House Insurance <img src="media/icons/Vector 15.svg"><i class="fas fa-arrow-right"></i></a></li>
+                            <li><a href="#">Travel Insurance <img src="media/icons/Vector 15.svg"><i class="fas fa-arrow-right"></i></a></li>
+                        </ul>
+                    </div>
+ 
+                    <!-- Column 4: Social Media -->
+                    <div class="footer-column">
+                        <h3>Follow us on</h3>
+                        <div class="social-links">
+                            <div class="social-icon facebook">
+                                <img src="media/icons/Frame 1171279839.svg">
+                            </div>
+                            <div class="social-icon instagram">
+                                <img src="media/icons/Frame 1171279840.svg">
+                            </div>
+                            <div class="social-icon linkedin">
+                                <img src="media/icons/Frame 1171279841.svg">
+                            </div>
+                            <div class="social-icon pinterest">
+                                <img src="media/icons/Frame 1171279842.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ 
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <i class="far fa-copyright"></i>
+                        <i class="fas fa-shield-alt"></i>
+                        <span><img src="media/icons/Text.svg"><img src="media/icons/Vector footer.svg">2025 - All rights reserved</span>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">T&C</a>
                     </div>
                 </div>
             </div>
         </div>
+    </footer>
     </section>
-
-<script src="right-coverage-section.js"></script>
-<script src="video-section.js"></script>
+  <script src="right-coverage-section.js"></script>
+  <script src="video-section.js"></script>
+  <script src="product-header.js"></script>
+  <script src="product-logo-carousel.js"></script>
+  <script src="product-faq.js"></script>
 </body>
+
 </html>

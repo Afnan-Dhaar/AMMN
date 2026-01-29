@@ -1,4 +1,4 @@
-        // Intersection Observer for scroll animations
+// Intersection Observer for scroll animations
         const motorObserverOptions = {
             root: null,
             threshold: [0.3, 0.6, 0.9],

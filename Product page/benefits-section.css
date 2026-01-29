@@ -3,7 +3,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 .sme-benefits {
-  padding: 40px 80px;
+  padding: 80px 80px;
 }
 
 .sme-benefits__container {
@@ -15,7 +15,7 @@
   font-size: 32px;
   font-weight: 700;
   color: #0a2540;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .sme-benefits__subtitle {

@@ -1,7 +1,13 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
+   * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
 
         .motor-insurance-works-container {
             padding: 40px 80px;
@@ -67,17 +73,24 @@
             padding: 12px 40px;
             border-radius: 12px 12px 0 0;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             z-index: 0;
             white-space: nowrap;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            width:98%;
+            width: 98%;
             text-align: center;
             box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
         }
 
+        /* Step label hover state */
+        .motor-insurance-card-wrapper:hover .motor-insurance-step-label {
+            top: -60px;
+            background: rgba(5, 74, 255, 1);
+            color: white;
+        }
+
         .motor-insurance-card {
-            background: linear-gradient(135deg, #a8c5ff 0%, #7ca3ff 100%);
+            background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
             border-radius: 16px;
             padding: 50px 30px;
             height: 100%;
@@ -89,7 +102,7 @@
             overflow: visible;
             cursor: pointer;
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 102, 255, 0.3);
             z-index: 1;
             margin-top: 20px;
         }
@@ -109,24 +122,18 @@
                 rgba(255, 255, 255, 0.05) 20px
             );
             pointer-events: none;
-            border-radius: 24px;
+            border-radius: 16px;
         }
 
+        /* Hover state - White background */
         .motor-insurance-card:hover {
-            background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
+            background: white;
             transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
-        }
-
-        .motor-insurance-card-wrapper:hover .motor-insurance-step-label {
-            top: -60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
 
         .motor-insurance-icon-wrapper {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
+    
             display: flex;
             align-items: center;
             justify-content: center;
@@ -134,10 +141,7 @@
             transition: all 0.3s ease;
         }
 
-        .motor-insurance-card:hover .motor-insurance-icon-wrapper {
-            background: rgba(255, 255, 255, 0.4);
-            transform: scale(1.1);
-        }
+        
 
         .motor-insurance-icon {
             width: 40px;
@@ -147,132 +151,144 @@
         }
 
         .motor-insurance-card h2 {
-            font-size: 24px;
-            font-weight: 600;
-            color: #1a1a1a;
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
             margin-bottom: 16px;
             transition: color 0.3s ease;
         }
 
         .motor-insurance-card:hover h2 {
-            color: white;
+            color: #1a1a1a;
         }
 
         .motor-insurance-card p {
-            font-size: 15px;
-            color: #2a2a2a;
-            line-height: 1.7;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
             transition: color 0.3s ease;
         }
 
         .motor-insurance-card:hover p {
-            color: rgba(255, 255, 255, 0.95);
+            color: #666;
         }
 
         /* Special styling for card 1 - Form inputs */
         .motor-card-1 .motor-insurance-icon-wrapper {
             display: flex;
-            flex-direction: column;
+            
             gap: 8px;
-            padding: 15px;
+            
             width: 140px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.4);
+            height: 120px;
+            
         }
+
+        
 
         .motor-input-field {
             background: white;
             border-radius: 8px;
             padding: 6px 12px;
             font-size: 11px;
-            color: #666;
+            color: #999;
             border: none;
             width: 100%;
         }
 
         /* Special styling for card 2 - Comparison icons */
         .motor-card-2 .motor-insurance-icon-wrapper {
-            width: 200px;
+            width: 220px;
+            height: 120px;
             display: flex;
             gap: 12px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.4);
+            
         }
+
+        
 
         .motor-price-box {
             flex: 1;
             background: white;
             border-radius: 8px;
-            padding: 8px;
+            padding: 12px 8px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
+            justify-content: center;
+            gap: 6px;
         }
 
         .motor-price-icon {
-            width: 16px;
-            height: 16px;
+            width: 20px;
+            height: 20px;
             background: #0066ff;
             border-radius: 50%;
         }
 
         .motor-price-text {
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 700;
             color: #1a1a1a;
         }
 
         .motor-compare-icon {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
-            font-size: 16px;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
         }
 
         /* Special styling for card 3 - Payment icons */
         .motor-card-3 .motor-insurance-icon-wrapper {
-            width: 180px;
+            width: 220px;
+            height: 120px;
             display: flex;
             gap: 10px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.4);
+            
+            align-items: center;
         }
 
+        
+
         .motor-payment-icon {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
             background: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 700;
             color: white;
         }
 
         .motor-payment-icon:nth-child(1) {
             background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            font-size: 8px;
         }
 
         .motor-payment-icon:nth-child(2) {
             background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            font-size: 7px;
         }
 
         .motor-payment-icon:nth-child(3) {
             background: linear-gradient(135deg, #95e1d3 0%, #38ada9 100%);
+            font-size: 11px;
         }
 
         .motor-payment-btn {
             background: white;
             color: #0066ff;
             border: none;
-            padding: 8px 16px;
+            padding: 10px 18px;
             border-radius: 20px;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
         }

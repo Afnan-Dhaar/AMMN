@@ -3,8 +3,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 .sme-hero {
-  padding: 40px 80px;
-  background: linear-gradient(135deg, #f5f8ff, #ffffff);
+  padding-top: 140px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 60px;
 }
 
 .sme-hero__container {
@@ -73,11 +75,12 @@
 
 /* Right image */
 .sme-hero__image {
-  text-align: center;
+  overflow: hidden;
+  height: 420px;
 }
 
 .sme-hero__image img {
-  max-width: 430px;
+  max-width: 670px;
   height: auto;
 }
 

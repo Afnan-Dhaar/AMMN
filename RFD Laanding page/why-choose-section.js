@@ -1,23 +1,23 @@
         const cards = [
             {
-                icon: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=100&h=100&fit=crop',
+                icon: 'media/icons/Framewhy.svg',
                 title: 'Fast and Online Quotes',
                 description: 'Instantly compare multiple providers on our platform to find the policy that fits your budget.'
             },
             {
-                icon: 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=100&h=100&fit=crop',
+                icon: 'media/icons/Framewhy.svg',
                 title: 'Dedicated Customer Support',
                 description: 'Our team is here to help you with claims, renewals, and any questions anytime you need us.'
             },
             {
-                icon: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=100&h=100&fit=crop',
+                icon: 'media/icons/Framewhy.svg',
                 title: 'Secure & Easy Purchase',
                 description: 'Complete your motor insurance purchase online with safe payment options and instant policy delivery.'
             },
             {
-                icon: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=100&h=100&fit=crop',
+                icon: 'media/icons/Framewhy.svg',
                 title: 'Trusted by Thousands',
-                description: 'Join thousands of satisfied customers who trust AMMN for their insurance needs.'
+                description: 'Join thousands of satisfied customers who trust AMMN for their insurance needs and gets satisfied by our services.'
             }
         ];
 

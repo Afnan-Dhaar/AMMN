@@ -3,7 +3,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 .sme-why-us {
-  padding: 40px 80px;
+  padding: 80px 80px;
 }
 
 .sme-why-us__container {
@@ -15,7 +15,7 @@
   font-size: 32px;
   font-weight: 700;
   color: #0a2540;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .sme-why-us__subtitle {
@@ -37,25 +37,13 @@
   padding: 28px;
 }
 
-.sme-why-us__icon {
-  width: 44px;
-  height: 44px;
-  background: #2563eb;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.sme-why-us__icon img {
-  width: 22px;
-  height: 22px;
+.sme-why-us__icon{
+  margin-bottom: 20px;
 }
 
 .sme-why-us__card h3 {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #0a2540;
 }
 
