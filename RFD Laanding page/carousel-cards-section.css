@@ -1,0 +1,223 @@
+.cards {
+  padding: 50px 0;
+}
+ 
+.cards h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  padding-left: 75px;
+}
+ 
+.p {
+  margin-bottom: 50px;
+  padding-left: 75px;
+}
+ 
+.cards-div {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+ 
+.cards-div::-webkit-scrollbar {
+  display: none;
+}
+ 
+.cards-div {
+  scrollbar-width: none;
+}
+ 
+.inside-cards {
+  display: flex;
+  gap: 20px;
+  padding-left: 75px;
+  padding-right: 75px;
+  transition: transform 0.5s ease;
+}
+ 
+.card-one,
+.card-two {
+  width: 1080px;
+  min-width: 1080px;
+  min-height: 425px;
+  border-radius: 20px;
+  /* background: linear-gradient(135deg, #043b82, #0a63d8); */
+  padding: 50px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+ 
+.card-one::before,
+.card-two::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./assets/);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+ 
+.card-one::before{
+  background-image: url(media/svg/11.png);
+}
+.card-two::before{
+  background-image: url(media/svg/11.png);
+}
+ 
+.card-content {
+  max-width: 55%;
+  position: relative;
+  z-index: 2;
+}
+ 
+.card-content h3 {
+  font-size: 27px;
+  margin-bottom: 15px;
+}
+ 
+.card-content p {
+  opacity: 0.9;
+  margin: 0 0 30px 0;
+}
+ 
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+ 
+.features span {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+ 
+.features span:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+ 
+.cta-btn {
+  padding: 14px 32px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  background: white;
+  color: #043b82;
+  transition: all 0.3s ease;
+}
+ 
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+ 
+/* Card Navigation Buttons */
+.card-nav {
+  position: absolute;
+  top: 74%;
+  /* transform: translateY(-50%); */
+  width: 100%;
+  right: -80%;
+  display: flex;
+  /* justify-content: space-between; */
+  padding: 0 20px;
+  z-index: 10;
+  gap: 10px;
+  pointer-events: none;
+}
+ 
+.nav-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.505);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  pointer-events: all;
+}
+ 
+.nav-btn:hover {
+  background: #f0f0f0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
+ 
+.nav-btn svg {
+  color: #043b82;
+}
+ 
+/* Slide Indicator */
+.slide-indicator {
+  position: absolute;
+  top: 55px;
+  right: 30px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+ 
+.indicator-dot {
+  width: 10px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+ 
+.indicator-dot.active {
+  width: 40px;
+  background: white;
+}
+.indicator-dot.a {
+  width: 40px;
+  background: white;
+}
+ 
+/* Responsive */
+@media (max-width: 968px) {
+  .card-one::before,
+  .card-two::before {
+    width: 100%;
+    opacity: 0.2;
+  }
+ 
+  .card-content {
+    max-width: 100%;
+  }
+ 
+  .features {
+    grid-template-columns: 1fr;
+  }
+ 
+  .nav-btn {
+    width: 50px;
+    height: 50px;
+  }
+ 
+  .card-nav {
+    padding: 0 10px;
+  }
+}
+ 

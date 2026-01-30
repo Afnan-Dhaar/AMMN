@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMMAN Motor Insurance</title>
     <style>
         /* Add new styles for the specific requirements */
-        
+
 
         /* Tab buttons style - Updated for better visibility */
         .tab-buttons {
@@ -36,7 +37,7 @@
         .tab-button.active {
             background: white;
             color: #0984e3;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         /* Multi-select dropdown styles - Updated to match image */
@@ -93,20 +94,18 @@
         }
 
         .multi-select-options {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            border: 1px solid #dfe6e9;
-            border-radius: 8px;
-            margin-top: 5px;
-            max-height: 300px;
-            overflow-y: auto;
-            z-index: 1000;
-            display: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
+    position: fixed;
+    background: white;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    margin-top: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 2002;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 300px;
+}
 
         .multi-select-options.active {
             display: block;
@@ -259,13 +258,15 @@
 
         /* Driver card styles - Updated to match image */
         .driver-card {
-            border: 2px solid #dfe6e9;
-            border-radius: 12px;
-            padding: 20px;
-            background: white;
-            position: relative;
-            overflow: hidden;
-        }
+    border: 2px solid #dfe6e9;
+    border-radius: 12px;
+    padding: 20px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    min-width: 280px;
+    flex-shrink: 0;
+}
 
         .driver-card-header {
             display: flex;
@@ -333,6 +334,31 @@
             font-weight: 600;
         }
 
+        /* Driver card remove button */
+        .driver-remove-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 28px;
+            height: 28px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+
+        .driver-remove-btn:hover {
+            background: #ff5252;
+            transform: scale(1.1);
+        }
+
         /* KSA Flag header for driver card */
         .ksa-header {
             position: absolute;
@@ -369,7 +395,7 @@
             border: 1px solid #dfe6e9;
             border-radius: 8px;
             padding: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             display: none;
             width: 280px;
@@ -492,15 +518,16 @@
 
         /* Add driver card */
         .add-driver-card {
-            border: 2px dashed #b2bec3;
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            background: white;
-            grid-column: 1 / -1;
-        }
+    border: 2px dashed #b2bec3;
+    border-radius: 12px;
+    padding: 50px 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: white;
+    min-width: 280px;
+    flex-shrink: 0;
+}
 
         .add-driver-card:hover {
             border-color: #00b894;
@@ -525,21 +552,39 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            
+            font-family: Helvetica;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            max-width: 1440px;
+            margin: auto;
         }
 
         .container {
+
             overflow: hidden;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-image: url('Frame background.png');
+            background-size: cover;
+            background-position: 0% 0%;
+            background-repeat: no-repeat;
+            min-height: 100vh;
         }
+
+        .page active {}
 
         /* Header */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 30px;
+            padding: 0px 80px;
             border-bottom: 1px solid #e0e0e0;
+            background: rgba(255, 255, 255, 0.8);
+backdrop-filter: blur(12px)
+
         }
 
         .logo {
@@ -551,7 +596,7 @@
         .logo-icon {
             width: 40px;
             height: 40px;
-            
+
         }
 
 
@@ -569,7 +614,7 @@
         .user-avatar {
             width: 35px;
             height: 35px;
-            
+
         }
 
         .user-name {
@@ -580,6 +625,7 @@
         /* Navigation */
         .nav-tabs {
             display: flex;
+            gap: 10px;
             justify-content: space-around;
             padding: 0 30px;
             border-bottom: 2px solid #e0e0e0;
@@ -590,7 +636,6 @@
             flex: 1;
             text-align: center;
             padding: 15px 10px;
-            cursor: pointer;
             color: #636e72;
             font-size: 14px;
             border-bottom: 3px solid transparent;
@@ -599,47 +644,73 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            position: relative;
         }
 
         .nav-tab.active {
             color: #2d3436;
-            border-bottom-color: #00b894;
+            border-bottom-color: rgba(23, 43, 77, 1);
             font-weight: 500;
         }
 
-        .nav-tab:hover {
-            background: #f0f0f0;
+        /* Black filter for active tab icons */
+        .nav-tab.active img {
+            filter: brightness(0);
         }
+
+        /* Completed tab styles */
+        .nav-tab.completed {
+            border-bottom-color: green !important; 
+            border-bottom: 6px solid;
+        }
+
+        /* Hide original icon for completed tabs */
+        .nav-tab.completed img {
+            display: none;
+        }
+
+        /* Green tick replaces the icon */
+        .nav-tab.completed::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background-image: url('Frametabgreentick.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+
 
         /* Main Content */
         .content {
-            padding: 90px 40px;
+            padding: 40px 0px;
+            width: 1220px;
+            margin: auto;
+
         }
 
         .section-title {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 25px;
             color: #2d3436;
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 28px;
+            line-height: 32px;
+            font-weight: 500;
         }
 
-        
+
 
         /* Tab Selection */
         .tab-selector {
             display: flex;
             gap: 10px;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
         }
 
         .tab-btn {
             padding: 10px 20px;
-            border: 2px solid #dfe6e9;
-            background: white;
-            border-radius: 6px;
+            border: none;
             cursor: pointer;
             font-size: 14px;
             color: #636e72;
@@ -647,10 +718,12 @@
         }
 
         .tab-btn.active {
-            border-color: #0984e3;
-            background: #e3f2fd;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 1px 6px 20px 0px rgba(0, 0, 0, 0.16);
+            padding: 10px 20px;
             color: #0984e3;
             font-weight: 500;
+            border-radius: 6px;
         }
 
         /* Form Fields */
@@ -668,6 +741,64 @@
         .form-group {
             display: flex;
             flex-direction: column;
+        }
+
+        /* Floating label styles */
+        /* Floating label styles */
+        .form-group {
+            position: relative;
+        }
+
+        .form-group .form-label {
+            position: absolute;
+            left: 15px;
+            top: 12px;
+            font-size: 14px;
+            color: #999;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            background: white;
+            padding: 0 5px;
+        }
+
+        .form-group .form-input:focus+.form-label,
+        .form-group .form-input:not(:placeholder-shown)+.form-label {
+            top: -10px;
+            font-size: 12px;
+            color: #0984e3;
+        }
+
+        .form-input::placeholder {
+            color: transparent;
+        }
+
+        .form-input:focus::placeholder {
+            color: transparent;
+        }
+
+        /* For inputs with icons */
+        .form-input-with-icon {
+            position: relative;
+        }
+
+        .form-input-with-icon .form-label {
+            position: absolute;
+            left: 15px;
+            top: 12px;
+            font-size: 14px;
+            color: #999;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            background: white;
+            padding: 0 5px;
+            z-index: 1;
+        }
+
+        .form-input-with-icon .form-input:focus+.form-label,
+        .form-input-with-icon .form-input:not(:placeholder-shown)+.form-label {
+            top: -10px;
+            font-size: 12px;
+            color: #0984e3;
         }
 
         .form-label {
@@ -696,14 +827,11 @@
         }
 
         .form-input-with-icon input {
-            padding-right: 35px;
+            padding-right: 175px;
         }
 
         .input-icon {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
+            margin-left: -2rem;
             color: #b2bec3;
             cursor: pointer;
         }
@@ -715,33 +843,57 @@
             gap: 10px;
             margin: 20px 0;
             cursor: pointer;
+            background: rgba(255, 255, 255, 1);
+            border: 0.5px solid rgba(235, 236, 240, 1);
+            box-shadow: 0px 12px 16px 0px rgba(0, 0, 0, 0.04);
+            padding: 23px 20px;
+            border-radius: 12px;
         }
 
         .checkbox-group input[type="checkbox"] {
             width: 18px;
             height: 18px;
             cursor: pointer;
-            accent-color: #00b894;
+            accent-color: rgba(24, 201, 47, 1);
+            appearance: none;
+            -webkit-appearance: none;
+            border: 1px solid rgba(151, 160, 175, 1);
+            border-radius: 3px;
+            position: relative;
+            background: white;
+        }
+
+        .checkbox-group input[type="checkbox"]:checked {
+            background: rgba(24, 201, 47, 1);
+        }
+
+        .checkbox-group input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            top: -15%;
+            left: 15%;
+
         }
 
         .checkbox-label {
             font-size: 14px;
             color: #2d3436;
             cursor: pointer;
+            font-weight: 500;
         }
 
         .checkbox-subtext {
             color: #636e72;
             font-size: 13px;
+            font-weight: 400;
         }
 
         /* Expandable Sections */
         .expandable-section {
-            border: 1px solid #dfe6e9;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            background: #f8f9fa;
+
             display: none;
         }
 
@@ -755,6 +907,7 @@
                 opacity: 0;
                 transform: translateY(-10px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -772,23 +925,28 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 28px;
+            line-height: 32px;
+            font-weight: 500;
             color: #2d3436;
         }
 
-        .section-header-title::before {
-            content: '📋';
-            font-size: 20px;
-        }
+
 
         .hide-btn {
-            background: none;
-            border: none;
-            color: #0984e3;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(9, 30, 66, 1);
+            background: rgba(255, 255, 255, 1);
+            border: 0.5px solid rgba(235, 236, 240, 1);
+            box-shadow: 0px 12px 16px 0px rgba(0, 0, 0, 0.04);
+            padding: 10px 15px;
             font-size: 13px;
             cursor: pointer;
-            text-decoration: underline;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 999px;
         }
 
         /* Radio Group - KEEPING original for other parts */
@@ -821,9 +979,19 @@
         }
 
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
         }
 
         .radio-group-container.invalid {
@@ -835,25 +1003,22 @@
 
         /* Next Button */
         .next-btn {
-            background: linear-gradient(135deg, #0984e3, #74b9ff);
+            background: rgba(40, 99, 228, 1);
             color: white;
             padding: 14px 40px;
             border: none;
             border-radius: 25px;
-            font-size: 15px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 500;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(9, 132, 227, 0.3);
+            box-shadow: 1px 6px 16px 0px rgba(0, 0, 0, 0.08);
+
         }
 
-        .next-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(9, 132, 227, 0.4);
-        }
 
         /* Modal Styles */
         .modal-overlay {
@@ -875,26 +1040,80 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
-        .modal {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 450px;
-            width: 90%;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: slideUp 0.3s ease-out;
-        }
+        /* Modal overlay layers */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
 
+.modal-overlay.active {
+    display: flex;
+}
+
+/* Background blur layer */
+.modal-background-layer {
+background: rgba(255, 255, 255, 0.32);
+border: 1px solid;
+
+border-image-source: linear-gradient(115.57deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 55.23%, rgba(255, 255, 255, 0) 65.1%, rgba(255, 255, 255, 0.4) 100%);
+
+backdrop-filter: blur(15px);
+
+box-shadow: 3px 3px 4px 0px rgba(255, 255, 255, 0.24) inset;
+
+box-shadow: 0px 14px 40px 0px rgba(0, 0, 0, 0.08);
+border-radius: 28px;
+ width: 512px;
+ height: 549px;
+}
+
+/* Image layer */
+.modal-image-layer {
+    
+            background-image: url('Frame modalglass.svg');
+            background-repeat: no-repeat;
+            background-position: -20rem -18rem;
+border-radius: 28px;            
+     width: 512px;
+ height: 549px;
+}
+
+/* Modal content */
+.modal {
+    border-radius: 28px;
+    padding: 40px;
+ width: 512px;
+ height: 549px;
+    width: 100%;
+    position: relative;
+    animation: slideUp 0.3s ease-out;
+    z-index: 3;
+    background-image: url('Vectormodalbackimag.svg');
+            background-repeat: no-repeat;
+            background-position: 8rem -5rem;
+}
         @keyframes slideUp {
             from {
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -905,23 +1124,13 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: rgba(255, 255, 255, 0.3);
+            background:transparent;
             border: none;
             width: 35px;
             height: 35px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
             transition: all 0.3s;
         }
 
-        .modal-close:hover {
-            background: rgba(255, 255, 255, 0.5);
-        }
 
         .modal-title {
             text-align: center;
@@ -935,7 +1144,7 @@
             text-align: center;
             color: rgba(255, 255, 255, 0.9);
             font-size: 14px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .modal-input-group {
@@ -962,12 +1171,11 @@
 
         .modal-input:focus {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
         }
 
-        .modal-input.error {
+        /* .modal-input.error {
             border: 2px solid #ff6b6b;
-        }
+        } */
 
         .error-message {
             color: #fff;
@@ -979,9 +1187,9 @@
             display: none;
         }
 
-        .error-message.show {
+        /* .error-message.show {
             display: block;
-        }
+        } */
 
         .modal-btn {
             width: 100%;
@@ -989,18 +1197,18 @@
             border: none;
             border-radius: 25px;
             background: white;
-            color: #0984e3;
+            color: black;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            margin-top: 10px;
+            margin-top: 5rem;
         }
 
-        .modal-btn:hover {
+        /* .modal-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        }
+        } */
 
         .modal-link {
             text-align: center;
@@ -1062,27 +1270,6 @@
             text-decoration: underline;
         }
 
-        .generated-code {
-            text-align: center;
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            color: white;
-        }
-
-        .generated-code-label {
-            font-size: 12px;
-            margin-bottom: 5px;
-            opacity: 0.9;
-        }
-
-        .generated-code-value {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 8px;
-        }
-
         /* Insurance Details Page */
         .insurance-section {
             display: none;
@@ -1102,10 +1289,6 @@
             font-weight: 600;
         }
 
-        .insurance-header::before {
-            content: '📋';
-            font-size: 24px;
-        }
 
         .insurance-question {
             font-size: 14px;
@@ -1153,17 +1336,14 @@
             font-weight: 600;
         }
 
-        .drivers-header::before {
-            content: '👥';
-            font-size: 22px;
-        }
+        
 
         #driversContainer {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
-            margin-bottom: 15px;
-        }
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    overflow-x: auto;
+}
 
         .driver-details {
             display: flex;
@@ -1217,6 +1397,7 @@
             transition: right 0.3s ease-out;
             z-index: 2001;
             overflow-y: auto;
+            overflow-x: hidden;
         }
 
         .drawer.active {
@@ -1517,24 +1698,27 @@
 
         /* Assistant */
         .assistant {
-            position: fixed;
+            position: absolute;
             bottom: 0px;
             right: 0px;
-            
             cursor: pointer;
+            display: none;
+            z-index: 0;
 
-            
         }
 
-        
 
-        
+
+
 
         /* Footer */
         .footer {
-            background: #f8f9fa;
-            padding: 20px 30px;
-            border-top: 1px solid #e0e0e0;
+            margin-top: auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px 80px;
+            backdrop-filter: blur(12px);
+
+            border: 0.5px solid rgba(223, 225, 230, 1);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1555,7 +1739,7 @@
         .qr-code {
             width: 60px;
             height: 60px;
-            
+
         }
 
         .qr-text {
@@ -1572,7 +1756,7 @@
             display: flex;
             gap: 10px;
             align-items: center;
-            padding-right: 7rem;
+            padding-right: 1rem;
 
         }
 
@@ -1607,6 +1791,7 @@
                 opacity: 0;
                 transform: translateX(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -1704,6 +1889,7 @@
                 transform: translateX(400px);
                 opacity: 0;
             }
+
             to {
                 transform: translateX(0);
                 opacity: 1;
@@ -1715,6 +1901,7 @@
                 transform: translateX(0);
                 opacity: 1;
             }
+
             to {
                 transform: translateX(400px);
                 opacity: 0;
@@ -1735,159 +1922,215 @@
             border-color: #ff6b6b;
             box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
         }
-/* Two-column tab layout */
-.tab-buttons-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 15px;
-}
 
-.tab-buttons-two-col .tab-button {
-    padding: 10px 0;
-    border: 1px solid #dfe6e9;
-    background: white;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    color: #636e72;
-    transition: all 0.3s;
-    text-align: center;
-    font-weight: 500;
-}
+        /* Two-column tab layout */
+        .tab-buttons-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+            background-color: rgba(244, 245, 247, 1);
+            padding: 5px 4px;
+            border-radius: 8px;
+        }
 
-.tab-buttons-two-col .tab-button.active {
-    background: #e8f8f5;
-    color: #00b894;
-    border-color: #00b894;
-}
+        .tab-buttons-two-col .tab-button {
+            padding: 10px 8px;
 
-/* Engine size input group */
-.engine-size-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 12px;
-    border: 1px solid #dfe6e9;
-    border-radius: 6px;
-    background: white;
-}
+            background: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            color: rgba(94, 108, 132, 1);
+            transition: all 0.3s;
+            text-align: center;
+            font-weight: 400;
+        }
 
-.engine-size-label {
-    font-size: 14px;
-    color: #636e72;
-    font-weight: 500;
-}
+        .tab-buttons-two-col .tab-button.active {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 1px 6px 16px 0px rgba(0, 0, 0, 0.08);
+            padding: 10px 8px;
+            border-radius: 6px;
+        }
 
-.engine-size-input {
-    width: 80px;
-    padding: 8px;
-    border: 1px solid #dfe6e9;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 14px;
-}
+        /* Engine size input group */
+        .engine-size-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border: 1px solid #dfe6e9;
+            border-radius: 6px;
+            background: white;
+        }
 
-.engine-size-controls {
-    display: flex;
-    gap: 5px;
-}
+        .engine-size-label {
+            font-size: 14px;
+            color: #636e72;
+            font-weight: 500;
+        }
 
-.engine-size-btn {
-    width: 28px;
-    height: 28px;
-    border: 1px solid #dfe6e9;
-    background: white;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #636e72;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-}
+        .engine-size-input {
+            width: 80px;
+            padding: 8px;
+            border: 1px solid #dfe6e9;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 14px;
+        }
 
-.engine-size-btn:hover {
-    background: #f5f5f5;
-    border-color: #0984e3;
-    color: #0984e3;
-}
+        .engine-size-controls {
+            display: flex;
+            gap: 5px;
+        }
 
-/* City dropdown with flag */
-.city-dropdown-container {
-    position: relative;
-}
+        .engine-size-btn {
+            width: 28px;
+            height: 28px;
+            border: 1px solid #dfe6e9;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #636e72;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
 
-.city-dropdown-display {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    border: 1px solid #dfe6e9;
-    border-radius: 6px;
-    cursor: pointer;
-    background: white;
-}
+        .engine-size-btn:hover {
+            background: #f5f5f5;
+            border-color: #0984e3;
+            color: #0984e3;
+        }
 
-.city-flag {
-    font-size: 20px;
-}
+        /* City dropdown with flag */
+        .city-dropdown-container {
+            position: relative;
+        }
 
-.city-name {
-    flex: 1;
-    font-size: 14px;
-    color: #2d3436;
-}
+        .city-dropdown-display {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 12px 15px;
+            border: 1px solid #dfe6e9;
+            border-radius: 6px;
+            cursor: pointer;
+            background: white;
+        }
 
-.dropdown-arrow {
-    font-size: 12px;
-    color: #636e72;
-}
+        .city-flag {
+            margin-top: -5px;
+        }
 
-/* Grid layout for features */
-/* Grid layout for features */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-}
+        .city-name {
+            flex: 1;
+            font-size: 14px;
+            color: #2d3436;
+        }
 
-.features-grid-four {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-top: 20px;
-}
+        .dropdown-arrow {
+            font-size: 12px;
+            color: #636e72;
+        }
 
-.feature-item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
+        /* Grid layout for features */
+        /* Grid layout for features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
 
-.feature-label {
-    font-size: 13px;
-    color: #636e72;
-    font-weight: 500;
-}
+        .features-grid-four {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-@media (max-width: 768px) {
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-}
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .feature-label {
+            font-size: 13px;
+            color: rgba(23, 43, 77, 1);
+            font-weight: 500;
+        }
+
+        .fill-car-details {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .fill-car-details-tabs-container {
+            border: 0.5px solid rgba(235, 236, 240, 1);
+            box-shadow: 0px 12px 16px 0px rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 1);
+            border-radius: 16px;
+            padding: 27px 24px;
+        }
+
+        .fill-car-details-tab-selector {
+            width: 370px;
+            display: flex;
+            justify-content: center;
+            background-color: rgba(244, 245, 247, 1);
+            padding: 5px 4px;
+            border-radius: 8px;
+        }
+
+        .new-customer-form-row {
+            display: flex;
+        }
+
+        .Vehicle-Data-Usage-title-image {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .Safety-Features-Availability-title-image {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .page1-boxes {
+            border: 0.5px solid rgba(235, 236, 240, 1);
+            box-shadow: 0px 12px 16px 0px rgba(0, 0, 0, 0.04);
+
+            border-radius: 16px;
+            padding: 27px 24px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 1);
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .form-row {
                 grid-template-columns: 1fr;
             }
-            
+
             .nav-tabs {
                 overflow-x: auto;
             }
-            
+
             .content {
                 padding: 20px;
             }
@@ -1942,35 +2185,38 @@
                 flex-direction: column;
             }
         }
+
         @media (max-width: 968px) {
-    /* Make 3-column grids into 2 columns on medium screens */
-    div[style*="grid-template-columns: 1fr 1fr 1fr"] {
-        grid-template-columns: 1fr 1fr !important;
-    }
-}
 
-@media (max-width: 768px) {
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .features-grid-four {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* Make all grids single column on mobile */
-    div[style*="grid-template-columns"] {
-        grid-template-columns: 1fr !important;
-    }
-}
+            /* Make 3-column grids into 2 columns on medium screens */
+            div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
 
-@media (max-width: 480px) {
-    .features-grid-four {
-        grid-template-columns: 1fr;
-    }
-}
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid-four {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Make all grids single column on mobile */
+            div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .features-grid-four {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- Header -->
@@ -1979,7 +2225,7 @@
                 <div class="logo-icon">
                     <img src="Frame 1984078200.svg" alt="">
                 </div>
-               
+
             </div>
             <div class="user-info">
                 <span class="language">
@@ -1988,537 +2234,597 @@
                 <div class="user-avatar">
                     <img src="Frame 1984078172 (1).svg" alt="">
                 </div>
-                
+
             </div>
         </div>
 
         <!-- Navigation Tabs -->
         <div class="nav-tabs">
             <div class="nav-tab active" id="carDetailsTab">
-                Car Details
+                <img src="Frametab1.svg" alt="">Car Details
             </div>
             <div class="nav-tab" id="insuranceDetailsTab">
-                Insurance Details
+                <img src="Frametab2.svg" alt="">Insurance Details
             </div>
             <div class="nav-tab" id="summaryTab">
-                Summary
+                <img src="Frametab3.svg" alt="">Summary
             </div>
             <div class="nav-tab">
-                Offers
+                <img src="Frametab4.svg" alt="">Offers
             </div>
             <div class="nav-tab">
-                Quotes List
+                <img src="Frametab5.svg" alt="">Quotes List
             </div>
             <div class="nav-tab">
-                Checkout & Payment
+                <img src="Frametab6.svg" alt="">Checkout & Payment
             </div>
         </div>
 
         <!-- Page 1: Car Details -->
         <div class="page active" id="carDetailsPage">
             <div class="content">
-                <h2 class="section-title">Fill Your Car Details</h2>
 
-                <!-- Tab Selector -->
-                <div class="tab-selector">
-                    <button class="tab-btn active" id="nationalTab">National Number</button>
-                    <button class="tab-btn" id="customTab">New Customer Number</button>
+                <div class="fill-car-details">
+                    <img src="Frame fillcarddetails.svg" alt="">
+                    <h2 class="section-title">Fill Your Car Details</h2>
                 </div>
+                <div class="fill-car-details-tabs-container">
+                    <!-- Tab Selector -->
+                    <div class="tab-selector fill-car-details-tab-selector">
+                        <button class="tab-btn active" id="nationalTab">National Number</button>
+                        <button class="tab-btn" id="customTab">New Customer Number</button>
+                    </div>
 
-                <!-- National Number Form -->
-                <div id="nationalForm">
-                    <div class="form-row single">
-                        <div class="form-group">
-                            <label class="form-label">Serial Number</label>
-                            <div class="form-input-with-icon">
-                                <input type="text" class="form-input" placeholder="Enter serial number" >
-                                <span class="input-icon">ⓘ</span>
+                    <!-- National Number Form -->
+                    <div id="nationalForm">
+                        <div class="form-row single">
+                            <div class="form-group">
+                                <div class="form-input-with-icon">
+                                    <input type="text" class="form-input" placeholder="Enter serial number">
+                                    <label class="form-label">Serial Number</label>
+                                    <span class="input-icon">ⓘ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Number Form -->
+                    <!-- Custom Number Form -->
+                    <div id="customForm" style="display: none;">
+                        <div class="form-row new-customer-form-row">
+                            <div class="form-group">
+                                <div class="form-input-with-icon">
+                                    <input type="text" class="form-input" placeholder="Enter custom card number">
+                                    <label class="form-label">Custom Card Number</label>
+                                </div>
+                            </div>
+                            <div class="form-group form-input-with-icon">
+                                <input type="text" class="form-input " placeholder="Enter year">
+                                <label class="form-label">Year of Manufacture</label>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Custom Number Form -->
-                <div id="customForm" style="display: none;">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">Custom Card Number</label>
-                            <div class="form-input-with-icon">
-                                <input type="text" class="form-input" placeholder="Enter custom card number">
-                                <span class="input-icon">ⓘ</span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Year of Manufacture</label>
-                            <input type="text" class="form-input" placeholder="Enter year">
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Show Additional Data Checkbox -->
                 <div class="checkbox-group" onclick="toggleAdditionalData()">
                     <input type="checkbox" id="additionalDataCheck">
                     <label class="checkbox-label">
-                        Show Additional Data 
-                        <span class="checkbox-subtext">(The more information you have, the more discounts we can offer you.)</span>
+                        Show Additional Data
+                        <span class="checkbox-subtext">(The more information you have, the more discounts we can offer
+                            you.)</span>
                     </label>
                 </div>
 
                 <!-- Vehicle Data and Usage Section -->
-<!-- Vehicle Data and Usage Section -->
-<div id="vehicleSection" class="expandable-section">
-    <div class="section-header">
-        <h3 class="section-header-title">Vehicle Data and Usage</h3>
-        <button class="hide-btn" onclick="toggleVehicleSection()">Hide ▼</button>
-    </div>
+                <!-- Vehicle Data and Usage Section -->
+                <div id="vehicleSection" class="expandable-section">
+                    <div class="section-header">
+                        <div class="Vehicle-Data-Usage-title-image">
+                            <img src="Frame vehchiledatausage.svg" alt="">
+                            <h3 class="section-header-title">Vehicle Data and Usage</h3>
+                        </div>
+                        <button class="hide-btn" onclick="toggleVehicleSection()">Hide <img src="Frame hidebtn.svg"
+                                alt=""></button>
+                    </div>
 
-    <!-- Row 1: 3 columns -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 20px; margin-bottom: 20px;">
-        <!-- Transmission Type -->
-        <div class="feature-item">
-            <label class="feature-label">Transmission type</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setTransmission('manual')">Manual</button>
-                <button class="tab-button active" onclick="setTransmission('automatic')">Automatic</button>
-            </div>
-        </div>
+                    <div class="page1-boxes">
+                        <!-- Row 1: 3 columns -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 20px; margin-bottom: 20px;">
+                            <!-- Transmission Type -->
+                            <div class="feature-item">
+                                <label class="feature-label">Transmission type</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setTransmission('manual')">Manual</button>
+                                    <button class="tab-button active"
+                                        onclick="setTransmission('automatic')">Automatic</button>
+                                </div>
+                            </div>
 
-        <!-- Engine Size (CC) -->
-        <div class="feature-item">
-            <label class="feature-label">Engine Size (CC)</label>
-            <div class="engine-size-group">
-                <span class="engine-size-label">CC</span>
-                <input type="text" class="engine-size-input" id="engineSize" value="800" readonly>
-                <div class="engine-size-controls">
-                    <button class="engine-size-btn" onclick="decrementEngine()">−</button>
-                    <button class="engine-size-btn" onclick="incrementEngine()">+</button>
-                </div>
-            </div>
-        </div>
+                            <!-- Engine Size (CC) -->
+                            <div class="feature-item">
+                                <label class="feature-label">Engine Size (CC)</label>
+                                <div class="engine-size-group">
+                                    <span class="engine-size-label">CC</span>
+                                    <input type="text" class="engine-size-input" id="engineSize" value="800" readonly>
+                                    <div class="engine-size-controls">
+                                        <button class="engine-size-btn" onclick="decrementEngine()">−</button>
+                                        <button class="engine-size-btn" onclick="incrementEngine()">+</button>
+                                    </div>
+                                </div>
+                            </div>
 
-        <!-- Modifications -->
-        <div style="width: 50%;" class="feature-item">
-            <label class="feature-label">Any modifications to the vehicle?</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setModifications(true)">Yes</button>
-                <button class="tab-button active" onclick="setModifications(false)">No</button>
-            </div>
-        </div>
-    </div>
+                            <!-- Modifications -->
+                            <div style="width: 50%;" class="feature-item">
+                                <label class="feature-label">Any modifications to the vehicle?</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setModifications(true)">Yes</button>
+                                    <button class="tab-button active" onclick="setModifications(false)">No</button>
+                                </div>
+                            </div>
+                        </div>
 
-    <!-- Row 2: 2 columns -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-        <!-- Kilometers -->
-        <div class="feature-item">
-            <label class="feature-label">Number of kilometers during the year</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button active" onclick="setKilometers('less')">Less Than 20,000 Km/s</button>
-                <button class="tab-button" onclick="setKilometers('more')">Above 20,000 Km/s</button>
-            </div>
-        </div>
+                        <!-- Row 2: 2 columns -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                            <!-- Kilometers -->
+                            <div class="feature-item">
+                                <label class="feature-label">Number of kilometers during the year</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button active" onclick="setKilometers('less')">Less Than 20,000
+                                        Km/s</button>
+                                    <button class="tab-button" onclick="setKilometers('more')">Above 20,000
+                                        Km/s</button>
+                                </div>
+                            </div>
 
-        <!-- Trailer -->
-        <div style="width: 50%;" class="feature-item">
-            <label class="feature-label">Trailer included with the vehicle?</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setTrailer(true)">Yes</button>
-                <button class="tab-button active" onclick="setTrailer(false)">No</button>
-            </div>
-        </div>
-    </div>
+                            <!-- Trailer -->
+                            <div style="width: 50%;" class="feature-item">
+                                <label class="feature-label">Trailer included with the vehicle?</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setTrailer(true)">Yes</button>
+                                    <button class="tab-button active" onclick="setTrailer(false)">No</button>
+                                </div>
+                            </div>
+                        </div>
 
-    <!-- Row 3: 3 columns -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 20px; margin-bottom: 20px;">
-        <!-- Driving City -->
-        <div class="feature-item">
-            <label class="feature-label">Select Driving City</label>
-            <div class="city-dropdown-container" onclick="toggleCityDropdown()">
-                <div class="city-dropdown-display" id="cityDisplay">
-                    <span class="city-flag">🇩🇿</span>
-                    <span class="city-name">Algeria</span>
-                    <span class="dropdown-arrow">▼</span>
-                </div>
-            </div>
-        </div>
+                        <!-- Row 3: 3 columns -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 20px; margin-bottom: 20px;">
+                            <!-- Driving City -->
+                            <div class="feature-item">
+                                <label class="feature-label">Select Driving City</label>
+                                <div class="city-dropdown-container" onclick="toggleCityDropdown()">
+                                    <div class="city-dropdown-display" id="cityDisplay">
+                                        <span class="city-flag">🇩🇿</span>
+                                        <span class="city-name">Algeria</span>
+                                        <span class="dropdown-arrow">▼</span>
+                                    </div>
+                                </div>
+                            </div>
 
-        <!-- City of Work -->
-        <div class="feature-item">
-            <label class="feature-label">City of Work</label>
-            <div class="city-dropdown-container" onclick="toggleWorkCityDropdown()">
-                <div class="city-dropdown-display" id="workCityDisplay">
-                    <span class="city-flag">🇩🇿</span>
-                    <span class="city-name">Algeria</span>
-                    <span class="dropdown-arrow">▼</span>
-                </div>
-            </div>
-        </div>
+                            <!-- City of Work -->
+                            <div class="feature-item">
+                                <label class="feature-label">City of Work</label>
+                                <div class="city-dropdown-container" onclick="toggleWorkCityDropdown()">
+                                    <div class="city-dropdown-display" id="workCityDisplay">
+                                        <span class="city-flag">🇩🇿</span>
+                                        <span class="city-name">Algeria</span>
+                                        <span class="dropdown-arrow">▼</span>
+                                    </div>
+                                </div>
+                            </div>
 
-        <!-- Renew Insurance -->
-        <div style="width: 50%;" class="feature-item">
-            <label class="feature-label">Want to renew your insurance?</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setRenew(true)">Yes</button>
-                <button class="tab-button active" onclick="setRenew(false)">No</button>
-            </div>
-        </div>
-    </div>
+                            <!-- Renew Insurance -->
+                            <div style="width: 50%;" class="feature-item">
+                                <label class="feature-label">Want to renew your insurance?</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setRenew(true)">Yes</button>
+                                    <button class="tab-button active" onclick="setRenew(false)">No</button>
+                                </div>
+                            </div>
+                        </div>
 
-    <!-- Row 4: Full width -->
-    <div style="margin-bottom: 20px; width: 50%;">
-        <div class="feature-item">
-            <label class="feature-label">Coverage for any driver of any age</label>
-            <div class="tab-buttons-two-col" style="max-width: 100%;">
-                <button class="tab-button active" onclick="setCoverage('18')">Any Driver Age 18 & Above</button>
-                <button class="tab-button" onclick="setCoverage('21')">Any Driver Age 21 & Above</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Show Other Details Checkbox -->
-    <div class="checkbox-group" onclick="toggleOtherDetails()">
-        <input type="checkbox" id="otherDetailsCheck">
-        <label class="checkbox-label">
-            Show Other Details 
-            <span class="checkbox-subtext">(Other details about the vehicle safety features.)</span>
-        </label>
-    </div>
-</div>
-                <!-- Safety Features Section -->
-<!-- Safety Features Section -->
-<div id="safetySection" class="expandable-section">
-    <div class="section-header">
-        <h3 class="section-header-title">Safety Features Availability</h3>
-        <button class="hide-btn" onclick="toggleSafetySection()">Hide ▼</button>
-    </div>
-
-    <div class="features-grid-four">
-        <!-- ABS System -->
-        <div class="feature-item">
-            <label class="feature-label">ABS System</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setFeature('abs', true)">Yes</button>
-                <button class="tab-button active" onclick="setFeature('abs', false)">No</button>
-            </div>
-        </div>
-
-        <!-- Fire Extinguisher -->
-        <div class="feature-item">
-            <label class="feature-label">Fire extinguisher</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setFeature('fire', true)">Yes</button>
-                <button class="tab-button active" onclick="setFeature('fire', false)">No</button>
-            </div>
-        </div>
-
-        <!-- Anti-theft Alarm -->
-        <div class="feature-item">
-            <label class="feature-label">Anti-theft alarm</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setFeature('alarm', true)">Yes</button>
-                <button class="tab-button active" onclick="setFeature('alarm', false)">No</button>
-            </div>
-        </div>
-
-        <!-- Speed Control -->
-        <div class="feature-item">
-            <label class="feature-label">Speed control</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setFeature('speed', true)">Yes</button>
-                <button class="tab-button active" onclick="setFeature('speed', false)">No</button>
-            </div>
-        </div>
-
-        <!-- Rear Sensors -->
-        <div class="feature-item">
-            <label class="feature-label">Rear sensors</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setFeature('rear', true)">Yes</button>
-                <button class="tab-button active" onclick="setFeature('rear', false)">No</button>
-            </div>
-        </div>
-
-        <!-- Front Camera -->
-        <div class="feature-item">
-            <label class="feature-label">Front Camera</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setFeature('frontCamera', true)">Yes</button>
-                <button class="tab-button active" onclick="setFeature('frontCamera', false)">No</button>
-            </div>
-        </div>
-
-        <!-- Rear Camera -->
-        <div class="feature-item">
-            <label class="feature-label">Rear Camera</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setFeature('rearCamera', true)">Yes</button>
-                <button class="tab-button active" onclick="setFeature('rearCamera', false)">No</button>
-            </div>
-        </div>
-
-        <!-- Automatic Brakes -->
-        <div class="feature-item">
-            <label class="feature-label">Automatic Brakes</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setFeature('autoBrakes', true)">Yes</button>
-                <button class="tab-button active" onclick="setFeature('autoBrakes', false)">No</button>
-            </div>
-        </div>
-
-        <!-- Adaptive Cruise Control -->
-        <div class="feature-item">
-            <label class="feature-label">Adaptive Cruise Control</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setFeature('cruise', true)">Yes</button>
-                <button class="tab-button active" onclick="setFeature('cruise', false)">No</button>
-            </div>
-        </div>
-
-        <!-- Front Sensors -->
-        <div class="feature-item">
-            <label class="feature-label">Front Sensors</label>
-            <div class="tab-buttons-two-col">
-                <button class="tab-button" onclick="setFeature('frontSensors', true)">Yes</button>
-                <button class="tab-button active" onclick="setFeature('frontSensors', false)">No</button>
-            </div>
-        </div>
-    </div>
-</div>
-                <button class="next-btn" onclick="openLoginModal()">
-    Next ➔
-</button>
-            </div>
-        </div>
-<!-- Page 2: Insurance Details -->
-<div class="page" id="insuranceDetailsPage">
-    <div class="content">
-        <h2 class="insurance-header">Insurance Details</h2>
-
-        <p class="insurance-question">Where do you want to get your car repaired?</p>
-
-        <div class="workshop-options">
-            <button class="workshop-btn active">Accredited Workshop</button>
-            <button class="workshop-btn">Agency</button>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label class="form-label">Insurance Start Date</label>
-                <div class="form-input-with-icon datepicker-container">
-                    <input type="text" class="form-input" placeholder="Select date" id="insuranceStartDate">
-                    <span class="input-icon" onclick="toggleDatePicker('insuranceDatePicker')">📅</span>
-                    <div class="datepicker-calendar" id="insuranceDatePicker"></div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="form-label">Estimated Car Value</label>
-                <div class="form-input-with-icon">
-                    <input type="text" class="form-input" placeholder="Enter value">
-                    <span class="input-icon">🔒</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="drivers-section">
-            <h3 class="drivers-header">Drivers</h3>
-
-            <div id="driversContainer">
-                <div class="driver-card">
-                    <div class="ksa-header"></div>
-                    <div class="form-percentage">100%</div>
-                    <div class="driver-card-header">
-                        <div class="driver-info">
-                            <span class="driver-title">Main Driver</span>
-                            <div class="driver-name">ABU MOHAMMED</div>
-                            <div class="driver-id">ID-10-10716624</div>
+                        <!-- Row 4: Full width -->
+                        <div style="margin-bottom: 20px; width: 50%;">
+                            <div class="feature-item">
+                                <label class="feature-label">Coverage for any driver of any age</label>
+                                <div class="tab-buttons-two-col" style="max-width: 100%;">
+                                    <button class="tab-button active" onclick="setCoverage('18')">Any Driver Age 18 &
+                                        Above</button>
+                                    <button class="tab-button" onclick="setCoverage('21')">Any Driver Age 21 &
+                                        Above</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="leadership-container">
-                        <div class="leadership-label">Leadership</div>
-                        <div class="leadership-value">100<span class="leadership-max">/100</span></div>
+                    <!-- Show Other Details Checkbox -->
+                    <div class="checkbox-group" onclick="toggleOtherDetails()">
+                        <input type="checkbox" id="otherDetailsCheck">
+                        <label class="checkbox-label">
+                            Show Other Details
+                            <span class="checkbox-subtext">(Other details about the vehicle safety features.)</span>
+                        </label>
                     </div>
                 </div>
-            </div>
-
-            <div class="add-driver-card" onclick="openAddDriverDrawer()">
-                <div class="add-driver-icon">➕</div>
-                <div class="add-driver-text">Add Additional Driver</div>
-            </div>
-        </div>
-
-        <div class="checkbox-group" style="margin-top: 40px;">
-            <input type="checkbox" id="transferCheck" onchange="toggleTransferInput()">
-            <label class="checkbox-label">Insurance required for transfer of ownership?</label>
-        </div>
-
-        <div id="transferInputContainer" class="transfer-input-container">
-            <div class="form-group">
-                <label class="form-label">Transfer Details</label>
-                <input type="text" class="form-input" placeholder="Enter transfer ownership details">
-            </div>
-        </div>
-
-        <button class="next-btn" onclick="goToSummary()">
-            Next ➔
-        </button>
-    </div>
-</div>
-
-
-<!-- Page 3: Summary/Offers Page -->
-<div class="page" id="summaryPage">
-    <div class="content" style="max-width: 1200px; margin: 0 auto;">
-        
-        <!-- Insurance Information Header -->
-        <div style="background: #f0f4f8; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
-            <h3 style="font-size: 14px; color: #636e72; margin-bottom: 20px; font-weight: 500;">INSURANCE INFORMATION</h3>
-            
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 20px;">
-                <div>
-                    <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Starting Date</div>
-                    <div style="font-size: 14px; color: #2d3436; font-weight: 600;" id="summaryStartDate">05 Jan 2026</div>
-                </div>
-                <div>
-                    <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Insurance ID</div>
-                    <div style="font-size: 14px; color: #2d3436; font-weight: 600;" id="summarySerial">1103736154</div>
-                </div>
-                <div>
-                    <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Transmission</div>
-                    <div style="font-size: 14px; color: #2d3436; font-weight: 600;" id="summaryTransmission">Automatic</div>
-                </div>
-                <div>
-                    <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Kilometers</div>
-                    <div style="font-size: 14px; color: #2d3436; font-weight: 600;" id="summaryKilometers">Less than 20,000</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Vehicle Information -->
-        <div style="background: #f0f4f8; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
-            <h3 style="font-size: 14px; color: #636e72; margin-bottom: 20px; font-weight: 500;">VEHICLE INFORMATION</h3>
-            
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
-                <div>
-                    <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Name</div>
-                    <div style="font-size: 14px; color: #2d3436; font-weight: 600;">Abu Mohammed</div>
-                </div>
-                <div>
-                    <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">City</div>
-                    <div style="font-size: 14px; color: #2d3436; font-weight: 600;" id="summaryCity">Algeria</div>
-                </div>
-                <div>
-                    <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Model Number</div>
-                    <div style="font-size: 14px; color: #2d3436; font-weight: 600;">2018</div>
-                </div>
-                <div>
-                    <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Plate Number</div>
-                    <div style="font-size: 14px; color: #2d3436; font-weight: 600;">5326</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Drivers Summary Section -->
-        <div style="background: #f0f4f8; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
-            <h3 style="font-size: 14px; color: #636e72; margin-bottom: 20px; font-weight: 500;">DRIVERS INFORMATION</h3>
-            <div id="summaryDriversContainer">
-                <!-- Drivers will be added here dynamically -->
-            </div>
-        </div>
-
-        <!-- Offers Header -->
-        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 25px;">
-            <span style="font-size: 32px;">🔍</span>
-            <h2 style="font-size: 24px; font-weight: 600; color: #2d3436; margin: 0;">
-                We Found <span style="color: #0984e3;">43</span> Best Offers For You
-            </h2>
-        </div>
-
-        <!-- Search and Filter -->
-        <div style="display: flex; gap: 15px; margin-bottom: 30px;">
-            <div style="flex: 1; position: relative;">
-                <input type="text" placeholder="Search Offers" style="width: 100%; padding: 12px 15px 12px 45px; border: 1px solid #dfe6e9; border-radius: 8px; font-size: 14px;">
-                <span style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #b2bec3;">🔍</span>
-            </div>
-            <button style="padding: 12px 25px; border: 1px solid #dfe6e9; background: white; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #636e72;">
-                <span>⚙️</span> Apply Filter
-            </button>
-            <button style="padding: 12px 20px; border: 1px solid #dfe6e9; background: white; border-radius: 8px; cursor: pointer; font-size: 20px;">
-                ☰
-            </button>
-            <button style="padding: 12px 20px; border: 1px solid #dfe6e9; background: white; border-radius: 8px; cursor: pointer; font-size: 20px;">
-                ⊞
-            </button>
-        </div>
-
-        <!-- Offer Card -->
-        <div style="border: 1px solid #dfe6e9; border-radius: 12px; padding: 25px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                <div style="display: flex; gap: 15px; align-items: center;">
-                    <div style="width: 60px; height: 60px; background: #f0f4f8; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">
-                        🏢
+                <!-- Safety Features Section -->
+                <!-- Safety Features Section -->
+                <div id="safetySection" class="expandable-section">
+                    <div class="section-header">
+                        <div class="Safety-Features-Availability-title-image">
+                            <img src="Frame saftyfeaturestitleimage.svg" alt="">
+                            <h3 class="section-header-title">Safety Features Availability</h3>
+                        </div>
+                        <button class="hide-btn" onclick="toggleSafetySection()">Hide <img src="Frame hidebtn.svg"
+                                alt=""></button>
                     </div>
-                    <div>
-                        <h3 style="font-size: 18px; font-weight: 600; color: #2d3436; margin: 0 0 5px 0;">Cooperative Insurance Company</h3>
-                        <div style="font-size: 13px; color: #0984e3;">Terms & Conditions</div>
+                    <div class="page1-boxes">
+                        <div class="features-grid-four">
+                            <!-- ABS System -->
+                            <div class="feature-item">
+                                <label class="feature-label">ABS System</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setFeature('abs', true)">Yes</button>
+                                    <button class="tab-button active" onclick="setFeature('abs', false)">No</button>
+                                </div>
+                            </div>
+
+                            <!-- Fire Extinguisher -->
+                            <div class="feature-item">
+                                <label class="feature-label">Fire extinguisher</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setFeature('fire', true)">Yes</button>
+                                    <button class="tab-button active" onclick="setFeature('fire', false)">No</button>
+                                </div>
+                            </div>
+
+                            <!-- Anti-theft Alarm -->
+                            <div class="feature-item">
+                                <label class="feature-label">Anti-theft alarm</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setFeature('alarm', true)">Yes</button>
+                                    <button class="tab-button active" onclick="setFeature('alarm', false)">No</button>
+                                </div>
+                            </div>
+
+                            <!-- Speed Control -->
+                            <div class="feature-item">
+                                <label class="feature-label">Speed control</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setFeature('speed', true)">Yes</button>
+                                    <button class="tab-button active" onclick="setFeature('speed', false)">No</button>
+                                </div>
+                            </div>
+
+                            <!-- Rear Sensors -->
+                            <div class="feature-item">
+                                <label class="feature-label">Rear sensors</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setFeature('rear', true)">Yes</button>
+                                    <button class="tab-button active" onclick="setFeature('rear', false)">No</button>
+                                </div>
+                            </div>
+
+                            <!-- Front Camera -->
+                            <div class="feature-item">
+                                <label class="feature-label">Front Camera</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setFeature('frontCamera', true)">Yes</button>
+                                    <button class="tab-button active"
+                                        onclick="setFeature('frontCamera', false)">No</button>
+                                </div>
+                            </div>
+
+                            <!-- Rear Camera -->
+                            <div class="feature-item">
+                                <label class="feature-label">Rear Camera</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setFeature('rearCamera', true)">Yes</button>
+                                    <button class="tab-button active"
+                                        onclick="setFeature('rearCamera', false)">No</button>
+                                </div>
+                            </div>
+
+                            <!-- Automatic Brakes -->
+                            <div class="feature-item">
+                                <label class="feature-label">Automatic Brakes</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setFeature('autoBrakes', true)">Yes</button>
+                                    <button class="tab-button active"
+                                        onclick="setFeature('autoBrakes', false)">No</button>
+                                </div>
+                            </div>
+
+                            <!-- Adaptive Cruise Control -->
+                            <div class="feature-item">
+                                <label class="feature-label">Adaptive Cruise Control</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setFeature('cruise', true)">Yes</button>
+                                    <button class="tab-button active" onclick="setFeature('cruise', false)">No</button>
+                                </div>
+                            </div>
+
+                            <!-- Front Sensors -->
+                            <div class="feature-item">
+                                <label class="feature-label">Front Sensors</label>
+                                <div class="tab-buttons-two-col">
+                                    <button class="tab-button" onclick="setFeature('frontSensors', true)">Yes</button>
+                                    <button class="tab-button active"
+                                        onclick="setFeature('frontSensors', false)">No</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div style="text-align: right;">
-                    <div style="font-size: 13px; color: #636e72; margin-bottom: 5px;">Payable Amount</div>
-                    <div style="font-size: 28px; font-weight: 700; color: #2d3436;">﷼ 2,562.86</div>
-                </div>
-            </div>
-
-            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 20px;">
-                <span style="color: #00b894; font-size: 18px;">✓</span>
-                <span style="font-size: 14px; color: #2d3436; font-weight: 500;">Insurance covers free of charge</span>
-            </div>
-
-            <div style="font-size: 13px; color: #636e72; line-height: 1.6; margin-bottom: 20px;">
-                The largest workshop network in the Kingdom, speed in settling claims, and international coverage
-            </div>
-
-            <div style="margin-bottom: 20px;">
-                <div style="font-size: 13px; color: #636e72; margin-bottom: 10px;">💰 Paid Add-ons</div>
-                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                        <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer; accent-color: #00b894;">
-                        <span style="font-size: 13px; color: #2d3436;">Replacement Car</span>
-                        <span style="background: #00b894; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600;">﷼ 200</span>
-                    </label>
-                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                        <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer; accent-color: #00b894;">
-                        <span style="font-size: 13px; color: #2d3436;">Roadside Assistance</span>
-                        <span style="background: #00b894; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600;">﷼ 3.5</span>
-                    </label>
-                </div>
-            </div>
-
-            <div style="display: flex; gap: 15px; align-items: flex-end;">
-                <div style="flex: 1;">
-                    <div style="font-size: 13px; color: #636e72; margin-bottom: 8px;">Endurance Value</div>
-                    <select style="width: 100%; padding: 12px 15px; border: 1px solid #dfe6e9; border-radius: 8px; font-size: 14px; cursor: pointer; background: white;">
-                        <option>Select Value</option>
-                        <option>10,000</option>
-                        <option>20,000</option>
-                        <option>30,000</option>
-                    </select>
-                </div>
-                <button style="flex: 1; padding: 14px; background: linear-gradient(135deg, #0984e3, #74b9ff); color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    Buy Now →
-                </button>
-            </div>
-
-            <div style="margin-top: 20px; text-align: right;">
-                <button style="background: none; border: none; color: #0984e3; font-size: 14px; cursor: pointer; text-decoration: underline;">
-                    Pricing Details ↓
+                <button class="next-btn" onclick="openLoginModal()">
+                    Next
                 </button>
             </div>
         </div>
+        <!-- Page 2: Insurance Details -->
+        <div class="page" id="insuranceDetailsPage">
+            <div class="content">
+                <h2 class="insurance-header"> <img src="Frame insurancedetailimage.svg" alt="">Insurance Details </h2>
 
-    </div>
-</div>
+                <div class="fill-car-details-tabs-container">
+                    
+                    
+
+                <p class="insurance-question">Where do you want to get your car repaired?</p>
+
+                <div class="workshop-options">
+                    <button class="workshop-btn active">Accredited Workshop</button>
+                    <button class="workshop-btn">Agency</button>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Insurance Start Date</label>
+                        <div class="form-input-with-icon datepicker-container">
+                            <input type="text" class="form-input" placeholder="Select date" id="insuranceStartDate">
+                            <span class="input-icon" onclick="toggleDatePicker('insuranceDatePicker')">📅</span>
+                            <div class="datepicker-calendar" id="insuranceDatePicker"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Estimated Car Value</label>
+                        <div class="form-input-with-icon">
+                            <input type="text" class="form-input" placeholder="Enter value">
+                            <span class="input-icon">🔒</span>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+                <div class="drivers-section">
+                    <h3 class="drivers-header">Drivers</h3>
+<div style="display: flex; align-items: center;">
+                    <div id="driversContainer">
+                        <div class="driver-card">
+                            <div class="ksa-header"></div>
+                            <div class="form-percentage">100%</div>
+                            <div class="driver-card-header">
+                                <div class="driver-info">
+                                    <span class="driver-title">Main Driver</span>
+                                    <div class="driver-name">ABU MOHAMMED</div>
+                                    <div class="driver-id">ID-10-10716624</div>
+                                </div>
+                            </div>
+                            <div class="leadership-container">
+                                <div class="leadership-label">Leadership</div>
+                                <div class="leadership-value">100<span class="leadership-max">/100</span></div>
+                            </div>
+                        </div>
+                        <div class="add-driver-card" onclick="openAddDriverDrawer()">
+                        <div class="add-driver-icon">➕</div>
+                        <div class="add-driver-text">Add Additional Driver</div>
+                    </div>
+                    </div>
+
+                    
+                    </div>
+                </div>
+
+                <div class="checkbox-group" style="margin-top: 40px;">
+                    <input type="checkbox" id="transferCheck" onchange="toggleTransferInput()">
+                    <label class="checkbox-label">Insurance required for transfer of ownership?</label>
+                </div>
+
+                <div id="transferInputContainer" class="transfer-input-container">
+                    <div class="form-group">
+                        <label class="form-label">Transfer Details</label>
+                        <input type="text" class="form-input" placeholder="Enter transfer ownership details">
+                    </div>
+                </div>
+
+                <button class="next-btn" onclick="goToSummary()">
+                    Next ➔
+                </button>
+            </div>
+        </div>
+
+
+        <!-- Page 3: Summary/Offers Page -->
+        <div class="page" id="summaryPage">
+            <div class="content" style="max-width: 1200px; margin: 0 auto;">
+
+                <!-- Insurance Information Header -->
+                <div style="background: #f0f4f8; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+                    <h3 style="font-size: 14px; color: #636e72; margin-bottom: 20px; font-weight: 500;">INSURANCE
+                        INFORMATION</h3>
+
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Starting Date</div>
+                            <div style="font-size: 14px; color: #2d3436; font-weight: 600;" id="summaryStartDate">05 Jan
+                                2026</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Insurance ID</div>
+                            <div style="font-size: 14px; color: #2d3436; font-weight: 600;" id="summarySerial">
+                                1103736154</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Transmission</div>
+                            <div style="font-size: 14px; color: #2d3436; font-weight: 600;" id="summaryTransmission">
+                                Automatic</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Kilometers</div>
+                            <div style="font-size: 14px; color: #2d3436; font-weight: 600;" id="summaryKilometers">Less
+                                than 20,000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Information -->
+                <div style="background: #f0f4f8; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+                    <h3 style="font-size: 14px; color: #636e72; margin-bottom: 20px; font-weight: 500;">VEHICLE
+                        INFORMATION</h3>
+
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                        <div>
+                            <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Name</div>
+                            <div style="font-size: 14px; color: #2d3436; font-weight: 600;">Abu Mohammed</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">City</div>
+                            <div style="font-size: 14px; color: #2d3436; font-weight: 600;" id="summaryCity">Algeria
+                            </div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Model Number</div>
+                            <div style="font-size: 14px; color: #2d3436; font-weight: 600;">2018</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: #636e72; margin-bottom: 5px;">Plate Number</div>
+                            <div style="font-size: 14px; color: #2d3436; font-weight: 600;">5326</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drivers Summary Section -->
+                <div style="background: #f0f4f8; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+                    <h3 style="font-size: 14px; color: #636e72; margin-bottom: 20px; font-weight: 500;">DRIVERS
+                        INFORMATION</h3>
+                    <div id="summaryDriversContainer">
+                        <!-- Drivers will be added here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Offers Header -->
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 25px;">
+                    <span style="font-size: 32px;">🔍</span>
+                    <h2 style="font-size: 24px; font-weight: 600; color: #2d3436; margin: 0;">
+                        We Found <span style="color: #0984e3;">43</span> Best Offers For You
+                    </h2>
+                </div>
+
+                <!-- Search and Filter -->
+                <div style="display: flex; gap: 15px; margin-bottom: 30px;">
+                    <div style="flex: 1; position: relative;">
+                        <input type="text" placeholder="Search Offers"
+                            style="width: 100%; padding: 12px 15px 12px 45px; border: 1px solid #dfe6e9; border-radius: 8px; font-size: 14px;">
+                        <span
+                            style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #b2bec3;">🔍</span>
+                    </div>
+                    <button
+                        style="padding: 12px 25px; border: 1px solid #dfe6e9; background: white; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #636e72;">
+                        <span>⚙️</span> Apply Filter
+                    </button>
+                    <button
+                        style="padding: 12px 20px; border: 1px solid #dfe6e9; background: white; border-radius: 8px; cursor: pointer; font-size: 20px;">
+                        ☰
+                    </button>
+                    <button
+                        style="padding: 12px 20px; border: 1px solid #dfe6e9; background: white; border-radius: 8px; cursor: pointer; font-size: 20px;">
+                        ⊞
+                    </button>
+                </div>
+
+                <!-- Offer Card -->
+                <div
+                    style="border: 1px solid #dfe6e9; border-radius: 12px; padding: 25px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <div
+                                style="width: 60px; height: 60px; background: #f0f4f8; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">
+                                🏢
+                            </div>
+                            <div>
+                                <h3 style="font-size: 18px; font-weight: 600; color: #2d3436; margin: 0 0 5px 0;">
+                                    Cooperative Insurance Company</h3>
+                                <div style="font-size: 13px; color: #0984e3;">Terms & Conditions</div>
+                            </div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 13px; color: #636e72; margin-bottom: 5px;">Payable Amount</div>
+                            <div style="font-size: 28px; font-weight: 700; color: #2d3436;">﷼ 2,562.86</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 20px;">
+                        <span style="color: #00b894; font-size: 18px;">✓</span>
+                        <span style="font-size: 14px; color: #2d3436; font-weight: 500;">Insurance covers free of
+                            charge</span>
+                    </div>
+
+                    <div style="font-size: 13px; color: #636e72; line-height: 1.6; margin-bottom: 20px;">
+                        The largest workshop network in the Kingdom, speed in settling claims, and international
+                        coverage
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <div style="font-size: 13px; color: #636e72; margin-bottom: 10px;">💰 Paid Add-ons</div>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox"
+                                    style="width: 18px; height: 18px; cursor: pointer; accent-color: #00b894;">
+                                <span style="font-size: 13px; color: #2d3436;">Replacement Car</span>
+                                <span
+                                    style="background: #00b894; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600;">﷼
+                                    200</span>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                <input type="checkbox"
+                                    style="width: 18px; height: 18px; cursor: pointer; accent-color: #00b894;">
+                                <span style="font-size: 13px; color: #2d3436;">Roadside Assistance</span>
+                                <span
+                                    style="background: #00b894; color: white; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600;">﷼
+                                    3.5</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; align-items: flex-end;">
+                        <div style="flex: 1;">
+                            <div style="font-size: 13px; color: #636e72; margin-bottom: 8px;">Endurance Value</div>
+                            <select
+                                style="width: 100%; padding: 12px 15px; border: 1px solid #dfe6e9; border-radius: 8px; font-size: 14px; cursor: pointer; background: white;">
+                                <option>Select Value</option>
+                                <option>10,000</option>
+                                <option>20,000</option>
+                                <option>30,000</option>
+                            </select>
+                        </div>
+                        <button
+                            style="flex: 1; padding: 14px; background: linear-gradient(135deg, #0984e3, #74b9ff); color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                            Buy Now →
+                        </button>
+                    </div>
+
+                    <div style="margin-top: 20px; text-align: right;">
+                        <button
+                            style="background: none; border: none; color: #0984e3; font-size: 14px; cursor: pointer; text-decoration: underline;">
+                            Pricing Details ↓
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
         <!-- Footer -->
-        <div class="footer">
+        <div class="footer" style="position: relative; z-index: 1;">
             <div class="qr-section">
                 <div class="qr-codes">
                     <img src="Frame 1171279861 (1).svg" alt="">
@@ -2529,69 +2835,89 @@
                 </div>
             </div>
             <div class="payment-icons">
-                <div class="payment-icon" >
-                <img src="Mada_Logo.svg" alt=""></div>
-                <div class="payment-icon" >
+                <div class="payment-icon">
+                    <img src="Mada_Logo.svg" alt="">
+                </div>
+                <div class="payment-icon">
                     <img src="Mastercard_logo.svg" alt="">
                 </div>
-                <div class="payment-icon" ><img src="Mis_Logo.svg" alt=""></div>
-                <div class="payment-icon" ><img src="Sadad_Logo.svg" alt=""></div>
-                <div class="payment-icon" >
+                <div class="payment-icon"><img src="Mis_Logo.svg" alt=""></div>
+                <div class="payment-icon"><img src="Sadad_Logo.svg" alt=""></div>
+                <div class="payment-icon">
                     <img src="Tabby_logo.svg" alt="">
                 </div>
-                <div class="payment-icon" ><img src="Visa_Logo.svg" alt=""></div>
-                
+                <div class="payment-icon"><img src="Visa_Logo.svg" alt=""></div>
+
+            </div>
+            <div class="assistant">
+                <img src="Frame 1984078246.svg" alt="">
             </div>
         </div>
     </div>
 
-    <!-- Login Modal -->
-    <div class="modal-overlay" id="loginModal">
-        <div class="modal">
-            <button class="modal-close" onclick="closeLoginModal()">✕</button>
-            <h2 class="modal-title">Verify Your Identity</h2>
-            <p class="modal-subtitle">Secure login via National ID or Residence Number.</p>
+    <!-- Login Modal with Captcha -->
+    <!-- Login Modal with Captcha -->
+<div class="modal-overlay" id="loginModal">
+    <div class="modal-background-layer">
+    <div class="modal-image-layer">
+    <div class="modal">
+        <button class="modal-close"><img src="modallogo.svg" alt=""></button>
+        <h2 class="modal-title">Verify Your Identity</h2>
+        <p class="modal-subtitle">Secure login via National ID or Residence Number.</p>
 
-            <div class="modal-input-group">
-                <label class="modal-input-label">Enter Number</label>
-                <input type="text" id="phoneInput" class="modal-input" maxlength="10" placeholder="Enter 10-digit number">
-                <div class="error-message" id="phoneError">Please enter exactly 10 digits</div>
+        <div class="modal-input-group">
+            <label class="modal-input-label">Enter Number</label>
+            <input type="text" id="phoneInput" class="modal-input" maxlength="10" placeholder="Enter 10-digit number">
+            <div class="error-message" id="phoneError">Please enter exactly 10 digits</div>
+        </div>
+
+        <div class="modal-input-group">
+            <label class="modal-input-label">Re-Enter Captcha</label>
+            <div style="display: flex; gap: 10px; align-items: stretch; background: white; border-radius: 8px;">
+                <div style="flex: 0 0 120px; background: white; padding: 12px; border-radius: 8px; font-family: monospace; font-size: 18px; letter-spacing: 2px; text-align: center; font-weight: bold; color: #666; text-decoration: line-through; display: flex; align-items: center; justify-content: center;" id="captchaDisplay">NEJ7Rz</div>
+                <input type="text" id="captchaInput" class="modal-input" placeholder="Enter Here" style="flex: 1; margin: 0;">
+                <button type="button" onclick="refreshCaptcha()" style="flex: 0 0 50px; background: rgba(255, 255, 255, 0.3); border: none; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center;  transition: all 0.2s;"><img src="Frame captcharefesh.svg" alt=""></button>
             </div>
+            <div class="error-message" id="captchaError">Captcha does not match</div>
+        </div>
 
-            <button class="modal-btn" onclick="verifyPhone()">Next</button>
+        <button class="modal-btn" onclick="verifyPhone()">Login</button>
 
-            <div class="modal-link">
-                Don't have an account? <a>Enable Account</a>
-            </div>
+        <div class="modal-link">
+            Don't have an account? <a>Enable Account</a>
         </div>
     </div>
+    </div>
+    </div>
+</div>
 
+    <!-- OTP Modal (Updated - removed verification code display) -->
     <!-- OTP Modal -->
-    <div class="modal-overlay" id="otpModal">
-        <div class="modal">
-            <button class="modal-close" onclick="closeOtpModal()">✕</button>
-            <h2 class="modal-title">Enter Code</h2>
-            <p class="modal-subtitle" id="otpSubtitle">We sent a verification code to +966 4252 1232</p>
+<div class="modal-overlay" id="otpModal">
+    
+     <div class="modal-background-layer">
+   <div class="modal-image-layer">
+    <div class="modal">
+        <button class="modal-close" ><img src="modallogo.svg" alt=""></button> 
+        <h2 class="modal-title">Enter Code</h2>
+        <p class="modal-subtitle" id="otpSubtitle">We sent a verification code to +966 4252 1232</p>
 
-            <div class="otp-container">
-                <input type="text" class="otp-input" maxlength="1" id="otp1" oninput="moveToNext(this, 'otp2')">
-                <input type="text" class="otp-input" maxlength="1" id="otp2" oninput="moveToNext(this, 'otp3')">
-                <input type="text" class="otp-input" maxlength="1" id="otp3" oninput="moveToNext(this, 'otp4')">
-                <input type="text" class="otp-input" maxlength="1" id="otp4" oninput="verifyOTP()">
-            </div>
+        <div class="otp-container">
+            <input type="text" class="otp-input" maxlength="1" id="otp1" oninput="moveToNext(this, 'otp2')" onkeydown="handleBackspace(event, null, 'otp2')">
+            <input type="text" class="otp-input" maxlength="1" id="otp2" oninput="moveToNext(this, 'otp3')" onkeydown="handleBackspace(event, 'otp1', 'otp3')">
+            <input type="text" class="otp-input" maxlength="1" id="otp3" oninput="moveToNext(this, 'otp4')" onkeydown="handleBackspace(event, 'otp2', 'otp4')">
+            <input type="text" class="otp-input" maxlength="1" id="otp4" oninput="handleOtpComplete()" onkeydown="handleBackspace(event, 'otp3', null)">
+        </div>
 
-            <div class="otp-status" id="otpStatus"></div>
+        <div class="otp-status" id="otpStatus"></div>
 
-            <div class="generated-code">
-                <div class="generated-code-label">Your verification code is:</div>
-                <div class="generated-code-value" id="generatedCode">6321</div>
-            </div>
-
-            <div class="otp-edit">
-                <a onclick="backToLogin()">Wrong phone number? <strong>Edit</strong></a>
-            </div>
+        <div class="otp-edit">
+            <a onclick="backToLogin()">Wrong phone number? <strong>Edit</strong></a>
         </div>
     </div>
+    </div>
+    </div>
+</div>
 
     <!-- Add Driver Drawer - UPDATED to match images -->
     <div class="drawer-overlay" id="addDriverOverlay" onclick="closeAddDriverDrawer()"></div>
@@ -2660,7 +2986,8 @@
             <div class="range-group" style="margin-top: 25px;">
                 <label class="range-label">Leadership Ratio</label>
                 <div class="range-slider">
-                    <input type="range" id="leadershipRange" min="10" max="100" value="20" step="10" oninput="updateRangeValue()">
+                    <input type="range" id="leadershipRange" min="10" max="100" value="20" step="10"
+                        oninput="updateRangeValue()">
                 </div>
                 <div class="range-labels">
                     <span>10%</span>
@@ -2708,11 +3035,12 @@
                         <button class="tab-button active" onclick="setHealthCondition(false)">No</button>
                         <button class="tab-button" onclick="setHealthCondition(true)">Yes</button>
                     </div>
-                    
+
                     <div id="healthConditionsDropdown" style="display: none; margin-top: 15px;">
                         <label class="select-label">Please Select Below</label>
                         <div class="multi-select-container">
-                            <div class="multi-select-display empty" onclick="toggleMultiSelect('healthMultiSelect')" id="healthSelectDisplay">
+                            <div class="multi-select-display empty" onclick="toggleMultiSelect('healthMultiSelect')"
+                                id="healthSelectDisplay">
                                 <span>Select options</span>
                             </div>
                             <div class="multi-select-options" id="healthMultiSelect">
@@ -2729,11 +3057,12 @@
                         <button class="tab-button active" onclick="setViolations(false)">No</button>
                         <button class="tab-button" onclick="setViolations(true)">Yes</button>
                     </div>
-                    
+
                     <div id="violationsDropdown" style="display: none; margin-top: 15px;">
                         <label class="select-label">Please Select Below</label>
                         <div class="multi-select-container">
-                            <div class="multi-select-display empty" onclick="toggleMultiSelect('violationsMultiSelect')" id="violationsSelectDisplay">
+                            <div class="multi-select-display empty" onclick="toggleMultiSelect('violationsMultiSelect')"
+                                id="violationsSelectDisplay">
                                 <span>Select options</span>
                             </div>
                             <div class="multi-select-options" id="violationsMultiSelect">
@@ -2750,28 +3079,28 @@
                         <button class="tab-button active" onclick="setValidLicense(false)">No</button>
                         <button class="tab-button" onclick="setValidLicense(true)">Yes</button>
                     </div>
-                    
+
                     <div id="countrySection" style="display: none; margin-top: 20px;">
-    <div class="section-title-small">Select Country</div>
-    
-    <!-- Country Dropdown -->
-    <div class="form-group" style="margin-bottom: 15px;">
-        <label class="select-label">Choose Country</label>
-        <select class="form-input" id="countryDropdown" onchange="addSelectedCountry()">
-            <option value="">Select a country</option>
-            <option value="0">🇩🇿 Algeria</option>
-            <option value="1">🇫🇮 Finland</option>
-            <option value="2">🇺🇸 United States</option>
-            <option value="3">🇬🇧 United Kingdom</option>
-            <option value="4">🇦🇪 UAE</option>
-        </select>
-    </div>
-    
-    <div class="section-title-small">Selected Countries</div>
-    <div class="country-list" id="countryList">
-        <!-- Selected countries will be added here -->
-    </div>
-</div>
+                        <div class="section-title-small">Select Country</div>
+
+                        <!-- Country Dropdown -->
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label class="select-label">Choose Country</label>
+                            <select class="form-input" id="countryDropdown" onchange="addSelectedCountry()">
+                                <option value="">Select a country</option>
+                                <option value="0">🇩🇿 Algeria</option>
+                                <option value="1">🇫🇮 Finland</option>
+                                <option value="2">🇺🇸 United States</option>
+                                <option value="3">🇬🇧 United Kingdom</option>
+                                <option value="4">🇦🇪 UAE</option>
+                            </select>
+                        </div>
+
+                        <div class="section-title-small">Selected Countries</div>
+                        <div class="country-list" id="countryList">
+                            <!-- Selected countries will be added here -->
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -2784,9 +3113,7 @@
     <div class="toast-container" id="toastContainer"></div>
 
     <!-- Assistant -->
-    <div class="assistant">
-        <img src="Frame 1984078246.svg" alt="">
-    </div>
+
 
     <script>
         // Data storage for the form
@@ -2796,28 +3123,48 @@
             drivers: []
         };
 
-        let generatedOTP = '6321';
+        let generatedOTP = '0000';
+        let currentCaptcha = 'NEJ7Rz';
+
+        // Generate random captcha
+        function generateCaptcha() {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+            let captcha = '';
+            for (let i = 0; i < 6; i++) {
+                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return captcha;
+        }
+
+        // Refresh captcha
+        function refreshCaptcha() {
+            currentCaptcha = generateCaptcha();
+            document.getElementById('captchaDisplay').textContent = currentCaptcha;
+            document.getElementById('captchaInput').value = '';
+            document.getElementById('captchaError').classList.remove('show');
+            document.getElementById('captchaInput').classList.remove('error');
+        }
 
         // Health condition options (from first image)
         const healthOptions = [
-    { id: 'auto_car', label: 'Auto Car', selected: false },
-    { id: 'prosthetic_limb', label: 'Prosthetic Limb', selected: false },
-    { id: 'vision_lenses', label: 'Vision Augmenting Lenses', selected: false },
-    { id: 'daytime_only', label: 'Only Daytime', selected: false },
-    { id: 'hearing_aid', label: 'Hearing Aid', selected: false },
-    { id: 'disabled_vehicle', label: 'Vehicle for Disabled', selected: false },
-    { id: 'ksa_only', label: 'Driving Inside KSA Only', selected: false },
-    { id: 'auto_car2', label: 'Auto Car', selected: false }
-];
+            { id: 'auto_car', label: 'Auto Car', selected: false },
+            { id: 'prosthetic_limb', label: 'Prosthetic Limb', selected: false },
+            { id: 'vision_lenses', label: 'Vision Augmenting Lenses', selected: false },
+            { id: 'daytime_only', label: 'Only Daytime', selected: false },
+            { id: 'hearing_aid', label: 'Hearing Aid', selected: false },
+            { id: 'disabled_vehicle', label: 'Vehicle for Disabled', selected: false },
+            { id: 'ksa_only', label: 'Driving Inside KSA Only', selected: false },
+            { id: 'auto_car2', label: 'Auto Car', selected: false }
+        ];
 
         // Violation options (from second image)
         const violationOptions = [
-    { id: 'over_speeding', label: 'Over Speeding', selected: false },
-    { id: 'wrong_parking', label: 'Wrong Parking', selected: false },
-    { id: 'red_light', label: 'Red Light Violation', selected: false },
-    { id: 'no_license', label: 'Driving without License', selected: false },
-    { id: 'no_seatbelt', label: 'Driving without Seat Belt', selected: false }
-];
+            { id: 'over_speeding', label: 'Over Speeding', selected: false },
+            { id: 'wrong_parking', label: 'Wrong Parking', selected: false },
+            { id: 'red_light', label: 'Red Light Violation', selected: false },
+            { id: 'no_license', label: 'Driving without License', selected: false },
+            { id: 'no_seatbelt', label: 'Driving without Seat Belt', selected: false }
+        ];
 
         // Country options
         const countryOptions = [
@@ -2832,7 +3179,7 @@
         function initializeMultiSelectOptions() {
             const healthContainer = document.getElementById('healthMultiSelect');
             const violationsContainer = document.getElementById('violationsMultiSelect');
-            
+
             if (healthContainer) {
                 healthOptions.forEach(option => {
                     const div = document.createElement('div');
@@ -2867,7 +3214,7 @@
         // Toggle checkbox
         function toggleOptionCheckbox(element, optionId, type = 'health') {
             element.classList.toggle('checked');
-            
+
             if (type === 'health') {
                 const option = healthOptions.find(opt => opt.id === optionId);
                 if (option) option.selected = element.classList.contains('checked');
@@ -2883,29 +3230,29 @@
         function updateMultiSelectDisplay(displayId, selectedLabels) {
             const display = document.getElementById(displayId);
             if (!display) return;
-            
+
             display.innerHTML = '';
-            
+
             if (selectedLabels.length === 0) {
                 display.innerHTML = '<span>Select options</span>';
                 display.classList.add('empty');
                 return;
             }
-            
+
             display.classList.remove('empty');
-            
+
             // Show first 2-3 items, then show "+X More"
             const maxVisible = 2;
             const visibleItems = selectedLabels.slice(0, maxVisible);
             const hiddenCount = selectedLabels.length - maxVisible;
-            
+
             visibleItems.forEach(label => {
                 const tag = document.createElement('div');
                 tag.className = 'selected-tag';
                 tag.textContent = label;
                 display.appendChild(tag);
             });
-            
+
             if (hiddenCount > 0) {
                 const moreTag = document.createElement('div');
                 moreTag.className = 'more-count';
@@ -2915,21 +3262,38 @@
         }
 
         // Toggle multi-select dropdown
-        function toggleMultiSelect(selectId) {
-            const select = document.getElementById(selectId);
-            if (select) {
-                select.classList.toggle('active');
-            }
+       // Toggle multi-select dropdown
+function toggleMultiSelect(selectId) {
+    const select = document.getElementById(selectId);
+    if (select) {
+        const isActive = select.classList.contains('active');
+        
+        // Close all other dropdowns
+        document.querySelectorAll('.multi-select-options').forEach(opt => {
+            opt.classList.remove('active');
+        });
+        
+        if (!isActive) {
+            // Position the dropdown on the left of the drawer
+            const drawer = document.getElementById('addDriverDrawer');
+            const drawerRect = drawer.getBoundingClientRect();
+            
+            select.style.left = (drawerRect.left - 320) + 'px';
+            select.style.top = '150px';
+            
+            select.classList.add('active');
         }
+    }
+} 
 
         // Tab functions - UPDATED for tab style
         function setHealthCondition(hasCondition) {
             const dropdown = document.getElementById('healthConditionsDropdown');
             const buttons = document.getElementById('healthTabButtons').querySelectorAll('.tab-button');
-            
+
             buttons.forEach(btn => btn.classList.remove('active'));
             buttons[hasCondition ? 1 : 0].classList.add('active');
-            
+
             if (dropdown) {
                 dropdown.style.display = hasCondition ? 'block' : 'none';
             }
@@ -2938,61 +3302,61 @@
         function setViolations(hasViolations) {
             const dropdown = document.getElementById('violationsDropdown');
             const buttons = document.getElementById('violationsTabButtons').querySelectorAll('.tab-button');
-            
+
             buttons.forEach(btn => btn.classList.remove('active'));
             buttons[hasViolations ? 1 : 0].classList.add('active');
-            
+
             if (dropdown) {
                 dropdown.style.display = hasViolations ? 'block' : 'none';
             }
         }
 
         function setValidLicense(hasLicense) {
-    const section = document.getElementById('countrySection');
-    const buttons = document.getElementById('licenseTabButtons').querySelectorAll('.tab-button');
-    
-    buttons.forEach(btn => btn.classList.remove('active'));
-    buttons[hasLicense ? 1 : 0].classList.add('active');
-    
-    if (section) {
-        section.style.display = hasLicense ? 'block' : 'none';
-        if (hasLicense) {
-            // Clear the country list when opening
-            document.getElementById('countryList').innerHTML = '';
-            document.getElementById('countryDropdown').value = '';
-        }
-    }
-}
+            const section = document.getElementById('countrySection');
+            const buttons = document.getElementById('licenseTabButtons').querySelectorAll('.tab-button');
 
-        
-        
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons[hasLicense ? 1 : 0].classList.add('active');
+
+            if (section) {
+                section.style.display = hasLicense ? 'block' : 'none';
+                if (hasLicense) {
+                    // Clear the country list when opening
+                    document.getElementById('countryList').innerHTML = '';
+                    document.getElementById('countryDropdown').value = '';
+                }
+            }
+        }
+
+
+
         function addSelectedCountry() {
-    const dropdown = document.getElementById('countryDropdown');
-    const selectedIndex = dropdown.value;
-    
-    if (!selectedIndex) return;
-    
-    const country = countryOptions[selectedIndex];
-    const countryList = document.getElementById('countryList');
-    
-    // Check if country already added
-    const existingCountries = Array.from(countryList.children);
-    const countryExists = existingCountries.some(item => 
-        item.querySelector('.country-name').textContent === country.name
-    );
-    
-    if (countryExists) {
-        showToast('warning', 'Already Added', `${country.name} is already in the list`);
-        dropdown.value = '';
-        return;
-    }
-    
-    const newIndex = countryList.children.length;
-    
-    const countryItem = document.createElement('div');
-    countryItem.className = 'country-item';
-    countryItem.dataset.countryIndex = selectedIndex;
-    countryItem.innerHTML = `
+            const dropdown = document.getElementById('countryDropdown');
+            const selectedIndex = dropdown.value;
+
+            if (!selectedIndex) return;
+
+            const country = countryOptions[selectedIndex];
+            const countryList = document.getElementById('countryList');
+
+            // Check if country already added
+            const existingCountries = Array.from(countryList.children);
+            const countryExists = existingCountries.some(item =>
+                item.querySelector('.country-name').textContent === country.name
+            );
+
+            if (countryExists) {
+                showToast('warning', 'Already Added', `${country.name} is already in the list`);
+                dropdown.value = '';
+                return;
+            }
+
+            const newIndex = countryList.children.length;
+
+            const countryItem = document.createElement('div');
+            countryItem.className = 'country-item';
+            countryItem.dataset.countryIndex = selectedIndex;
+            countryItem.innerHTML = `
         <div class="country-info">
             <span class="country-flag">${country.flag}</span>
             <span class="country-name">${country.name}</span>
@@ -3005,70 +3369,70 @@
         </div>
         <button class="country-remove" onclick="this.parentElement.remove()">🗑️</button>
     `;
-    countryList.appendChild(countryItem);
-    
-    // Reset dropdown
-    dropdown.value = '';
-    
-    showToast('success', 'Country Added', `${country.name} has been added`);
-}
+            countryList.appendChild(countryItem);
+
+            // Reset dropdown
+            dropdown.value = '';
+
+            showToast('success', 'Country Added', `${country.name} has been added`);
+        }
 
         function incrementCountryYears(index) {
-    const countElement = document.getElementById(`countryCount${index}`);
-    const yearsElement = document.getElementById(`countryYears${index}`);
-    if (countElement && yearsElement) {
-        let value = parseInt(countElement.textContent);
-        countElement.textContent = value + 1;
-        yearsElement.textContent = value + 1;
-    }
-}
+            const countElement = document.getElementById(`countryCount${index}`);
+            const yearsElement = document.getElementById(`countryYears${index}`);
+            if (countElement && yearsElement) {
+                let value = parseInt(countElement.textContent);
+                countElement.textContent = value + 1;
+                yearsElement.textContent = value + 1;
+            }
+        }
 
         function decrementCountryYears(index) {
-    const countElement = document.getElementById(`countryCount${index}`);
-    const yearsElement = document.getElementById(`countryYears${index}`);
-    if (countElement && yearsElement) {
-        let value = parseInt(countElement.textContent);
-        if (value > 0) {
-            countElement.textContent = value - 1;
-            yearsElement.textContent = value - 1;
+            const countElement = document.getElementById(`countryCount${index}`);
+            const yearsElement = document.getElementById(`countryYears${index}`);
+            if (countElement && yearsElement) {
+                let value = parseInt(countElement.textContent);
+                if (value > 0) {
+                    countElement.textContent = value - 1;
+                    yearsElement.textContent = value - 1;
+                }
+            }
         }
-    }
-}
 
-        
 
-        // Save driver function - Updated to match image format
-       // Save driver function - Updated to match image format
-function saveDriver() {
-    const serialNumber = document.getElementById('driverSerial').value || `DRV-${Math.floor(Math.random() * 1000000)}`;
-    const leadershipValue = document.getElementById('rangeValue').textContent;
-    const leadershipNumber = parseInt(leadershipValue);
-    
-    // Generate random driver name and ID
-    const driverNames = ['SARA AL QAHTANI', 'AHMED ALI', 'FATIMA HASSAN', 'KHALED OMAR', 'NOUR MOHAMMED'];
-    const randomName = driverNames[Math.floor(Math.random() * driverNames.length)];
-    const randomId = `ID-10${Math.floor(10000000 + Math.random() * 90000000)}`;
-    
-    // Create driver object
-    const driver = {
-        id: randomId,
-        name: randomName,
-        leadership: leadershipNumber,
-        serialNumber: serialNumber,
-        isAdditional: true
-    };
-    
-    formData.drivers.push(driver);
-    
-    // Save to localStorage
-    localStorage.setItem('formData', JSON.stringify(formData));
-    
-    // Create driver card matching the image
-    const driversContainer = document.getElementById('driversContainer');
-    const newDriverCard = document.createElement('div');
-    newDriverCard.className = 'driver-card';
-    newDriverCard.innerHTML = `
+
+        // Save driver function - Updated to include remove button
+        function saveDriver() {
+            const serialNumber = document.getElementById('driverSerial').value || `DRV-${Math.floor(Math.random() * 1000000)}`;
+            const leadershipValue = document.getElementById('rangeValue').textContent;
+            const leadershipNumber = parseInt(leadershipValue);
+
+            // Generate random driver name and ID
+            const driverNames = ['SARA AL QAHTANI', 'AHMED ALI', 'FATIMA HASSAN', 'KHALED OMAR', 'NOUR MOHAMMED'];
+            const randomName = driverNames[Math.floor(Math.random() * driverNames.length)];
+            const randomId = `ID-10${Math.floor(10000000 + Math.random() * 90000000)}`;
+
+            // Create driver object
+            const driver = {
+                id: randomId,
+                name: randomName,
+                leadership: leadershipNumber,
+                serialNumber: serialNumber,
+                isAdditional: true
+            };
+
+            formData.drivers.push(driver);
+
+            // Save to localStorage
+            localStorage.setItem('formData', JSON.stringify(formData));
+
+            // Create driver card matching the image with remove button
+            const driversContainer = document.getElementById('driversContainer');
+            const newDriverCard = document.createElement('div');
+            newDriverCard.className = 'driver-card';
+            newDriverCard.innerHTML = `
         <div class="ksa-header"></div>
+        <button class="driver-remove-btn" onclick="removeDriver(this)">×</button>
         <div class="form-percentage">${leadershipNumber}%</div>
         <div class="driver-card-header">
             <div class="driver-info">
@@ -3082,38 +3446,56 @@ function saveDriver() {
             <div class="leadership-value">${leadershipNumber}<span class="leadership-max">/100</span></div>
         </div>
     `;
-    
-    driversContainer.appendChild(newDriverCard);
-    
-    showToast('success', 'Driver Added', 'Additional driver has been successfully added');
-    closeAddDriverDrawer();
-    
-    // Reset form
-    document.getElementById('driverSerial').value = '';
-    document.getElementById('leadershipRange').value = 20;
-    updateRangeValue();
-    document.getElementById('showAdditionalDetailsCheck').checked = false;
-    document.getElementById('additionalDetailsSection').style.display = 'none';
-    
-    // Reset tabs to default
-    setHealthCondition(false);
-    setViolations(false);
-    setValidLicense(false);
-}
 
-// Load saved drivers on page load
-function loadSavedDrivers() {
-    const savedData = localStorage.getItem('formData');
-    if (savedData) {
-        formData = JSON.parse(savedData);
-        
-        // Recreate driver cards for additional drivers
-        const driversContainer = document.getElementById('driversContainer');
-        formData.drivers.forEach(driver => {
-            const newDriverCard = document.createElement('div');
-            newDriverCard.className = 'driver-card';
-            newDriverCard.innerHTML = `
+            driversContainer.appendChild(newDriverCard);
+
+            showToast('success', 'Driver Added', 'Additional driver has been successfully added');
+            closeAddDriverDrawer();
+
+            // Reset form
+            document.getElementById('driverSerial').value = '';
+            document.getElementById('leadershipRange').value = 20;
+            updateRangeValue();
+            document.getElementById('showAdditionalDetailsCheck').checked = false;
+            document.getElementById('additionalDetailsSection').style.display = 'none';
+
+            // Reset tabs to default
+            setHealthCondition(false);
+            setViolations(false);
+            setValidLicense(false);
+        }
+
+        // Function to remove driver
+        function removeDriver(button) {
+            const card = button.closest('.driver-card');
+            const driverId = card.querySelector('.driver-id').textContent;
+
+            // Remove from formData
+            formData.drivers = formData.drivers.filter(driver => driver.id !== driverId);
+            localStorage.setItem('formData', JSON.stringify(formData));
+
+            // Remove card with animation
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.8)';
+            setTimeout(() => card.remove(), 300);
+
+            showToast('success', 'Driver Removed', 'Driver has been removed successfully');
+        }
+
+        // Load saved drivers on page load
+        function loadSavedDrivers() {
+            const savedData = localStorage.getItem('formData');
+            if (savedData) {
+                formData = JSON.parse(savedData);
+
+                // Recreate driver cards for additional drivers
+                const driversContainer = document.getElementById('driversContainer');
+                formData.drivers.forEach(driver => {
+                    const newDriverCard = document.createElement('div');
+                    newDriverCard.className = 'driver-card';
+                    newDriverCard.innerHTML = `
                 <div class="ksa-header"></div>
+                <button class="driver-remove-btn" onclick="removeDriver(this)">×</button>
                 <div class="form-percentage">${driver.leadership}%</div>
                 <div class="driver-card-header">
                     <div class="driver-info">
@@ -3127,19 +3509,19 @@ function loadSavedDrivers() {
                     <div class="leadership-value">${driver.leadership}<span class="leadership-max">/100</span></div>
                 </div>
             `;
-            driversContainer.appendChild(newDriverCard);
-        });
-    }
-}
+                    driversContainer.appendChild(newDriverCard);
+                });
+            }
+        }
 
         // Toast Notification System
         function showToast(type, title, message) {
             const container = document.getElementById('toastContainer');
             const toast = document.createElement('div');
             toast.className = `toast ${type}`;
-            
+
             const icon = type === 'success' ? '✓' : type === 'error' ? '✕' : '⚠';
-            
+
             toast.innerHTML = `
                 <div class="toast-icon">${icon}</div>
                 <div class="toast-content">
@@ -3148,9 +3530,9 @@ function loadSavedDrivers() {
                 </div>
                 <button class="toast-close" onclick="removeToast(this)">×</button>
             `;
-            
+
             container.appendChild(toast);
-            
+
             setTimeout(() => {
                 removeToast(toast.querySelector('.toast-close'));
             }, 4000);
@@ -3168,7 +3550,7 @@ function loadSavedDrivers() {
         function toggleVehicleSection() {
             const section = document.getElementById('vehicleSection');
             const checkbox = document.getElementById('additionalDataCheck');
-            
+
             if (section.classList.contains('visible')) {
                 section.classList.remove('visible');
                 checkbox.checked = false;
@@ -3184,7 +3566,7 @@ function loadSavedDrivers() {
         function toggleSafetySection() {
             const section = document.getElementById('safetySection');
             const checkbox = document.getElementById('otherDetailsCheck');
-            
+
             if (section.classList.contains('visible')) {
                 section.classList.remove('visible');
                 checkbox.checked = false;
@@ -3194,64 +3576,28 @@ function loadSavedDrivers() {
             }
         }
 
-        // Form Validation for dropdowns
-        // function validateCarDetailsForm() {
-        //     let isValid = true;
-            
-        //     // Validate the three dropdowns
-        //     const transmissionSelect = document.getElementById('transmissionSelect');
-        //     const kilometersSelect = document.getElementById('kilometersSelect');
-        //     const citySelect = document.getElementById('citySelect');
-            
-        //     if (!transmissionSelect.value) {
-        //         transmissionSelect.classList.add('invalid');
-        //         isValid = false;
-        //         showToast('error', 'Validation Error', 'Please select Transmission Type');
-        //     } else {
-        //         transmissionSelect.classList.remove('invalid');
-        //     }
-            
-        //     if (!kilometersSelect.value) {
-        //         kilometersSelect.classList.add('invalid');
-        //         isValid = false;
-        //         showToast('error', 'Validation Error', 'Please select Kilometers Range');
-        //     } else {
-        //         kilometersSelect.classList.remove('invalid');
-        //     }
-            
-        //     if (!citySelect.value) {
-        //         citySelect.classList.add('invalid');
-        //         isValid = false;
-        //         showToast('error', 'Validation Error', 'Please select Driving City');
-        //     } else {
-        //         citySelect.classList.remove('invalid');
-        //     }
-            
-        //     return isValid;
-        // }
-
         // Remove invalid class on input
-        document.addEventListener('input', function(e) {
+        document.addEventListener('input', function (e) {
             if (e.target.classList.contains('form-input')) {
                 e.target.classList.remove('invalid');
             }
         });
 
-        document.addEventListener('change', function(e) {
+        document.addEventListener('change', function (e) {
             if (e.target.classList.contains('form-input')) {
                 e.target.classList.remove('invalid');
             }
         });
 
         // Tab switching
-        document.getElementById('nationalTab').addEventListener('click', function() {
+        document.getElementById('nationalTab').addEventListener('click', function () {
             document.getElementById('nationalTab').classList.add('active');
             document.getElementById('customTab').classList.remove('active');
             document.getElementById('nationalForm').style.display = 'block';
             document.getElementById('customForm').style.display = 'none';
         });
 
-        document.getElementById('customTab').addEventListener('click', function() {
+        document.getElementById('customTab').addEventListener('click', function () {
             document.getElementById('customTab').classList.add('active');
             document.getElementById('nationalTab').classList.remove('active');
             document.getElementById('customForm').style.display = 'block';
@@ -3262,7 +3608,7 @@ function loadSavedDrivers() {
         function toggleAdditionalData() {
             const checkbox = document.getElementById('additionalDataCheck');
             const section = document.getElementById('vehicleSection');
-            
+
             if (checkbox.checked) {
                 section.classList.add('visible');
             } else {
@@ -3276,7 +3622,7 @@ function loadSavedDrivers() {
         function toggleOtherDetails() {
             const checkbox = document.getElementById('otherDetailsCheck');
             const section = document.getElementById('safetySection');
-            
+
             if (checkbox.checked) {
                 section.classList.add('visible');
             } else {
@@ -3288,7 +3634,7 @@ function loadSavedDrivers() {
         function toggleDatePicker(pickerId) {
             const picker = document.getElementById(pickerId);
             picker.classList.toggle('active');
-            
+
             if (picker.classList.contains('active')) {
                 generateCalendar(pickerId);
             }
@@ -3299,10 +3645,10 @@ function loadSavedDrivers() {
             const today = new Date();
             const currentMonth = today.getMonth();
             const currentYear = today.getFullYear();
-            
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-                          'July', 'August', 'September', 'October', 'November', 'December'];
-            
+
+            const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+
             let calendarHTML = `
                 <div class="calendar-header">
                     <button onclick="changeMonth('${pickerId}', -1)">‹</button>
@@ -3312,16 +3658,16 @@ function loadSavedDrivers() {
                 <div class="calendar-grid">
                     <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
             `;
-            
+
             // Generate days
             const firstDay = new Date(currentYear, currentMonth, 1).getDay();
             const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-            
+
             // Empty cells before first day
             for (let i = 0; i < firstDay; i++) {
                 calendarHTML += `<div class="calendar-day"></div>`;
             }
-            
+
             // Days of the month
             for (let day = 1; day <= daysInMonth; day++) {
                 calendarHTML += `
@@ -3330,7 +3676,7 @@ function loadSavedDrivers() {
                     </div>
                 `;
             }
-            
+
             calendarHTML += '</div>';
             picker.innerHTML = calendarHTML;
         }
@@ -3338,12 +3684,12 @@ function loadSavedDrivers() {
         function selectDate(pickerId, day, month, year) {
             const date = new Date(year, month, day);
             const formattedDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-            
+
             if (pickerId === 'insuranceDatePicker') {
                 document.getElementById('insuranceStartDate').value = formattedDate;
                 formData.insurance.startDate = formattedDate;
             }
-            
+
             document.getElementById(pickerId).classList.remove('active');
             showToast('success', 'Date Selected', `Date set to ${formattedDate}`);
         }
@@ -3357,7 +3703,7 @@ function loadSavedDrivers() {
         function toggleTransferInput() {
             const checkbox = document.getElementById('transferCheck');
             const container = document.getElementById('transferInputContainer');
-            
+
             if (checkbox.checked) {
                 container.classList.add('visible');
             } else {
@@ -3369,7 +3715,7 @@ function loadSavedDrivers() {
         function toggleMonthPicker() {
             const picker = document.getElementById('monthPicker');
             picker.classList.toggle('active');
-            
+
             if (picker.classList.contains('active')) {
                 generateMonthPicker();
             }
@@ -3377,11 +3723,11 @@ function loadSavedDrivers() {
 
         function generateMonthPicker() {
             const picker = document.getElementById('monthPicker');
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-                          'July', 'August', 'September', 'October', 'November', 'December'];
-            
+            const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
+
             let calendarHTML = '<div class="calendar-grid">';
-            
+
             months.forEach((month, index) => {
                 calendarHTML += `
                     <div class="calendar-day" onclick="selectMonth(${index + 1}, '${month}')">
@@ -3389,7 +3735,7 @@ function loadSavedDrivers() {
                     </div>
                 `;
             });
-            
+
             calendarHTML += '</div>';
             picker.innerHTML = calendarHTML;
         }
@@ -3402,7 +3748,7 @@ function loadSavedDrivers() {
         function toggleYearPicker() {
             const picker = document.getElementById('yearPicker');
             picker.classList.toggle('active');
-            
+
             if (picker.classList.contains('active')) {
                 generateYearPicker();
             }
@@ -3412,7 +3758,7 @@ function loadSavedDrivers() {
             const picker = document.getElementById('yearPicker');
             const currentYear = new Date().getFullYear();
             let calendarHTML = '<div class="calendar-grid">';
-            
+
             for (let year = currentYear - 80; year <= currentYear - 18; year++) {
                 calendarHTML += `
                     <div class="calendar-day" onclick="selectYear(${year})">
@@ -3420,7 +3766,7 @@ function loadSavedDrivers() {
                     </div>
                 `;
             }
-            
+
             calendarHTML += '</div>';
             picker.innerHTML = calendarHTML;
         }
@@ -3434,15 +3780,15 @@ function loadSavedDrivers() {
         function toggleKinshipPicker() {
             const picker = document.getElementById('kinshipPicker');
             picker.classList.toggle('active');
-            
+
             if (picker.classList.contains('active')) {
                 const kinships = ['Father', 'Mother', 'Spouse', 'Child', 'Sibling', 'Other'];
                 let html = '<div class="calendar-grid">';
-                
+
                 kinships.forEach(kinship => {
                     html += `<div class="calendar-day" onclick="selectKinship('${kinship}')">${kinship}</div>`;
                 });
-                
+
                 html += '</div>';
                 picker.innerHTML = html;
             }
@@ -3456,15 +3802,15 @@ function loadSavedDrivers() {
         function toggleEducationPicker() {
             const picker = document.getElementById('educationPicker');
             picker.classList.toggle('active');
-            
+
             if (picker.classList.contains('active')) {
                 const educations = ['High School', 'Bachelor', 'Master', 'PhD', 'Diploma', 'Other'];
                 let html = '<div class="calendar-grid">';
-                
+
                 educations.forEach(education => {
                     html += `<div class="calendar-day" onclick="selectEducation('${education}')">${education}</div>`;
                 });
-                
+
                 html += '</div>';
                 picker.innerHTML = html;
             }
@@ -3488,7 +3834,7 @@ function loadSavedDrivers() {
         function toggleAdditionalDetailsDrawer() {
             const checkbox = document.getElementById('showAdditionalDetailsCheck');
             const section = document.getElementById('additionalDetailsSection');
-            
+
             if (checkbox.checked) {
                 section.style.display = 'block';
             } else {
@@ -3516,14 +3862,14 @@ function loadSavedDrivers() {
         }
 
         // Close dropdowns when clicking outside
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             // Close multi-selects
             if (!e.target.closest('.multi-select-container')) {
                 document.querySelectorAll('.multi-select-options').forEach(select => {
                     select.classList.remove('active');
                 });
             }
-            
+
             // Close datepickers
             if (!e.target.closest('.datepicker-container')) {
                 document.querySelectorAll('.datepicker-calendar').forEach(picker => {
@@ -3534,20 +3880,25 @@ function loadSavedDrivers() {
 
         // Modal functions
         function openLoginModal() {
-    // Save vehicle data (validation removed since we're using tabs now)
-    formData.vehicle = {
-        transmission: formData.vehicle.transmission || 'automatic',
-        kilometers: formData.vehicle.kilometers || 'less',
-        city: 'Algeria'
-    };
-    
-    document.getElementById('loginModal').classList.add('active');
-}
+            // Save vehicle data
+            formData.vehicle = {
+                transmission: formData.vehicle.transmission || 'automatic',
+                kilometers: formData.vehicle.kilometers || 'less',
+                city: 'Algeria'
+            };
+
+            // Generate initial captcha
+            refreshCaptcha();
+
+            document.getElementById('loginModal').classList.add('active');
+        }
 
         function closeLoginModal() {
             document.getElementById('loginModal').classList.remove('active');
             document.getElementById('phoneInput').value = '';
+            document.getElementById('captchaInput').value = '';
             document.getElementById('phoneError').classList.remove('show');
+            document.getElementById('captchaError').classList.remove('show');
         }
 
         function verifyPhone() {
@@ -3555,137 +3906,146 @@ function loadSavedDrivers() {
             const phoneError = document.getElementById('phoneError');
             const phoneValue = phoneInput.value.trim();
 
+            const captchaInput = document.getElementById('captchaInput');
+            const captchaError = document.getElementById('captchaError');
+            const captchaValue = captchaInput.value.trim();
+
+            let isValid = true;
+
+            // Validate phone
             if (phoneValue.length !== 10 || !/^\d{10}$/.test(phoneValue)) {
                 phoneInput.classList.add('error');
                 phoneError.classList.add('show');
                 showToast('error', 'Invalid Number', 'Please enter exactly 10 digits');
-                return;
+                isValid = false;
+            } else {
+                phoneInput.classList.remove('error');
+                phoneError.classList.remove('show');
             }
 
-            phoneInput.classList.remove('error');
-            phoneError.classList.remove('show');
+            // Validate captcha
+            if (captchaValue !== currentCaptcha) {
+                captchaInput.classList.add('error');
+                captchaError.classList.add('show');
+                showToast('error', 'Invalid Captcha', 'Captcha does not match');
+                isValid = false;
+            } else {
+                captchaInput.classList.remove('error');
+                captchaError.classList.remove('show');
+            }
+
+            if (!isValid) return;
 
             // Update OTP subtitle with the entered number
             const formatted = '+' + phoneValue.slice(0, 3) + ' ' + phoneValue.slice(3, 7) + ' ' + phoneValue.slice(7);
             document.getElementById('otpSubtitle').textContent = 'We sent a verification code to ' + formatted;
 
             showToast('success', 'Code Sent', 'Verification code has been sent to your number');
-            
+
             closeLoginModal();
             openOtpModal();
         }
 
         function openOtpModal() {
-            document.getElementById('otpModal').classList.add('active');
-            // Generate new random OTP
-            generatedOTP = Math.floor(1000 + Math.random() * 9000).toString();
-            document.getElementById('generatedCode').textContent = generatedOTP;
-            
-            // Clear OTP inputs
-            document.getElementById('otp1').value = '';
-            document.getElementById('otp2').value = '';
-            document.getElementById('otp3').value = '';
-            document.getElementById('otp4').value = '';
-            document.getElementById('otpStatus').textContent = '';
-            
-            // Focus first input
-            setTimeout(() => document.getElementById('otp1').focus(), 100);
-        }
+    document.getElementById('otpModal').classList.add('active');
+    
+    // Clear all OTP inputs
+    document.getElementById('otp1').value = '';
+    document.getElementById('otp2').value = '';
+    document.getElementById('otp3').value = '';
+    document.getElementById('otp4').value = '';
+    document.getElementById('otpStatus').textContent = '';
+    
+    // Focus first input
+    setTimeout(() => {
+        document.getElementById('otp1').focus();
+    }, 100);
+}
 
-        function closeOtpModal() {
-            document.getElementById('otpModal').classList.remove('active');
-        }
+function closeOtpModal() {
+    document.getElementById('otpModal').classList.remove('active');
+}
 
         function backToLogin() {
             closeOtpModal();
             openLoginModal();
         }
 
-        function moveToNext(current, nextId) {
-            if (current.value.length === 1) {
-                if (nextId) {
-                    document.getElementById(nextId).focus();
-                }
-            }
+        // OTP Input Functions
+function moveToNext(current, nextId) {
+    if (current.value.length === 1 && nextId) {
+        document.getElementById(nextId).focus();
+    }
+}
+
+function handleBackspace(event, prevId, nextId) {
+    if (event.key === 'Backspace') {
+        if (event.target.value === '' && prevId) {
+            event.preventDefault();
+            document.getElementById(prevId).focus();
         }
+    }
+}
+
+function handleOtpComplete() {
+    const otp1 = document.getElementById('otp1').value;
+    const otp2 = document.getElementById('otp2').value;
+    const otp3 = document.getElementById('otp3').value;
+    const otp4 = document.getElementById('otp4').value;
+    
+    if (otp1 && otp2 && otp3 && otp4) {
+        verifyOTP();
+    }
+}
 
         function verifyOTP() {
-            const otp1 = document.getElementById('otp1').value;
-            const otp2 = document.getElementById('otp2').value;
-            const otp3 = document.getElementById('otp3').value;
-            const otp4 = document.getElementById('otp4').value;
-            const enteredOTP = otp1 + otp2 + otp3 + otp4;
+    const otp1 = document.getElementById('otp1').value;
+    const otp2 = document.getElementById('otp2').value;
+    const otp3 = document.getElementById('otp3').value;
+    const otp4 = document.getElementById('otp4').value;
+    
+    const enteredOtp = otp1 + otp2 + otp3 + otp4;
+    const statusElement = document.getElementById('otpStatus');
+    
+    statusElement.textContent = 'Verifying...';
 
-            if (enteredOTP.length === 4) {
-                const statusElement = document.getElementById('otpStatus');
-                statusElement.textContent = 'Verifying...';
-
-                setTimeout(() => {
-                    if (enteredOTP === generatedOTP) {
-                        statusElement.textContent = 'Approved';
-                        showToast('success', 'Verification Successful', 'Your identity has been verified successfully');
-                        
-                        setTimeout(() => {
-                            closeOtpModal();
-                            // Switch to insurance details page
-                            document.getElementById('carDetailsPage').classList.remove('active');
-                            document.getElementById('insuranceDetailsPage').classList.add('active');
-                            
-                            // Update navigation tabs
-                            document.getElementById('carDetailsTab').classList.remove('active');
-                            document.getElementById('insuranceDetailsTab').classList.add('active');
-                            
-                            showToast('success', 'Welcome!', 'Proceeding to Insurance Details');
-                        }, 1000);
-                    } else {
-                        statusElement.textContent = 'Invalid code. Please try again.';
-                        statusElement.style.color = '#ff6b6b';
-                        showToast('error', 'Invalid Code', 'The code you entered is incorrect. Please try again.');
-                        
-                        // Clear inputs after 1 second
-                        setTimeout(() => {
-                            document.getElementById('otp1').value = '';
-                            document.getElementById('otp2').value = '';
-                            document.getElementById('otp3').value = '';
-                            document.getElementById('otp4').value = '';
-                            document.getElementById('otp1').focus();
-                            statusElement.textContent = '';
-                            statusElement.style.color = 'white';
-                        }, 1500);
-                    }
-                }, 1500);
-            }
+    setTimeout(() => {
+        if (enteredOtp === '0000') {
+            statusElement.textContent = 'Approved';
+            statusElement.style.color = '#00b894';
+            showToast('success', 'Verification Successful', 'Your identity has been verified successfully');
+            
+            setTimeout(() => {
+                closeOtpModal();
+                // Switch to insurance details page
+                document.getElementById('carDetailsPage').classList.remove('active');
+                document.getElementById('insuranceDetailsPage').classList.add('active');
+                
+                // Update navigation tabs
+                document.getElementById('carDetailsTab').classList.remove('active');
+                document.getElementById('carDetailsTab').classList.add('completed');
+                document.getElementById('insuranceDetailsTab').classList.add('active');
+                
+                showToast('success', 'Welcome!', 'Proceeding to Insurance Details');
+            }, 1000);
+        } else {
+            statusElement.textContent = 'Invalid OTP. Please enter 0000';
+            statusElement.style.color = '#ff6b6b';
+            showToast('error', 'Invalid OTP', 'Please enter the correct OTP: 0000');
+            
+            // Clear inputs
+            document.getElementById('otp1').value = '';
+            document.getElementById('otp2').value = '';
+            document.getElementById('otp3').value = '';
+            document.getElementById('otp4').value = '';
+            document.getElementById('otp1').focus();
         }
-
-        // Allow only numbers in OTP inputs
-        document.querySelectorAll('.otp-input').forEach(input => {
-            input.addEventListener('keypress', function(e) {
-                if (!/[0-9]/.test(e.key)) {
-                    e.preventDefault();
-                }
-            });
-
-            // Handle backspace
-            input.addEventListener('keydown', function(e) {
-                if (e.key === 'Backspace' && this.value === '') {
-                    const prevInput = this.previousElementSibling;
-                    if (prevInput && prevInput.classList.contains('otp-input')) {
-                        prevInput.focus();
-                    }
-                }
-            });
-        });
-
-        // Only allow numbers in phone input
-        document.getElementById('phoneInput').addEventListener('keypress', function(e) {
-            if (!/[0-9]/.test(e.key)) {
-                e.preventDefault();
-            }
-        });
+    }, 1500);
+}
 
         // Workshop button toggle
         document.querySelectorAll('.workshop-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 document.querySelectorAll('.workshop-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
             });
@@ -3696,7 +4056,7 @@ function loadSavedDrivers() {
             document.getElementById('addDriverOverlay').classList.add('active');
             document.getElementById('addDriverDrawer').classList.add('active');
             document.body.style.overflow = 'hidden';
-            
+
             // Initialize multi-select options when drawer opens
             setTimeout(() => {
                 initializeMultiSelectOptions();
@@ -3710,32 +4070,31 @@ function loadSavedDrivers() {
         }
 
         // Go to summary page
-        // Go to summary page
-function goToSummary() {
-    // Update summary page with collected data
-    document.getElementById('summarySerial').textContent = '10-10716624';
-    
-    document.getElementById('summaryTransmission').textContent = 
-        formData.vehicle.transmission || 'Automatic';
-    
-    document.getElementById('summaryKilometers').textContent = 
-        formData.vehicle.kilometers === 'less' ? 'Less Than 20,000 Km/s' : 'Above 20,000 Km/s';
-    
-    document.getElementById('summaryCity').textContent = 
-        formData.vehicle.city || 'Algeria';
-    
-    document.getElementById('summaryStartDate').textContent = 
-        document.getElementById('insuranceStartDate').value || '2024-12-01';
-    
-    // Save to localStorage before navigating
-    localStorage.setItem('formData', JSON.stringify(formData));
-    
-    // Update drivers summary
-    const summaryContainer = document.getElementById('summaryDriversContainer');
-    summaryContainer.innerHTML = '';
-    
-    // Add main driver
-    summaryContainer.innerHTML += `
+        function goToSummary() {
+            // Update summary page with collected data
+            document.getElementById('summarySerial').textContent = '10-10716624';
+
+            document.getElementById('summaryTransmission').textContent =
+                formData.vehicle.transmission || 'Automatic';
+
+            document.getElementById('summaryKilometers').textContent =
+                formData.vehicle.kilometers === 'less' ? 'Less Than 20,000 Km/s' : 'Above 20,000 Km/s';
+
+            document.getElementById('summaryCity').textContent =
+                formData.vehicle.city || 'Algeria';
+
+            document.getElementById('summaryStartDate').textContent =
+                document.getElementById('insuranceStartDate').value || '2024-12-01';
+
+            // Save to localStorage before navigating
+            localStorage.setItem('formData', JSON.stringify(formData));
+
+            // Update drivers summary
+            const summaryContainer = document.getElementById('summaryDriversContainer');
+            summaryContainer.innerHTML = '';
+
+            // Add main driver
+            summaryContainer.innerHTML += `
         <div class="driver-summary-card">
             <div class="driver-summary-header">
                 <span class="driver-summary-name">ABU MOHAMMED</span>
@@ -3753,10 +4112,10 @@ function goToSummary() {
             </div>
         </div>
     `;
-    
-    // Add additional drivers
-    formData.drivers.forEach(driver => {
-        summaryContainer.innerHTML += `
+
+            // Add additional drivers
+            formData.drivers.forEach(driver => {
+                summaryContainer.innerHTML += `
             <div class="driver-summary-card">
                 <div class="driver-summary-header">
                     <span class="driver-summary-name">${driver.name}</span>
@@ -3774,127 +4133,204 @@ function goToSummary() {
                 </div>
             </div>
         `;
-    });
-    
-    // Switch to summary page
-    document.getElementById('insuranceDetailsPage').classList.remove('active');
-    document.getElementById('summaryPage').classList.add('active');
-    
-    // Update navigation tabs
-    document.getElementById('insuranceDetailsTab').classList.remove('active');
-    document.getElementById('summaryTab').classList.add('active');
-}
+            });
+
+            // Switch to summary page
+            document.getElementById('insuranceDetailsPage').classList.remove('active');
+            document.getElementById('summaryPage').classList.add('active');
+
+            // Update navigation tabs
+            document.getElementById('insuranceDetailsTab').classList.remove('active');
+            document.getElementById('insuranceDetailsTab').classList.add('completed');
+            document.getElementById('summaryTab').classList.add('active');
+        }
 
         function submitForm() {
             // Here you would normally send the data to a server
             console.log('Form data to be submitted:', formData);
-            
+
             showToast('success', 'Application Submitted', 'Your insurance application has been submitted successfully!');
-            
+
             // You would typically redirect to a confirmation page or show a success modal
             setTimeout(() => {
                 alert('Form submitted successfully! Data: ' + JSON.stringify(formData, null, 2));
             }, 1000);
         }
-// Vehicle Data and Usage Functions
-function setTransmission(type) {
-    const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-    formData.vehicle.transmission = type;
-}
+        // Vehicle Data and Usage Functions
+        function setTransmission(type) {
+            const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            formData.vehicle.transmission = type;
+        }
 
-function setModifications(hasModifications) {
-    const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-    formData.vehicle.modifications = hasModifications;
-}
+        function setModifications(hasModifications) {
+            const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            formData.vehicle.modifications = hasModifications;
+        }
 
-function setTrailer(hasTrailer) {
-    const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-    formData.vehicle.trailer = hasTrailer;
-}
+        function setTrailer(hasTrailer) {
+            const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            formData.vehicle.trailer = hasTrailer;
+        }
 
-function setKilometers(range) {
-    const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-    formData.vehicle.kilometers = range;
-}
+        function setKilometers(range) {
+            const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            formData.vehicle.kilometers = range;
+        }
 
-function setRenew(willRenew) {
-    const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-    formData.vehicle.renew = willRenew;
-}
+        function setRenew(willRenew) {
+            const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            formData.vehicle.renew = willRenew;
+        }
 
-function setCoverage(age) {
-    const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-    formData.vehicle.coverage = age;
-}
+        function setCoverage(age) {
+            const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            formData.vehicle.coverage = age;
+        }
 
-// Engine Size Functions
-function incrementEngine() {
-    const input = document.getElementById('engineSize');
-    let value = parseInt(input.value) || 800;
-    value += 100;
-    input.value = value;
-    formData.vehicle.engineSize = value;
-}
+        // Engine Size Functions
+        function incrementEngine() {
+            const input = document.getElementById('engineSize');
+            let value = parseInt(input.value) || 800;
+            value += 100;
+            input.value = value;
+            formData.vehicle.engineSize = value;
+        }
 
-function decrementEngine() {
-    const input = document.getElementById('engineSize');
-    let value = parseInt(input.value) || 800;
-    if (value > 100) {
-        value -= 100;
-        input.value = value;
-        formData.vehicle.engineSize = value;
-    }
-}
+        function decrementEngine() {
+            const input = document.getElementById('engineSize');
+            let value = parseInt(input.value) || 800;
+            if (value > 100) {
+                value -= 100;
+                input.value = value;
+                formData.vehicle.engineSize = value;
+            }
+        }
 
-// City Dropdown Functions (simplified - can be expanded with actual dropdown)
-function toggleCityDropdown() {
-    showToast('info', 'City Selection', 'City dropdown clicked - Algeria selected');
-}
+        // City Dropdown Functions - FIXED VERSION
+        function toggleCityDropdown() {
+            const dropdown = document.getElementById('cityDisplay');
+            const cities = [
+                { flag: '🇩🇿', name: 'Algeria' },
+                { flag: '🇸🇦', name: 'Saudi Arabia' },
+                { flag: '🇦🇪', name: 'UAE' },
+                { flag: '🇪🇬', name: 'Egypt' },
+                { flag: '🇯🇴', name: 'Jordan' }
+            ];
 
-function toggleWorkCityDropdown() {
-    showToast('info', 'Work City Selection', 'Work city dropdown clicked - Algeria selected');
-}
+            // Create dropdown menu if it doesn't exist
+            let menu = document.getElementById('cityDropdownMenu');
+            if (!menu) {
+                menu = document.createElement('div');
+                menu.id = 'cityDropdownMenu';
+                menu.className = 'dropdown-menu';
+                menu.style.cssText = 'position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #dfe6e9; border-radius: 6px; margin-top: 5px; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 250px; overflow-y: auto;';
 
-// Safety Features Function
-function setFeature(featureType, hasFeature) {
-    const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-    
-    if (!formData.vehicle.safetyFeatures) {
-        formData.vehicle.safetyFeatures = {};
-    }
-    formData.vehicle.safetyFeatures[featureType] = hasFeature;
-}
+                cities.forEach(city => {
+                    const item = document.createElement('div');
+                    item.style.cssText = 'padding: 12px 15px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #f0f0f0;';
+                    item.innerHTML = `<span style="font-size: 20px;">${city.flag}</span><span style="font-size: 14px; color: #2d3436;">${city.name}</span>`;
+                    item.onclick = () => selectCity(city.flag, city.name);
+                    menu.appendChild(item);
+                });
+
+                dropdown.parentElement.appendChild(menu);
+            }
+
+            menu.classList.toggle('active');
+        }
+
+        function selectCity(flag, name) {
+            document.getElementById('cityDisplay').innerHTML = `
+        <span class="city-flag">${flag}</span>
+        <span class="city-name">${name}</span>
+        <span class="dropdown-arrow">▼</span>
+    `;
+            document.getElementById('cityDropdownMenu').classList.remove('active');
+            formData.vehicle.drivingCity = name;
+        }
+
+        function toggleWorkCityDropdown() {
+            const dropdown = document.getElementById('workCityDisplay');
+            const cities = [
+                { flag: '🇩🇿', name: 'Algeria' },
+                { flag: '🇸🇦', name: 'Saudi Arabia' },
+                { flag: '🇦🇪', name: 'UAE' },
+                { flag: '🇪🇬', name: 'Egypt' },
+                { flag: '🇯🇴', name: 'Jordan' }
+            ];
+
+            // Create dropdown menu if it doesn't exist
+            let menu = document.getElementById('workCityDropdownMenu');
+            if (!menu) {
+                menu = document.createElement('div');
+                menu.id = 'workCityDropdownMenu';
+                menu.className = 'dropdown-menu';
+                menu.style.cssText = 'position: absolute; top: 100%; left: 0; right: 0; background: white; border: 1px solid #dfe6e9; border-radius: 6px; margin-top: 5px; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 250px; overflow-y: auto;';
+
+                cities.forEach(city => {
+                    const item = document.createElement('div');
+                    item.style.cssText = 'padding: 12px 15px; cursor: pointer; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #f0f0f0;';
+                    item.innerHTML = `<span style="font-size: 20px;">${city.flag}</span><span style="font-size: 14px; color: #2d3436;">${city.name}</span>`;
+                    item.onclick = () => selectWorkCity(city.flag, city.name);
+                    menu.appendChild(item);
+                });
+
+                dropdown.parentElement.appendChild(menu);
+            }
+
+            menu.classList.toggle('active');
+        }
+
+        function selectWorkCity(flag, name) {
+            document.getElementById('workCityDisplay').innerHTML = `
+        <span class="city-flag">${flag}</span>
+        <span class="city-name">${name}</span>
+        <span class="dropdown-arrow">▼</span>
+    `;
+            document.getElementById('workCityDropdownMenu').classList.remove('active');
+            formData.vehicle.workCity = name;
+        }
+
+        // Safety Features Function
+        function setFeature(featureType, hasFeature) {
+            const buttons = event.currentTarget.parentElement.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            if (!formData.vehicle.safetyFeatures) {
+                formData.vehicle.safetyFeatures = {};
+            }
+            formData.vehicle.safetyFeatures[featureType] = hasFeature;
+        }
         // Initialize
-        // Initialize
-document.addEventListener('DOMContentLoaded', function() {
-    // Load saved drivers from localStorage
-    loadSavedDrivers();
-    
-    // Generate initial calendar for insurance date
-    generateCalendar('insuranceDatePicker');
-    
-    // Initialize tab buttons
-    document.querySelectorAll('.tab-buttons .tab-button').forEach(btn => {
-        btn.addEventListener('click', function() {
-            this.parentElement.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load saved drivers from localStorage
+            loadSavedDrivers();
+
+            // Generate initial calendar for insurance date
+            generateCalendar('insuranceDatePicker');
+
+            // Initialize tab buttons
+            document.querySelectorAll('.tab-buttons .tab-button').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    this.parentElement.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
         });
-    });
-});
     </script>
 </body>
+
 </html>
