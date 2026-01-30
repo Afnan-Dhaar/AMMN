@@ -12,9 +12,9 @@
 
 .sme-why-us__title {
   text-align: center;
-  font-size: 32px;
-  font-weight: 700;
-  color: #0a2540;
+  font-size: 36px;
+  font-weight: 550;
+  color: #172B4D;
   margin-bottom: 20px;
 }
 
@@ -34,23 +34,28 @@
 .sme-why-us__card {
   background: #f2f6ff;
   border-radius: 16px;
-  padding: 28px;
+  height: 241px;
+  width: 548px;
+  padding: 24px 28px 24px 28px;
 }
 
 .sme-why-us__icon{
   margin-bottom: 20px;
+  height: 56px ;
+  width: 56px ;
 }
 
 .sme-why-us__card h3 {
   font-size: 18px;
   margin-bottom: 20px;
+  line-height: 2px;
   color: #0a2540;
 }
 
 .sme-why-us__card p {
   font-size: 16px;
-  line-height: 1.6;
-  color: #425466;
+  line-height: 24px;
+  color: #172B4D;
 }
 
 @media (max-width: 768px) {

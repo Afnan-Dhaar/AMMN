@@ -14,19 +14,20 @@
 }
 
 .insurance-header h1 {
-    font-size: 44px;
-    font-weight: 700;
-    color: #0f172a;
-    line-height: 1.2;
+    font-size: 36px;
+    font-weight: 550;
+    color:#172B4D;
+    padding-top: 80px;
+    line-height: 48px;
     margin-bottom: 20px;
 }
 
 .insurance-header p {
     font-size: 16px;
-    color: #64748b;
-    max-width: 850px;
+    color: #42526E;
+    width: 700px;
     margin: 0 auto;
-    line-height: 1.8;
+    line-height: 24px;
 }
 
 /* Carousel Container */
@@ -40,6 +41,7 @@
     margin-bottom: 60px;
 }
 
+
 .coverage-track {
     position: relative;
     width: 100%;
@@ -51,15 +53,12 @@
 
 /* Card Styles */
 .coverage-card {
-    position: absolute;
+    position:absolute;
     width: 450px;
     height: 470px;
-    background: white;
     border-radius: 20px;
     padding: 45px 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    cursor: pointer;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -74,6 +73,7 @@
     pointer-events: none;
     z-index: 1;
 }
+   
 
 .coverage-card.active-center .card-decoration {
     opacity: 0.2;
@@ -88,8 +88,8 @@
     transform: translateX(0) scale(1);
     opacity: 1;
     z-index: 10;
-    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
-    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.35);
+    background-image:url(media/images/Outer\ Div.png);
+
 }
 
 .coverage-card.active-center::before {
@@ -97,7 +97,8 @@
 }
 
 .coverage-card.active-center h3 {
-    color: #ffffff;
+    color:  #DFE1E6;
+
 }
 
 .coverage-card.active-center p {
