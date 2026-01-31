@@ -6,9 +6,6 @@
   padding: 80px 80px;
 }
 
-.sme-why-us__container {
-
-}
 
 .sme-why-us__title {
   text-align: center;
@@ -58,8 +55,236 @@
   color: #172B4D;
 }
 
-@media (max-width: 768px) {
+
+  
+
+@media (max-width: 1024px) {
+  .sme-why-us {
+    padding: 60px 50px;
+  }
+
+  .sme-why-us__title {
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .sme-why-us__subtitle {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+
   .sme-why-us__grid {
-    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .sme-why-us__card {
+    width: 100%;
+    height: auto;
+    padding: 22px 26px;
+  }
+
+  .sme-why-us__icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+  }
+
+  .sme-why-us__card h3 {
+    font-size: 17px;
+    margin-bottom: 16px;
+  }
+
+  .sme-why-us__card p {
+    font-size: 15px;
+    line-height: 22px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .sme-why-us {
+    padding: 50px 40px;
+  }
+
+  .sme-why-us__title {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .sme-why-us__subtitle {
+    font-size: 14px;
+    margin-bottom: 36px;
+  }
+
+  .sme-why-us__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .sme-why-us__card {
+    width: 100%;
+    height: auto;
+    padding: 20px 24px;
+  }
+
+  .sme-why-us__icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+
+  .sme-why-us__card h3 {
+    font-size: 16px;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+
+  .sme-why-us__card p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .sme-why-us__container {
+    padding: 0;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .sme-why-us {
+    padding: 40px 25px;
+  }
+
+  .sme-why-us__title {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+
+  .sme-why-us__subtitle {
+    font-size: 13px;
+    margin-bottom: 32px;
+  }
+
+  .sme-why-us__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .sme-why-us__card {
+    width: 100%;
+    height: auto;
+    padding: 18px 22px;
+  }
+
+  .sme-why-us__icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .sme-why-us__card h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .sme-why-us__card p {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sme-why-us {
+    padding: 35px 20px;
+  }
+
+  .sme-why-us__title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .sme-why-us__subtitle {
+    font-size: 12px;
+    margin-bottom: 28px;
+  }
+
+  .sme-why-us__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .sme-why-us__card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 16px 20px;
+  }
+
+  .sme-why-us__icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+  }
+
+  .sme-why-us__card h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .sme-why-us__card p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .sme-why-us__container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  .sme-why-us {
+    padding: 30px 16px;
+  }
+
+  .sme-why-us__title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .sme-why-us__subtitle {
+    font-size: 11px;
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  .sme-why-us__grid {
+    gap: 12px;
+  }
+
+  .sme-why-us__card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 10px 10px 25px;
+  }
+
+  .sme-why-us__icon {
+    width: 10px;
+    height: 40%;
+  }
+
+  .sme-why-us__card h3 {
+    font-size: 13px;
+    margin-bottom: 2px;
+    line-height: 1.1;
+  }
+
+  .sme-why-us__card p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
