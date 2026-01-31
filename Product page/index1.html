@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      max-width: 1440px;
+    }
+ 
+    .cta {
+      background: #0b2261;
+      position: relative;
+      overflow: hidden;
+      height: 600px;
+      width: 100%;
+    }
+ 
+    .cta-content {
+      height: 100%;
+      padding: 0 0 0 80px;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+    }
+ 
+    .cta-content h2 {
+      margin-top: 40px;
+      font-size: 40px;
+      line-height: 50px;
+      margin-bottom: 20px;
+      letter-spacing: -0.16px;
+      font-weight: 500;
+      background: linear-gradient(93.45deg, #ffffff 54.99%, #c7cad1 89.13%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+ 
+    /* Subtext */
+    .cta-content p {
+      font-size: 16px;
+      line-height: 24px;
+      color: #ebecf0;
+      margin-bottom: 60px;
+      letter-spacing: -0.16px;
+      font-weight: 400;
+    }
+ 
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      z-index: 10;
+    }
+ 
+    .cta-btn {
+      border: solid 0.7px;
+      box-shadow: 1px 6px 16px 0px #00000014;
+      padding: 16px 24px;
+      border-radius: 999px;
+    }
+ 
+    .cta-btn {
+      padding: 16px 24px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+ 
+    .cta-btn.cta-btn-primary {
+      background: #ffffff;
+      color: #0b1f4d;
+    }
+ 
+    .cta-btn.cta-btn-secondary {
+      border-radius: 999px;
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 16px;
+      text-decoration: none;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 0) 50.07%,
+        rgba(255, 255, 255, 0.4) 100%
+      );
+      box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.35),
+        0 6px 16px rgba(0, 0, 0, 0.25);
+      border: none;
+      transition: all 0.3s ease;
+    }
+ 
+    .cta-content,
+    .cta-section-right {
+      flex: 1;
+      min-width: 0;
+    }
+ 
+    .cta-img {
+      position: absolute;
+      pointer-events: none;
+    }
+ 
+    .base {
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+    }
+ 
+    .layer-1 {
+      bottom: -95%;
+      right: -26%;
+      width: 90%;
+      z-index: 1;
+    }
+ 
+    .layer-2 {
+      bottom: -20px;
+      right: -80px;
+      width: 50%;
+      z-index: 2;
+    }
+ 
+    @media (max-width: 800px) {
+      .cta {
+        height: auto;
+        padding-bottom: 300px;
+      }
+ 
+      .cta-content {
+        padding: 40px 20px 0;
+        z-index: 2;
+      }
+ 
+      .cta-content {
+        text-align: center;
+        padding: 70px 20px 0;
+      }
+ 
+      .cta-content h2 {
+        font-size: 28px;
+        line-height: 36px;
+      }
+ 
+      .cta-content p {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 30px;
+      }
+      .cta-buttons {
+        flex-direction: column;
+      }
+      .base {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 420px;
+      }
+      .layer-1 {
+        bottom: -240px;
+        right: -60px;
+        width: 100%;
+      }
+ 
+      .layer-2 {
+        bottom: -20px;
+        right: 10%;
+        width: 450px;
+      }
+    }
+ 
+    @media (max-width: 480px) {
+      .layer-1 {
+        bottom: -140px;
+        right: -40px;
+        width: 500px;
+      }
+ 
+      .layer-2 {
+        bottom: -20px;
+        right: -30%;
+        width: 450px;
+      }
+    }
+  </style>
+ 
+  <body>
+    <section class="cta">
+      <div class="cta-content">
+        <div class="cta-logos">
+          <span><img src="media/svg/Mis_Logo.svg" alt="" /></span>
+          <span><img src="media/svg/Sadad_Logo.svg" alt="" /></span>
+          <span><img src="media/svg/Mastercard_logo.svg" alt="" /></span>
+          <span><img src="media/svg/Mada_Logo.svg" alt="" /></span>
+          <span><img src="media/svg/Morni_Logo.svg" alt="" /></span>
+          <span><img src="media/svg/Mastercard_logo.svg" alt="" /></span>
+          <span><img src="media/svg/Tabby_logo.svg" alt="" /></span>
+        </div>
+        <h2>
+          Start Your Motor Insurance<br />
+          Quote in KSA Today
+        </h2>
+ 
+        <p>
+          Get the best prices, trusted coverage, and instant policy issuance —
+          all in one place
+        </p>
+        <div class="cta-buttons">
+          <button href="" class="cta-btn cta-btn-primary">Buy Insurance</button>
+          <button href="" class="cta-btn cta-btn-secondary">Get a Quote</button>
+        </div>
+      </div>
+ 
+      <!-- '''''''''''''''''''''''''' -->
+      <img class="cta-img base" src="media/images/Mask group.png" />
+      <img class="cta-img layer-1" src="media/images/Group.png" />
+      <img class="cta-img layer-2" src="media/images/insuranceAuthority.png" />
+    </section>
+  </body>
+</html>
