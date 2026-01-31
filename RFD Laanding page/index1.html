@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insurance Carousel - Enhanced</title>
+    <title>Insurance Carousel - Mobile Responsive</title>
     <style>
         * {
             margin: 0;
@@ -18,16 +18,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
         }
 
         .insurance-section {
             width: 100%;
-            
+            overflow: hidden;
         }
 
         .section-header {
             margin-bottom: 50px;
+            padding-left: 80px;
         }
 
         .section-header h1 {
@@ -47,8 +47,9 @@
         .carousel-wrapper {
             position: relative;
             overflow: hidden;
-            padding: 20px 0;
             height: 65vh;
+            padding: 20px 0;
+            width: 100%;
         }
 
         .carousel-container {
@@ -56,7 +57,8 @@
             gap: 20px;
             transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
             align-items: center;
-            padding-left: 50px;
+            height: 100%;
+            padding-left: 80px;
         }
 
         .carousel-slide {
@@ -64,29 +66,29 @@
             border-radius: 20px;
             overflow: hidden;
             flex-shrink: 0;
-            width: 350px;
             height: 60vh;
             transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
             cursor: pointer;
-            opacity: 0;
-            transform: scale(0.9);
-            visibility: hidden;
+            opacity: 0.5;
+            transform: scale(1) translateZ(0);
+            width: 350px;
+            visibility: visible;
         }
 
         .carousel-slide.active {
             opacity: 1;
             cursor: default;
-            transform: scale(1);
-            width: 80vw;
-            visibility: visible;
+            transform: scale(1) translateZ(0);
+            width: 900px;
+            z-index: 10;
         }
 
-        .carousel-slide.next-active {
-            opacity: 1;
-            transform: scale(1);
+        .carousel-slide.next-half {
+            opacity: 0.75;
+            transform: scale(1) translateZ(0);
             cursor: pointer;
-            visibility: visible; 
+            width: 400px;
         }
 
         .slide-image {
@@ -114,23 +116,30 @@
             z-index: 2;
         }
 
-        /* Fixed Info Box */
         .info-box-container {
             position: absolute;
-            top: 50%;
-            right: 80px;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 30px;
+            top: 40px;
+            right: 70px;
+            width: 376px;
+            height: 444px;
+            backdrop-filter: blur(20px);
+            box-shadow: 2px 2px 4px 0px rgba(255, 255, 255, 0.2) inset;
+            border: 0.7px solid;
+            border-image-source: linear-gradient(141.08deg, rgba(255, 255, 255, 0.1) 16.26%, rgba(255, 255, 255, 0) 74.46%);
+            background: rgba(255, 255, 255, 0.5);
             border-radius: 16px;
-            width: 320px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             z-index: 100;
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .info-box-content {
             transition: opacity 0.3s ease, transform 0.3s ease;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .info-box-content.fade-out {
@@ -139,7 +148,7 @@
         }
 
         .info-box-container h3 {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 600;
             color: #1a1a1a;
             margin-bottom: 12px;
@@ -147,20 +156,21 @@
 
         .info-box-container p {
             font-size: 14px;
-            color: #666;
+            color: #333;
             line-height: 1.6;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .slide-buttons {
             display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 24px;
         }
 
         .btn {
-            padding: 12px 24px;
-            border-radius: 25px;
+            flex: 1;
+            padding: 20px 24px;
+            border-radius: 999px;
             font-size: 14px;
             font-weight: 500;
             border: none;
@@ -168,7 +178,7 @@
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: center;
         }
 
         .btn-primary {
@@ -178,19 +188,20 @@
 
         .btn-primary:hover {
             background: #0052cc;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
         }
 
         .btn-secondary {
-            background: #00cc66;
-            color: white;
+            background: transparent;
+            color: #0066ff;
+            border: 1px solid #0066ff;
         }
 
         .btn-secondary:hover {
-            background: #00b359;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 204, 102, 0.3);
+            background: #0066ff;
+            color: white;
+            transform: translateY(-1px);
         }
 
         .slide-navigation {
@@ -198,13 +209,15 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
+            margin-top: auto;
         }
 
         .nav-btn {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            background: rgba(0, 102, 255, 0.1);
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
             border: none;
             color: #0066ff;
             cursor: pointer;
@@ -215,8 +228,8 @@
         }
 
         .nav-btn:hover {
-            background: rgba(0, 102, 255, 0.2);
-            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
         }
 
         .nav-btn svg {
@@ -231,9 +244,9 @@
         }
 
         .dot {
-            height: 3px;
+            height: 4px;
             border-radius: 2px;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.3);
             cursor: pointer;
             transition: all 0.3s ease;
             width: 20px;
@@ -244,48 +257,193 @@
             background: #0066ff;
         }
 
-        @media (max-width: 1200px) {
-            .carousel-slide {
-                width: 300px;
-            }
-
-            .carousel-slide.active {
-                width: 500px;
-            }
-
-            .info-box-container {
-                width: 280px;
-                padding: 24px;
-                right: 40px;
-            }
+        /* Mobile View */
+        .mobile-carousel-wrapper {
+            display: none;
         }
 
         @media (max-width: 768px) {
+            body {
+                background: #0a0a0a;
+            }
+
+            .section-header {
+                padding-left: 24px; 
+                margin-bottom: 30px;
+            }
+
             .section-header h1 {
-                font-size: 32px;
+                font-size: 26px;
+                color: #ffffff;
+                line-height: 1.3;
+                font-weight: 500;
+                width: 55%;
             }
 
-            .carousel-slide {
-                width: 250px;
-                height: 400px;
+            .section-header p {
+                font-size: 13px;
+                color: #a0a0a0;
+                margin-top: 8px;
             }
 
-            .carousel-slide.active {
-                width: 300px;
-            }
-
+            .carousel-wrapper,
+            .carousel-container,
             .info-box-container {
-                width: 90%;
-                right: 5%;
-                padding: 20px;
-                top: auto;
-                bottom: 20px;
-                transform: none;
+                display: none;
             }
 
+            .mobile-carousel-wrapper {
+                display: block;
+                width: 100%;
+            }
+
+            /* Mobile Image Carousel */
+            .mobile-image-carousel {
+                position: relative;
+                overflow: visible;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .mobile-image-track {
+                display: flex;
+                gap: 12px;
+                transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                padding: 0 20px;
+            }
+
+            .mobile-image-slide {
+                flex-shrink: 0;
+                width: calc(100% - 80px);
+                height: 240px;
+                border-radius: 20px;
+                overflow: hidden;
+                transform: scale(0.95);
+                transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                opacity: 0.6;
+            }
+
+            .mobile-image-slide.active {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            .mobile-image-slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            /* Mobile Info Box - Fixed */
+            .mobile-info-box {
+                
+                border-radius: 20px;
+                padding: 28px 24px;
+                color: white;
+                margin: 0px 24px;
+            backdrop-filter: blur(20px);
+            box-shadow: 2px 2px 4px 0px rgba(255, 255, 255, 0.2) inset;
+            border: 0.7px solid;
+            border-image-source: linear-gradient(141.08deg, rgba(255, 255, 255, 0.1) 16.26%, rgba(255, 255, 255, 0) 74.46%);
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            }
+
+            /* Pagination at top of info box */
+            .mobile-dots {
+                display: flex;
+            gap: 6px;
+            align-items: center;
+            justify-content: center;
+                margin-bottom: 24px;
+            }
+
+            .mobile-dot {
+                height: 4px;
+            border-radius: 2px;
+            background: rgba(66, 82, 110, 1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 20px;
+            }
+
+            .mobile-dot.active {
+                width: 30px;
+            background:white;
+            }
+
+            .mobile-info-content {
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                text-align: center;
+            }
+
+            .mobile-info-content.fade-out {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            .mobile-info-title {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 12px;
+            }
+
+            .mobile-info-description {
+                font-size: 13px;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.95);
+                margin-bottom: 24px;
+            }
+
+            .mobile-buy-button {
+                width: 100%;
+                padding: 16px;
+                background: white;
+                color: #3d67b0;
+                border: none;
+                border-radius: 999px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                margin-bottom: 16px;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-buy-button:active {
+                transform: scale(0.98);
+            }
+
+            .mobile-explore-link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                color: white;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .mobile-explore-link svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        @media (max-width: 1400px) and (min-width: 769px) {
             .carousel-wrapper {
-                height: auto;
-                min-height: 500px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .info-box-container {
+                left: 50%;
+                transform: translateX(120%);
             }
         }
     </style>
@@ -297,19 +455,19 @@
             <p>A wide range of insurance products designed to keep you secure in every situation.</p>
         </div>
 
+        <!-- Desktop Carousel -->
         <div class="carousel-wrapper">
             <div class="carousel-container" id="carousel">
-                <!-- Slides will be inserted here by JavaScript -->
+                <!-- Slides inserted by JS -->
             </div>
 
-            <!-- Fixed Info Box -->
-            <div class="info-box-container">
+            <div class="info-box-container" id="infoBox">
                 <div class="info-box-content" id="infoBoxContent">
                     <h3 id="infoTitle">Motor Insurance</h3>
                     <p id="infoDescription">Motor insurance provides essential protection for all motor vehicles, covering repairs, accidents, breakdowns, and unexpected emergencies.</p>
                     <div class="slide-buttons">
                         <button class="btn btn-primary">Buy Now</button>
-                        <button class="btn btn-secondary">Explore →</button>
+                        <button class="btn btn-secondary">Sign Up</button>
                     </div>
                     <div class="slide-navigation">
                         <button class="nav-btn prev-btn" id="prevBtn">
@@ -317,9 +475,7 @@
                                 <path d="M15 18l-6-6 6-6"/>
                             </svg>
                         </button>
-                        <div class="carousel-dots" id="dotsContainer">
-                            <!-- Dots will be inserted here -->
-                        </div>
+                        <div class="carousel-dots" id="dotsContainer"></div>
                         <button class="nav-btn next-btn" id="nextBtn">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M9 18l6-6-6-6"/>
@@ -329,225 +485,224 @@
                 </div>
             </div>
         </div>
+
+        <!-- Mobile Carousel -->
+        <div class="mobile-carousel-wrapper">
+            <!-- Image Carousel -->
+            <div class="mobile-image-carousel">
+                <div class="mobile-image-track" id="mobileImageTrack">
+                    <!-- Image slides inserted by JS -->
+                </div>
+            </div>
+
+            <!-- Fixed Info Box with Pagination at Top -->
+            <div class="mobile-info-box">
+                <div class="mobile-dots" id="mobileDotsContainer">
+                    <!-- Dots inserted by JS -->
+                </div>
+                <div class="mobile-info-content" id="mobileInfoContent">
+                    <h3 class="mobile-info-title" id="mobileInfoTitle">Motor Insurance</h3>
+                    <p class="mobile-info-description" id="mobileInfoDescription">Motor insurance provides essential protection for all motor vehicles, covering repairs, accidents, breakdowns, and unexpected emergencies.</p>
+                    <button class="mobile-buy-button">Buy Now</button>
+                    <a href="#" class="mobile-explore-link">
+                        Explore 
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
         const slides = [
-            {
-                title: 'Motor Insurance',
-                description: 'Motor insurance provides essential protection for all motor vehicles, covering repairs, accidents, breakdowns, and unexpected emergencies.',
-                image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80',
-            },
-            {
-                title: 'Health Insurance',
-                description: 'Comprehensive health coverage for you and your family, including hospitalization, medical treatments, and preventive care services.',
-                image: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1200&q=80',
-            },
-            {
-                title: 'Life Insurance',
-                description: 'Secure your family\'s future with comprehensive life insurance plans that provide financial protection and peace of mind.',
-                image: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1200&q=80',
-            },
-            {
-                title: 'Travel Insurance',
-                description: 'Travel with confidence knowing you\'re protected against unexpected events, medical emergencies, and trip cancellations.',
-                image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80',
-            },
-            {
-                title: 'Home Insurance',
-                description: 'Protect your most valuable asset with comprehensive home insurance covering property damage, theft, and natural disasters.',
-                image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80',
-            }
+            {title: 'Motor Insurance', description: 'Motor insurance provides essential protection for all motor vehicles, covering repairs, accidents, breakdowns, and unexpected emergencies.', image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&q=80'},
+            {title: 'Health Insurance', description: 'Comprehensive health coverage for you and your family, including hospitalization, medical treatments, and preventive care services.', image: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1200&q=80'},
+            {title: 'Life Insurance', description: "Secure your family's future with comprehensive life insurance plans that provide financial protection and peace of mind.", image: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1200&q=80'},
+            {title: 'Travel Insurance', description: 'Travel with confidence knowing you\'re protected against unexpected events, medical emergencies, and trip cancellations.', image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80'},
+            {title: 'Home Insurance', description: 'Protect your most valuable asset with comprehensive home insurance covering property damage, theft, and natural disasters.', image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80'}
         ];
 
         let currentIndex = 0;
+        let mobileCurrentIndex = 0;
+
+        // Desktop Carousel
         const carousel = document.getElementById('carousel');
         const infoTitle = document.getElementById('infoTitle');
         const infoDescription = document.getElementById('infoDescription');
         const infoBoxContent = document.getElementById('infoBoxContent');
         const dotsContainer = document.getElementById('dotsContainer');
 
-        // Create dots
         function createDots() {
-            slides.forEach((_, index) => {
+            dotsContainer.innerHTML = '';
+            slides.forEach((_, i) => {
                 const dot = document.createElement('div');
-                dot.className = `dot ${index === 0 ? 'active' : ''}`;
-                dot.dataset.index = index;
-                dot.addEventListener('click', () => goToSlide(index));
+                dot.className = `dot ${i === 0 ? 'active' : ''}`;
+                dot.dataset.index = i;
+                dot.addEventListener('click', () => goToSlide(i));
                 dotsContainer.appendChild(dot);
             });
         }
 
-        // Initialize carousel with infinite loop structure
         function initializeCarousel() {
-            // Create slides: [last, ...all slides..., first] for infinite loop
-            const slidesToRender = [
-                slides[slides.length - 1], // Clone of last slide
-                ...slides,
-                slides[0] // Clone of first slide
-            ];
-
-            slidesToRender.forEach((slide, index) => {
+            carousel.innerHTML = '';
+            slides.forEach((slide, i) => {
                 const slideDiv = document.createElement('div');
                 slideDiv.className = 'carousel-slide';
-                slideDiv.dataset.index = index;
-                
-                // Mark the first real slide as active and second as next-active
-                if (index === 1) {
-                    slideDiv.classList.add('active');
-                } else if (index === 2) {
-                    slideDiv.classList.add('next-active');
-                }
-                
+                slideDiv.dataset.index = i;
                 slideDiv.innerHTML = `
-                    <img src="${slide.image}" alt="${slide.title}" class="slide-image">
+                    <img src="${slide.image}" alt="${slide.title}" class="slide-image" loading="lazy">
                     <div class="slide-overlay"></div>
                     <h2 class="slide-title">${slide.title}</h2>
                 `;
-
-                slideDiv.addEventListener('click', () => {
-                    // Calculate the real index (accounting for clones)
-                    const realIndex = index === 0 ? slides.length - 1 : 
-                                     index === slidesToRender.length - 1 ? 0 : 
-                                     index - 1;
-                    if (realIndex !== currentIndex) {
-                        goToSlide(realIndex);
-                    }
-                });
-
+                slideDiv.addEventListener('click', () => goToSlide(i));
                 carousel.appendChild(slideDiv);
             });
-
-            // Position to show first real slide
-            updateCarouselPosition(false);
+            updateCarousel();
         }
 
-        function updateCarouselPosition(animate = true) {
-            const allSlides = document.querySelectorAll('.carousel-slide');
-            const normalWidth = 350;
-            const activeWidth = 600;
-            const gap = 20;
-            
-            // Calculate offset to show current active slide and next slide
-            // We need to position so active slide is on left, next slide on right
-            const offset = (currentIndex + 1) * (normalWidth + gap);
-            
-            if (!animate) {
-                carousel.style.transition = 'none';
-            } else {
-                carousel.style.transition = 'transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
-            }
-            
-            carousel.style.transform = `translateX(-${offset}px)`;
-            
-            if (!animate) {
-                // Force reflow
-                carousel.offsetHeight;
-                carousel.style.transition = 'transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
-            }
-        }
-
-        function updateSlideClasses() {
-            const allSlides = document.querySelectorAll('.carousel-slide');
-            const activeSlideIndex = currentIndex + 1; // +1 because of the cloned first slide
-            const nextActiveIndex = activeSlideIndex + 1;
-            
-            allSlides.forEach((slide, index) => {
-                slide.classList.remove('active', 'next-active');
-                if (index === activeSlideIndex) {
+        function updateCarousel() {
+            document.querySelectorAll('.carousel-slide').forEach((slide, i) => {
+                slide.classList.remove('active', 'next-half');
+                if (i === currentIndex) {
                     slide.classList.add('active');
-                } else if (index === nextActiveIndex) {
-                    slide.classList.add('next-active');
+                } else if (i === (currentIndex + 1) % slides.length) {
+                    slide.classList.add('next-half');
                 }
             });
+
+            const activeOffset = currentIndex * (350 + 20);
+            carousel.style.transform = `translateX(-${activeOffset}px)`;
         }
 
         function updateInfoBox() {
-            // Fade out
             infoBoxContent.classList.add('fade-out');
-            
             setTimeout(() => {
                 infoTitle.textContent = slides[currentIndex].title;
                 infoDescription.textContent = slides[currentIndex].description;
-                
-                // Fade in
                 infoBoxContent.classList.remove('fade-out');
             }, 150);
         }
 
         function updateDots() {
-            const dots = document.querySelectorAll('.dot');
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
             });
         }
 
         function goToSlide(index) {
             currentIndex = index;
-            updateSlideClasses();
-            updateCarouselPosition(true);
+            updateCarousel();
             updateInfoBox();
             updateDots();
         }
 
-        function nextSlide() {
-            const nextIndex = (currentIndex + 1) % slides.length;
-            
-            if (nextIndex === 0) {
-                // Going from last to first - handle infinite loop
-                currentIndex = nextIndex;
-                updateSlideClasses();
-                updateCarouselPosition(true);
-                updateInfoBox();
-                updateDots();
-                
-                // After animation, jump to real first slide without animation
-                setTimeout(() => {
-                    updateCarouselPosition(false);
-                }, 700);
-            } else {
-                goToSlide(nextIndex);
-            }
-        }
+        document.getElementById('prevBtn').addEventListener('click', () => goToSlide((currentIndex - 1 + slides.length) % slides.length));
+        document.getElementById('nextBtn').addEventListener('click', () => goToSlide((currentIndex + 1) % slides.length));
 
-        function prevSlide() {
-            const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-            
-            if (currentIndex === 0) {
-                // Going from first to last - handle infinite loop
-                currentIndex = prevIndex;
-                updateSlideClasses();
-                updateCarouselPosition(true);
-                updateInfoBox();
-                updateDots();
-                
-                // After animation, jump to real last slide without animation
-                setTimeout(() => {
-                    updateCarouselPosition(false);
-                }, 700);
-            } else {
-                goToSlide(prevIndex);
-            }
-        }
-
-        // Event listeners
-        document.getElementById('prevBtn').addEventListener('click', prevSlide);
-        document.getElementById('nextBtn').addEventListener('click', nextSlide);
-
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') prevSlide();
-            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') goToSlide((currentIndex - 1 + slides.length) % slides.length);
+            if (e.key === 'ArrowRight') goToSlide((currentIndex + 1) % slides.length);
         });
 
-        // Recalculate on window resize
+        // Mobile Carousel
+        const mobileImageTrack = document.getElementById('mobileImageTrack');
+        const mobileInfoTitle = document.getElementById('mobileInfoTitle');
+        const mobileInfoDescription = document.getElementById('mobileInfoDescription');
+        const mobileInfoContent = document.getElementById('mobileInfoContent');
+        const mobileDotsContainer = document.getElementById('mobileDotsContainer');
+
+        function initializeMobileCarousel() {
+            // Create image slides
+            mobileImageTrack.innerHTML = '';
+            slides.forEach((slide, i) => {
+                const slideDiv = document.createElement('div');
+                slideDiv.className = `mobile-image-slide ${i === 0 ? 'active' : ''}`;
+                slideDiv.innerHTML = `<img src="${slide.image}" alt="${slide.title}" loading="lazy">`;
+                mobileImageTrack.appendChild(slideDiv);
+            });
+
+            // Create dots
+            mobileDotsContainer.innerHTML = '';
+            slides.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.className = `mobile-dot ${i === 0 ? 'active' : ''}`;
+                dot.addEventListener('click', () => goToMobileSlide(i));
+                mobileDotsContainer.appendChild(dot);
+            });
+        }
+
+        function updateMobileCarousel(index) {
+            mobileCurrentIndex = index;
+            
+            // Update image carousel position - show partial next/prev slides
+            const slideWidth = document.querySelector('.mobile-image-slide').offsetWidth;
+            const gap = 12;
+            const offset = index * (slideWidth + gap);
+            mobileImageTrack.style.transform = `translateX(calc(-${offset}px + 20px))`;
+
+            // Update active states
+            document.querySelectorAll('.mobile-image-slide').forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+
+            // Update dots
+            document.querySelectorAll('.mobile-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function updateMobileInfoBox() {
+            mobileInfoContent.classList.add('fade-out');
+            setTimeout(() => {
+                mobileInfoTitle.textContent = slides[mobileCurrentIndex].title;
+                mobileInfoDescription.textContent = slides[mobileCurrentIndex].description;
+                mobileInfoContent.classList.remove('fade-out');
+            }, 150);
+        }
+
+        function goToMobileSlide(index) {
+            mobileCurrentIndex = index;
+            updateMobileCarousel(index);
+            updateMobileInfoBox();
+        }
+
+        // Touch events for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        mobileImageTrack.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        mobileImageTrack.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleMobileSwipe();
+        });
+
+        function handleMobileSwipe() {
+            if (touchStartX - touchEndX > 50) {
+                // Swipe left
+                const nextIndex = Math.min(mobileCurrentIndex + 1, slides.length - 1);
+                goToMobileSlide(nextIndex);
+            }
+            if (touchEndX - touchStartX > 50) {
+                // Swipe right
+                const prevIndex = Math.max(mobileCurrentIndex - 1, 0);
+                goToMobileSlide(prevIndex);
+            }
+        }
+
         window.addEventListener('resize', () => {
-            updateCarouselPosition(false);
+            updateCarousel();
+            updateMobileCarousel(mobileCurrentIndex);
         });
 
-        // Initialize
+        // Initialize everything
         createDots();
         initializeCarousel();
+        initializeMobileCarousel();
     </script>
 </body>
-</html>
+</html> 
