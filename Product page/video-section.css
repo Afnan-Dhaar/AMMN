@@ -1,239 +1,268 @@
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+.app-section {
+  padding: 80px 80px;
+}
 
+.app-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
 
-        .app-section {
-            padding: 80px 80px;
-        }
+/* Left Content */
+.app-content {
+  display: flex;
+  gap: 90px;
+}
 
-        .app-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            align-items: center;
-        }
+.app-content h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
 
-        /* Left Content */
-        .app-content {
-            display: flex;
-            gap: 90px;
-        }
+.app-content p {
+  font-size: 16px;
+  color: rgba(66, 82, 110, 1);
+  line-height: 1.8;
+  align-self: end;
+}
 
-        .app-content h2 {
-            font-size: 36px; 
-            font-weight: 700;
-            color: #0f172a;
-            line-height: 1.2;
-        }
+/* Right Video Card */
+.video-card {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
 
-        .app-content p {
-            font-size: 16px;
-            color: rgba(66, 82, 110, 1);
-            line-height: 1.8;
-            align-self: end;
-        }
+.video-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
 
-        /* Right Video Card */
-        .video-card {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            border-radius: 24px;
-            overflow: hidden;
-            background: #000;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
+/* Video Overlay */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+}
 
-        .video-background {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.85);
-        }
+/* Play Button */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
 
-        /* Video Overlay */
-        .video-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 40px;
-        }
+.play-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: rgba(255, 255, 255, 1);
+}
 
-        /* Play Button */
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-        }
+.play-button::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 20px solid #0f172a;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  margin-left: 4px;
+}
+.download-section {
+  margin-top: auto;
+}
 
-        .play-button:hover {
-            transform: translate(-50%, -50%) scale(1.1);
-            background: rgba(255, 255, 255, 1);
-        }
+.download-text {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
 
-        .play-button::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 20px solid #0f172a;
-            border-top: 12px solid transparent;
-            border-bottom: 12px solid transparent;
-            margin-left: 4px;
-        }
+.app-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 
-        /* Download Section in Video */
-        .download-section {
-            margin-top: auto;
-        }
+.app-badge {
+  height: 48px;
+  width: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
 
-        .download-text {
-            color: white;
-            font-size: 16px;
-            font-weight: 500;
-            margin-bottom: 16px;
-        }
+.app-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
 
-        .app-badges {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
+.downloads-counter {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  text-align: right;
+}
 
-        .app-badge {
-            height: 48px;
-            width: auto;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-        }
+.downloads-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
 
-        .app-badge:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
+.downloads-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
 
-        /* Downloads Counter */
-        .downloads-counter {
-            position: absolute;
-            bottom: 40px;
-            right: 40px;
-            text-align: right;
-        }
+@media (max-width: 1024px) {
+  .app-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-        .downloads-number {
-            font-size: 48px;
-            font-weight: 700;
-            color: white;
-            line-height: 1;
-            margin-bottom: 8px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
+  .app-content {
+    padding-right: 0;
+    text-align: center;
+  }
 
-        .downloads-label {
-            font-size: 18px;
-            font-weight: 600;
-            color: white;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
+  .video-card {
+    height: 450px;
+  }
+}
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .app-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+@media (max-width: 768px) {
+  .app-section {
+    padding: 60px 20px;
+  }
+  .app-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-            .app-content {
-                padding-right: 0;
-                text-align: center;
-            }
+  .app-content h3 {
+    font-size: 35px;
+  }
+  .app-content p {
+    font-size: 25px;
+    line-height: 1.6;
+  }
 
-            .video-card {
-                height: 450px;
-            }
-        }
+  .video-card {
+    height: 400px;
+  }
 
-        @media (max-width: 768px) {
-            .app-section {
-                padding: 60px 20px;
-            }
+  .video-overlay {
+    padding: 30px;
+  }
 
-            .app-content h2 {
-                font-size: 32px;
-            }
+  .downloads-counter {
+    bottom: 30px;
+    right: 30px;
+  }
 
-            .video-card {
-                height: 400px;
-            }
+  .downloads-number {
+    font-size: 36px;
+  }
 
-            .video-overlay {
-                padding: 30px;
-            }
+  .downloads-label {
+    font-size: 16px;
+  }
 
-            .downloads-counter {
-                bottom: 30px;
-                right: 30px;
-            }
+  .app-badge {
+    height: 42px;
+  }
+}
 
-            .downloads-number {
-                font-size: 36px;
-            }
+@media (max-width: 480px) {
+  .app-content h3{
+    font-size: 28px;
+  }
+  .app-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-            .downloads-label {
-                font-size: 16px;
-            }
+  .video-card {
+    height: 350px;
+  }
 
-            .app-badge {
-                height: 42px;
-            }
-        }
+  .play-button {
+    width: 60px;
+    height: 60px;
+  }
 
-        @media (max-width: 480px) {
-            .app-content h2 {
-                font-size: 28px;
-            }
+  .play-button::after {
+    border-left: 16px solid #0f172a;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
 
-            .video-card {
-                height: 350px;
-            }
+  .app-badges {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-            .play-button {
-                width: 60px;
-                height: 60px;
-            }
+  .app-badge {
+    width: 100%;
+    max-width: 200px;
+  }
+  @media (max-width: 350px) {
+    .app-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .app-content h3 {
+      font-size: 18px;
+      margin-bottom: -60px;
+    }
 
-            .play-button::after {
-                border-left: 16px solid #0f172a;
-                border-top: 10px solid transparent;
-                border-bottom: 10px solid transparent;
-            }
-
-            .app-badges {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .app-badge {
-                width: 100%;
-                max-width: 200px;
-            }
-        }
+    .app-content p {
+      font-size: 15px;
+      max-width: 300px;
+      line-height: 1.4;
+    }
+  }
+}
