@@ -1,6 +1,10 @@
+body{
+  font-family: Helvetica !important;
+}
 .footer {
   color: white;
   position: relative;
+  z-index: 3;
 }
  
 .footer-content {

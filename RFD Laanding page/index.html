@@ -15,112 +15,77 @@
     <link rel="stylesheet" href="Licensed-section.css">
     <link rel="stylesheet" href="how-we-work.css">
     <link rel="stylesheet" href="carousel-cards-section.css">
-
+    <link rel="stylesheet" href="second-section.css">
+    <link rel="stylesheet" href="protection-section.css">
+<style>
+  body{
+    width: 1440px;
+    margin: auto; 
+  }
+</style>
 </head>
 <body>
-        <!-- HEADER SECTION -->
-     <header id="header">
-        <div class="header-container">
-            <div class="logo-section">
-                <div class="logo-placeholder">
-                    <img src="media/images/Frame 30.png" alt="">
-                </div>
-            </div>
-
-            <nav id="nav">
-                <a href="#about">About</a>
-                <a href="#insurance">Insurance Services</a>
-                <a href="#faq">FAQ</a>
-                <a href="#partners">Partners</a>
-            </nav>
-
-            <div class="right-section">
-                <button class="lang-btn">العربية</button>
-                <button class="login-btn">SME Login</button>
-                <button class="mobile-menu-btn" id="menuBtn">☰</button>
-            </div>
+       <!-- HEADER SECTION -->
+  <header id="header">
+    <div class="header-container">
+      <div class="logo-section">
+        <div class="logo-placeholder">
+          <img src="media/images/Frame 30.png" alt="">
         </div>
-    </header>
-    <!-- HERO SECTION  -->
-     <section>
-        <div class="hero-section">
-        <div class="hero-container">
-            <!-- Static Content -->
-            <div class="hero-content">
-                <h1 class="hero-title">Your Trusted Insurance<br>Broker in Saudi Arabia</h1>
-                <p class="hero-subtitle">AMNN connects you with licensed insurance companies, helping you compare real offers, choose the right coverage, and buy securely all in one place.</p>
-                
-                <div class="hero-buttons">
-                    <button class="btn btn-primary">Find Best Coverage</button>
-                    <button class="btn btn-secondary">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                        How it works
-                    </button>
-                </div>
-            </div>
+      </div>
 
-            <!-- Carousel for Images Only -->
-            <div class="carousel-section">
-                <div class="carousel-container">
-                    <!-- Slide 1 -->
-                    <div class="carousel-slide active">
-                        <div class="slide-content">
-                            
+      <nav id="nav">
+        <a href="#about">About</a>
+        <a href="#insurance">Insurance Services</a>
+        <a href="#faq">FAQ</a>
+        <a href="#partners">Partners</a>
+      </nav>
 
-                            <div class="slide-image">
-                                <img src="media/images/Frame 1984078276.png" alt="Insurance Professional">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="carousel-slide">
-                        <div class="slide-content">
-                            
-
-                            <div class="slide-image">
-                                <img src="media/images/Frame 1984078276.png" alt="Insurance Professional">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="carousel-slide">
-                        <div class="slide-content">
-                            
-
-                            <div class="slide-image">
-                                <img src="media/images/Frame 1984078276.png" alt="Insurance Professional">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Navigation Arrows -->
-                <div class="carousel-nav nav-left" onclick="prevSlide()">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M15 19l-7-7 7-7"/>
-                    </svg>
-                </div>
-                <div class="carousel-nav nav-right" onclick="nextSlide()">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M9 5l7 7-7 7"/>
-                    </svg>
-                </div>
-
-                <!-- Dots Navigation -->
-                <div class="carousel-dots">
-                    <div class="dot active" onclick="goToSlide(0)"></div>
-                    <div class="dot" onclick="goToSlide(1)"></div>
-                    <div class="dot" onclick="goToSlide(2)"></div>
-                </div>
-            </div>
-        </div>
+      <div class="right-section">
+        <button class="lang-btn">العربية</button>
+        <button class="login-btn">SME Login</button>
+        <button class="mobile-menu-btn" id="menuBtn">☰</button>
+      </div>
     </div>
+  </header>
+    <!-- HERO SECTION  -->
+    <section class="hero-section">
+<div class="hero-container">
 
-     </section>
+<div class="hero-section-bg1"><img src="./assets/lefttopeffect.svg"></div>
+<div class="hero-section-bg2"><img src="./assets/righttopeffect.svg"></div>
+<div class="hero-section-bg3"><img src="./assets/leftbottomeffect.svg"></div>
+<div class="hero-section-bg4"><img src="./assets/rightbottomeffect.svg"></div>
+
+<div class="hero-content">
+<h1 class="hero-title">Your Trusted Insurance<br>Broker in Saudi Arabia</h1>
+<p class="hero-subtitle">AMMN connects you with licensed insurance companies, helping you compare real offers, choose the right coverage, and buy securely all in one place.</p>
+<div class="hero-buttons">
+<button class="btn btn-primary">Find Best Coverage</button>
+<button class="btn btn-secondary">▶ How it works</button>
+</div>
+</div>
+
+<div class="carousel-section">
+<div class="carousel-container">
+<div class="carousel-slide active"><div class="slide-image"><img src="./assets/Saudi Arabian Man.png"></div></div>
+<div class="carousel-slide"><div class="slide-image"><img src="./assets/docterimg.png"></div></div>
+</div>
+
+<div class="carousel-nav nav-left" onclick="prevSlide()"><img src="./assets/lefterrow.svg"></div>
+<div class="carousel-nav nav-right" onclick="nextSlide()"><img src="./assets/righterrow.svg"></div>
+
+
+</div>
+<div class="carousel-dots">
+<div class="dot active" onclick="goToSlide(0)"></div>
+<div class="dot" onclick="goToSlide(1)"></div>
+</div>
+<div class="hero-bottom-blur"></div>
+
+</div>
+</section>
+
 
     <!-- COMPANY LOGO CAROUSEL SECTION -->
      <section>
@@ -158,100 +123,123 @@
         </div>
     </div>
      </section>
-     <!-- CAROUSEL CARDS  -->
-<section class="cards">
-      <h1>Your Insurance, Fully Supported</h1>
-      <p class="p">
-        Get expert consultation and after-insurance services designed to make
-        your experience seamless.
-      </p>
-      <div class="cards-div">
-        <div class="inside-cards">
-          <div class="card-one">
-            <div class="card-content">
-              <h3>Need Support Beyond Policy Purchase?</h3>
-              <p>
-                AMMN is here to support you even after your insurance is issued,
-                making post-insurance tasks simple and stress-free.
-              </p>
- 
-              <div class="features">
-                <span>Policy guidance & follow-ups</span>
-                <span>Document access & support</span>
-                <span>Claim redirection & assistance</span>
-                <span>Renewal reminders</span>
-              </div>
- 
-              <button class="cta-btn">Get Post-Insurance Support</button>
+
+     
+<section class="payment-methods">
+  <div class="payment-header">
+    <h2>
+      From cards to digital channels, pick the payment method<br />
+      that works best for you — fast, simple, and secure.
+    </h2>
+  </div>
+
+  <div class="payment-track">
+    <div class="payment-row">
+      <!-- SET 1 - Original 7 icons -->
+      <div class="payment-icon"><img src="media/icons/secondsectionlogo-1.svg" alt="Payment method 1"></div>
+      <div class="payment-icon"><img src="media/icons/secondsectionicon-2.svg" alt="Payment method 2"></div>
+      <div class="payment-icon"><img src="media/icons/secondsectionicon-3.svg" alt="Payment method 3"></div>
+      <div class="payment-icon"><img src="media/icons/secondsectionicon-4.svg" alt="Payment method 4"></div>
+      <div class="payment-icon"><img src="media/icons/secondsectionicon-5.svg" alt="Payment method 5"></div>
+      <div class="payment-icon"><img src="media/icons/secondsectionicon-6.svg" alt="Payment method 6"></div>
+      <div class="payment-icon"><img src="media/icons/secondsectionicon-4.svg" alt="Payment method 7"></div>
+
+      <!-- SET 2 - Clones for mobile infinite scroll -->
+      <div class="payment-icon clone"><img src="media/icons/secondsectionlogo-1.svg" alt="Payment method 1"></div>
+      <div class="payment-icon clone"><img src="media/icons/secondsectionicon-2.svg" alt="Payment method 2"></div>
+      <div class="payment-icon clone"><img src="media/icons/secondsectionicon-3.svg" alt="Payment method 3"></div>
+      <div class="payment-icon clone"><img src="media/icons/secondsectionicon-4.svg" alt="Payment method 4"></div>
+      <div class="payment-icon clone"><img src="media/icons/secondsectionicon-5.svg" alt="Payment method 5"></div>
+      <div class="payment-icon clone"><img src="media/icons/secondsectionicon-6.svg" alt="Payment method 6"></div>
+      <div class="payment-icon clone"><img src="media/icons/secondsectionicon-4.svg" alt="Payment method 7"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROTECTION SECTION -->
+<section>
+   <div class="xyz-insurance-section">
+      <div class="xyz-section-header">
+        <h1>Protection for Every Part of Life.</h1>
+        <p>
+          A wide range of insurance products designed to keep you secure in
+          every situation.
+        </p>
+      </div>
+
+      <div class="xyz-carousel-wrapper">
+        <div class="xyz-carousel-container" id="xyz-carousel"></div>
+        <div class="xyz-info-box-container" id="xyz-infoBox">
+          <div class="xyz-info-box-content" id="xyz-infoBoxContent">
+            <h3 id="xyz-infoTitle">Motor Insurance</h3>
+            <p id="xyz-infoDescription">
+              Motor insurance provides essential protection...
+            </p>
+            <div class="xyz-slide-buttons">
+              <button class="xyz-btn xyz-btn-primary">Buy Now</button>
+              <button class="xyz-btn xyz-btn-secondary">Explore</button>
             </div>
- 
-            <!-- Navigation and indicators for card one -->
-            <div class="card-nav">
-              <button class="nav-btn nav-btn-left" data-action="prev">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
+            <div class="xyz-slide-navigation">
+              <button class="xyz-nav-btn" id="xyz-prevBtn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                >
                   <path d="M15 18l-6-6 6-6" />
                 </svg>
               </button>
-              <button class="nav-btn nav-btn-right" data-action="next">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
+              <div class="xyz-carousel-dots" id="xyz-dotsContainer"></div>
+              <button class="xyz-nav-btn" id="xyz-nextBtn">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                >
                   <path d="M9 18l6-6-6-6" />
                 </svg>
               </button>
-            </div>
- 
-            <!-- Slide indicator -->
-            <div class="slide-indicator">
-              <span class="indicator-dot active"></span>
-              <span class="indicator-dot"></span>
-            </div>
-          </div>
- 
-          <div class="card-two">
-            <div class="card-content">
-              <h3>Need Help Choosing the Right Insurance Partner?</h3>
-              <p>
-                AMMN experts will guide you through coverage options, pricing,
-                and
-                benefits so you make the right decision with confidence.
-              </p>
- 
-              <div class="features">
-                <span>Free insurance guidance</span>
-                <span>Compare coverage clearly</span>
-                <span>No obligation consultation</span>
-              </div>
- 
-              <button class="cta-btn">Get Post-Insurance Support</button>
-            </div>
- 
-            <!-- Navigation and indicators for card two -->
-            <div class="card-nav">
-              <button class="nav-btn nav-btn-left" data-action="prev">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M15 18l-6-6 6-6" />
-                </svg>
-              </button>
-              <button class="nav-btn nav-btn-right" data-action="next">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
-              </button>
-            </div>
- 
-            <!-- Slide indicator -->
-            <div class="slide-indicator">
-              <span class="indicator-dot"></span>
-              <span class="indicator-dot a"></span>
             </div>
           </div>
         </div>
       </div>
-    </section>
-     <!-- HOW WE WORKS  -->
+
+      <div class="xyz-mobile-carousel-wrapper">
+        <div class="xyz-mobile-image-carousel">
+          <div class="xyz-mobile-image-track" id="xyz-mobileImageTrack"></div>
+        </div>
+        <div class="xyz-mobile-info-box">
+          <div class="xyz-mobile-dots" id="xyz-mobileDotsContainer"></div>
+          <div class="xyz-mobile-info-content" id="xyz-mobileInfoContent">
+            <h3 class="xyz-mobile-info-title" id="xyz-mobileInfoTitle">
+              Motor Insurance
+            </h3>
+            <p
+              class="xyz-mobile-info-description"
+              id="xyz-mobileInfoDescription"
+            >
+              Motor insurance provides protection...
+            </p>
+            <button class="xyz-mobile-buy-button">Buy Now</button>
+            <a href="#" class="xyz-mobile-explore-link">
+              Explore
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+  <!-- HOW WE WORKS  -->
     <section>
         <div class="motor-insurance-works-container">
             <div class="motor-insurance-works-header">
@@ -267,7 +255,7 @@
                         <div class="motor-insurance-card motor-card-1">
                             <div class="motor-insurance-icon-wrapper">
                                 <div class="motor-input-field">Your Insurance Number</div>
-                                <div class="motor-input-field">Your Car...</div>
+                                <div class="motor-input-field">Your Car Number</div>
                             </div>
                             <h2>Enter Your Vehicle Details</h2>
                             <p>Provide basic information such as car type, model, year, and other key details in a user-friendly form designed to deliver everything needed in just a few steps.</p>
@@ -282,13 +270,28 @@
                         <div class="motor-insurance-card motor-card-2">
                             <div class="motor-insurance-icon-wrapper">
                                 <div class="motor-price-box">
-                                    <div class="motor-price-icon"></div>
-                                    <div class="motor-price-text">﷼1500</div>
+                                    <div class="motor-price-icon left-icon">
+                                        <svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.7221 0.176517C5.55816 0.27353 5.23028 0.5217 4.99358 0.72787L4.56314 1.10278V3.82701V6.55124L2.89754 6.87113C1.98142 7.04704 1.19473 7.21852 1.14922 7.25207C1.05594 7.32097 0.764818 8.1794 0.730458 8.48701C0.710396 8.66642 0.728287 8.68621 0.895072 8.66937C1.10266 8.6483 4.22463 8.06669 4.43214 8.01033C4.55221 7.97773 4.56314 8.0475 4.56314 8.84676V9.71867L4.13271 9.79864C3.896 9.84259 2.96117 10.0208 2.05538 10.1948L0.408492 10.5111L0.28243 10.8153C0.122757 11.2007 -0.0461993 11.926 0.0115915 11.9778C0.0487214 12.0112 4.10291 11.2768 4.51531 11.1621C4.77754 11.0891 5.2597 10.6339 5.67868 10.0637L6.09774 9.49338L6.13517 8.59181L6.1726 7.69017L6.77147 7.57075C7.72749 7.38008 7.63234 7.24167 7.63234 8.82247C7.63234 9.57892 7.64357 10.1978 7.65735 10.1978C7.77375 10.1978 12.3474 9.31042 12.4663 9.26473C12.5771 9.22213 12.6667 9.064 12.7795 8.7119C13.0264 7.94143 13.0514 7.78256 12.9265 7.78256C12.8674 7.78256 12.0312 7.93351 11.0684 8.11801C10.1056 8.30251 9.29233 8.45347 9.26112 8.45347C9.2299 8.45347 9.20437 8.15216 9.20437 7.78383C9.20437 7.14439 9.21193 7.11265 9.3728 7.07965C9.46548 7.06066 10.1981 6.92077 11.001 6.76888C11.8038 6.61699 12.5026 6.46241 12.5537 6.42537C12.717 6.30723 13.0993 4.96433 12.9694 4.96507C12.9367 4.96527 12.1182 5.11603 11.1507 5.30019C10.1831 5.48436 9.34945 5.63511 9.29795 5.63531C9.22473 5.63558 9.20437 5.09462 9.20437 3.15328C9.20437 1.78798 9.17847 0.67091 9.14688 0.67091C9.02464 0.67091 8.47398 1.04065 8.06278 1.39878L7.63234 1.77369V3.86706V5.96037L7.12705 6.06033C6.8491 6.11535 6.51223 6.18056 6.37846 6.20525L6.13517 6.25013V3.12503C6.13517 1.40629 6.10927 0 6.07768 0C6.04609 0 5.88604 0.0794358 5.7221 0.176517ZM10.4064 11.0405C9.19412 11.2757 8.16017 11.4826 8.10867 11.5003C8.00155 11.5372 7.74605 12.2347 7.6673 12.705C7.61565 13.014 7.61887 13.0213 7.79172 12.9849C7.88933 12.9644 8.99507 12.751 10.2489 12.5106C11.5028 12.2702 12.5559 12.0365 12.589 11.9911C12.6642 11.8884 12.9212 11.1116 12.9769 10.8184C13.0155 10.6157 13.0041 10.6008 12.8144 10.6066C12.7022 10.61 11.6186 10.8053 10.4064 11.0405Z"fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <div class="motor-price-text">1,500</div>
                                 </div>
-                                <div class="motor-compare-icon">⇄</div>
+
+                                <div class="motor-compare-icon">
+                                    <svg width="50" height="50" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M32 26H50M50 26L44 20M50 26L44 32" stroke="#00000040" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                      <path d="M32 38H14M14 38L20 32M14 38L20 44" stroke="#00000040" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+
                                 <div class="motor-price-box">
-                                    <div class="motor-price-icon"></div>
-                                    <div class="motor-price-text">﷼1800</div>
+                                    <div class="motor-price-icon right-icon">
+                                        <svg  width="13" height="13" viewBox="0 0 13 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.7221 0.176517C5.55816 0.27353 5.23028 0.5217 4.99358 0.72787L4.56314 1.10278V3.82701V6.55124L2.89754 6.87113C1.98142 7.04704 1.19473 7.21852 1.14922 7.25207C1.05594 7.32097 0.764818 8.1794 0.730458 8.48701C0.710396 8.66642 0.728287 8.68621 0.895072 8.66937C1.10266 8.6483 4.22463 8.06669 4.43214 8.01033C4.55221 7.97773 4.56314 8.0475 4.56314 8.84676V9.71867L4.13271 9.79864C3.896 9.84259 2.96117 10.0208 2.05538 10.1948L0.408492 10.5111L0.28243 10.8153C0.122757 11.2007 -0.0461993 11.926 0.0115915 11.9778C0.0487214 12.0112 4.10291 11.2768 4.51531 11.1621C4.77754 11.0891 5.2597 10.6339 5.67868 10.0637L6.09774 9.49338L6.13517 8.59181L6.1726 7.69017L6.77147 7.57075C7.72749 7.38008 7.63234 7.24167 7.63234 8.82247C7.63234 9.57892 7.64357 10.1978 7.65735 10.1978C7.77375 10.1978 12.3474 9.31042 12.4663 9.26473C12.5771 9.22213 12.6667 9.064 12.7795 8.7119C13.0264 7.94143 13.0514 7.78256 12.9265 7.78256C12.8674 7.78256 12.0312 7.93351 11.0684 8.11801C10.1056 8.30251 9.29233 8.45347 9.26112 8.45347C9.2299 8.45347 9.20437 8.15216 9.20437 7.78383C9.20437 7.14439 9.21193 7.11265 9.3728 7.07965C9.46548 7.06066 10.1981 6.92077 11.001 6.76888C11.8038 6.61699 12.5026 6.46241 12.5537 6.42537C12.717 6.30723 13.0993 4.96433 12.9694 4.96507C12.9367 4.96527 12.1182 5.11603 11.1507 5.30019C10.1831 5.48436 9.34945 5.63511 9.29795 5.63531C9.22473 5.63558 9.20437 5.09462 9.20437 3.15328C9.20437 1.78798 9.17847 0.67091 9.14688 0.67091C9.02464 0.67091 8.47398 1.04065 8.06278 1.39878L7.63234 1.77369V3.86706V5.96037L7.12705 6.06033C6.8491 6.11535 6.51223 6.18056 6.37846 6.20525L6.13517 6.25013V3.12503C6.13517 1.40629 6.10927 0 6.07768 0C6.04609 0 5.88604 0.0794358 5.7221 0.176517ZM10.4064 11.0405C9.19412 11.2757 8.16017 11.4826 8.10867 11.5003C8.00155 11.5372 7.74605 12.2347 7.6673 12.705C7.61565 13.014 7.61887 13.0213 7.79172 12.9849C7.88933 12.9644 8.99507 12.751 10.2489 12.5106C11.5028 12.2702 12.5559 12.0365 12.589 11.9911C12.6642 11.8884 12.9212 11.1116 12.9769 10.8184C13.0155 10.6157 13.0041 10.6008 12.8144 10.6066C12.7022 10.61 11.6186 10.8053 10.4064 11.0405Z" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <div class="motor-price-text right-text">1,800</div>
                                 </div>
                             </div>
                             <h2>Compare Motor Insurance Quotes</h2>
@@ -303,9 +306,15 @@
                         <div class="motor-insurance-step-label">STEP 3</div>
                         <div class="motor-insurance-card motor-card-3">
                             <div class="motor-insurance-icon-wrapper">
-                                <div class="motor-payment-icon">MS</div>
-                                <div class="motor-payment-icon">mada</div>
-                                <div class="motor-payment-icon">t</div>
+                                <div class="motor-payment-icon">
+                                    <img src="./assets/card3img1.png" alt="icon">
+                                </div>
+                                <div class="motor-payment-icon">
+                                    <img src="./assets/card3img2.png" alt="icon">
+                                </div>
+                                <div class="motor-payment-icon">
+                                    <img src="./assets/card3img3.png" alt="icon">
+                                </div>
                                 <div class="motor-payment-btn">Pay Now</div>
                             </div>
                             <h2>Choose And Pay Online</h2>
@@ -317,112 +326,239 @@
         </div>
     </section>
 
-     <!-- AFTER INSURANCE SERVICES SECTION -->
-      <section class="sectionthree">
-  <div class="three">
-    <h1>After Insurance Services</h1>
-    <p>
-      Enjoy exclusive services through AMMN's trusted partners supporting
-      you even after your policy is issued.
-    </p>
-    <div class="carousel-container">
-      <div class="cards-wrapper" id="cardsWrapper">
-        <div class="cardss firstcard">
-          <img src="media/icons/Vectoraft.svg" alt="" />
-          <h1>Roadside Assistance by Morni</h1>
-          <p>
-            Get reliable roadside assistance services including towing,
-            breakdown support, and emergency help across Saudi Arabia.
-          </p>
-          <button>
-            Know More <img src="media/icons/Frame 1984077986.svg" alt="" />
-          </button>
-        </div>
+     <!-- YOUR INSURANCE CAROUSEL CARDS  -->
+<section class="cards">
+      <h1>Your Insurance, Fully Supported</h1>
+      <p class="p">
+        Get expert consultation and after-insurance services designed to make
+        your experience seamless.
+        your experience seamless.
+      </p>
+      <div class="cards-div">
+        <div class="inside-cards">
+          <div class="card-one">
+            <div class="card-contents">
+              <h3>Need Support Beyond Policy Purchase?</h3>
+              <p>
+                AMMN is here to support you even after your insurance is issued,
+                making post-insurance tasks simple and stress-free.
+              </p>
 
-        <div class="cardss secondcard">
-          <img src="media/icons/Vector (2)aft.svg" alt="" />
-          <h1>Fuel & Vehicle Services by NaNa</h1>
-          <p>
-            Convenient fuel delivery and vehicle-related services designed to
-            keep you moving without delays.
-          </p>
-          <button>
-            Know More <img src="media/icons/Frame 1984077986.svg" alt="" />
-          </button>
-        </div>
-        
-        <div class="cardss thirdcard">
-          <img src="media/icons/Vector (1)aft.svg" alt="" />
-          <h1>Vehicle Care by GrandShift</h1>
-          <p>
-            Convenient fuel delivery and vehicle-related services designed to
-            keep you moving without delays.
-          </p>
-          <button>
-            Know More <img src="media/icons/Frame 1984077986.svg" alt="" />
-          </button>
+              <div class="features">
+                <span>Policy guidance & follow-ups</span>
+                <span>Document access & support</span>
+                <span>Claim redirection & assistance</span>
+                <span>Renewal reminders</span>
+              </div>
+
+              <button class="cta-btn">Get Post-Insurance Support</button>
+            </div>
+
+            <!-- Navigation and indicators for card one -->
+            <div class="card-nav">
+              <button class="nav-btn nav-btn-left" data-action="prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button class="nav-btn nav-btn-right" data-action="next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Slide indicator -->
+            <div class="slide-indicator">
+              <span class="indicator-dot active"></span>
+              <span class="indicator-dot"></span>
+            </div>
+          </div>
+
+          <div class="card-two">
+            <div class="card-contents">
+              <h3>Need Help Choosing the Right Insurance Partner?</h3>
+              <p>
+                AMMN experts will guide you through coverage options, pricing,
+                and
+                benefits so you make the right decision with confidence.
+              </p>
+
+              <div class="features">
+                <span>Free insurance guidance</span>
+                <span>Compare coverage clearly</span>
+                <span>No obligation consultation</span>
+              </div>
+
+              <button class="cta-btn">Get Post-Insurance Support</button>
+            </div>
+
+            <!-- Navigation and indicators for card two -->
+            <div class="card-nav">
+              <button class="nav-btn nav-btn-left" data-action="prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button class="nav-btn nav-btn-right" data-action="next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Slide indicator -->
+            <div class="slide-indicator">
+              <span class="indicator-dot"></span>
+              <span class="indicator-dot a"></span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+     
+
+     <!-- AFTER INSURANCE SERVICES SECTION -->
+      <section class="sectionthree">
+<div class="glass-promo">
+<h1>After Insurance Services</h1>
+<p class="glass-promo-p">
+        Enjoy exclusive services through AMMN's trusted partners supporting
+        you even after your policy is issued.
+</p>
+<div class="glass-carousel-outer">
+<div class="glass-cards-track" id="glass-carousel-track">
+<!-- Original cards -->
+<div class="glass-card-item" id="glass-first-card">
+<img src="./assets/Vector.png" alt="Roadside Assistance" />
+<h1>Roadside Assistance by Morni</h1>
+<p>
+              Get reliable roadside assistance services including towing,
+              breakdown support, and emergency help across Saudi Arabia.
+</p>
+<button>
+              Know More <img src="./assets/Frame 1984077986.png" alt="Arrow" />
+</button>
+</div>
+ 
+          <div class="glass-card-item" id="glass-second-card">
+<img src="./assets/Vector (1).png" alt="Fuel Services" />
+<h1>Fuel & Vehicle Services by NaNa</h1>
+<p>
+              Convenient fuel delivery and vehicle-related services designed to
+              keep you moving without delays.
+</p>
+<button>
+              Know More <img src="./assets/Frame 1984077986.png" alt="Arrow" />
+</button>
+</div>
+ 
+          <div class="glass-card-item" id="glass-third-card">
+<img src="./assets/Vector (2).png" alt="Vehicle Care" />
+<h1>Vehicle Care by GrandShift</h1>
+<p>
+              Premium vehicle maintenance and care services to keep your car in
+              top condition.
+</p>
+<button>
+              Know More <img src="./assets/Frame 1984077986.png" alt="Arrow" />
+</button>
+</div>
+ 
+          <!-- Duplicated cards for infinite loop -->
+<div class="glass-card-item" id="glass-first-clone">
+<img src="./assets/Vector.png" alt="Roadside Assistance" />
+<h1>Roadside Assistance by Morni</h1>
+<p>
+              Get reliable roadside assistance services including towing,
+              breakdown support, and emergency help across Saudi Arabia.
+</p>
+<button>
+              Know More <img src="./assets/Frame 1984077986.png" alt="Arrow" />
+</button>
+</div>
+ 
+          <div class="glass-card-item" id="glass-second-clone">
+<img src="./assets/Vector (1).png" alt="Fuel Services" />
+<h1>Fuel & Vehicle Services by NaNa</h1>
+<p>
+              Convenient fuel delivery and vehicle-related services designed to
+              keep you moving without delays.
+</p>
+<button>
+              Know More <img src="./assets/Frame 1984077986.png" alt="Arrow" />
+</button>
+</div>
+ 
+          <div class="glass-card-item" id="glass-third-clone">
+<img src="./assets/Vector (2).png" alt="Vehicle Care" />
+<h1>Vehicle Care by GrandShift</h1>
+<p>
+              Premium vehicle maintenance and care services to keep your car in
+              top condition.
+</p>
+<button>
+              Know More <img src="./assets/Frame 1984077986.png" alt="Arrow" />
+</button>
+</div>
+</div>
+</div>
+</div>
 </section>
 
     <!-- WHY CHOOSE US SECTION  -->
+ <!-- WHY CHOOSE US SECTION  -->
     <section>
-<div class="why-choose-container">
-        <div class="why-choose-header">
-            <h2>Why Choose AMMN?</h2>
-            <p>AMMN is a trusted insurance broker in Saudi Arabia, dedicated to simplifying the way customers find and
-                purchase insurance. We act as a neutral mediator between insurance companies and customers, ensuring
-                transparent comparisons, fair pricing, and unbiased recommendations. Our mission is to make insurance
-                shopping easy, fast, and fully reliable whether you are looking for motor, health, travel, home, or
-                business insurance. With AMMN, you get professional support, simplified processes, and access to top
-                insurers across the Kingdom all through one convenient platform.</p>
-        </div>
+        <div class="why-choose-container">
+            <div class="why-choose-header">
+                <h2>Why Choose AMMN?</h2>
+                <p>AMMN is a trusted insurance broker in Saudi Arabia, dedicated to simplifying the way customers find and purchase insurance. We act as a neutral mediator between insurance companies and customers, ensuring transparent comparisons, fair pricing, and unbiased recommendations. Our mission is to make insurance shopping easy, fast, and fully reliable whether you are looking for motor, health, travel, home, or business insurance. With AMMN, you get professional support, simplified processes, and access to top insurers across the Kingdom all through one convenient platform.</p>
+            </div>
 
-        <div class="why-choose-carousel-container">
-            <div class="why-choose-carousel-track" id="why-choose-carouselTrack">
-                <!-- Cards will be inserted here by JavaScript -->
+            <div class="why-choose-carousel-container">
+                <div class="why-choose-carousel-track" id="why-choose-carouselTrack"></div>
             </div>
         </div>
-    </div>
     </section>
 
     <!-- LICENSED SECTION -->
      <section>
-        <div class="licensed-insurance-main-container">
+      <div class="licensed-insurance-main-container">
         <div class="licensed-insurance-header">
-            <h1>Licensed By Insurance Authorities</h1>
-            <p>We proudly announce our partnership in success with</p>
+          <h1>Licensed By Insurance Authorities</h1>
+          <p>We proudly announce our partnership in success with</p>
         </div>
 
         <div class="licensed-insurance-content-wrapper">
-            <div class="licensed-insurance-static-card">
-                <div class="licensed-insurance-verified-badge">Verified</div>
-                <div class="licensed-insurance-static-content">
-                    <h2>Mandatory by Saudi law</h2>
-                    <p>AMMN operates under official authorization from the Saudi Central Bank authority, guaranteeing that every process meets national insurance and consumer protection standards.</p>
-                </div>
+          <div class="licensed-insurance-static-card">
+            
+          </div>
+
+          <div class="licensed-insurance-carousel-section">
+            <div class="licensed-insurance-slide-container"
+              id="licensedSlideContainer">
             </div>
 
-            <div class="licensed-insurance-carousel-section">
-                <div class="licensed-insurance-slide-container" id="licensedSlideContainer">
-                    </div>
-
-                <div class="licensed-insurance-slide-info" id="licensedSlideInfo">
-                    </div>
-
-                <div class="licensed-insurance-controls">
-                    <button class="licensed-insurance-control-btn" id="licensedPrevBtn">←</button>
-                    <button class="licensed-insurance-control-btn" id="licensedNextBtn">→</button>
-                </div>
+            <div class="licensed-insurance-slide-info" id="licensedSlideInfo">
             </div>
+
+            <div class="licensed-insurance-controls">
+              <button class="licensed-insurance-control-btn"
+                id="licensedPrevBtn"><img src="./assets/license button left.png"></button>
+              <button class="licensed-insurance-control-btn"
+                id="licensedNextBtn"><img src="./assets/license button right.png"></button>
+            </div>
+          </div>
         </div>
-    </div>
-     </section>
+      </div>
+    </section>
 
   <!-- FAQ SECTION -->
-    <section>
+   <section>
         <div class="faq-wrapper">
    <!-- Left Section -->
   <div class="faq-left">
@@ -438,7 +574,7 @@
     <div class="faq-item active">
       <button class="faq-question">
         <span>What is AMMN?</span>
-        <span class="faq-icon">−</span>
+        <span class="faq-icon1">−</span>
       </button>
       <div class="faq-answer">
         <p>
@@ -538,47 +674,41 @@
     </div>
   </div>
 </div>
-
-    </section>
-    <!-- CTA SECTION -->
-    <section class="cta-section">
-  <div class="cta-section-content">
-
-    <!-- Logos -->
-    <div class="cta-section-logos">
-      <span><img src="media/svg/Mis_Logo.svg" alt=""></span>
-      <span><img src="media/svg/Sadad_Logo.svg" alt=""></span>
-      <span><img src="media/svg/Mastercard_logo.svg" alt=""></span>
-      <span><img src="media/svg/Mada_Logo.svg" alt=""></span>
-      <span><img src="media/svg/Morni_Logo.svg" alt=""></span>
-      <span><img src="media/svg/Mastercard_logo.svg" alt=""></span>
-      <span><img src="media/svg/Tabby_logo.svg" alt=""></span>
-    </div>
-
-    <!-- Text -->
-    <h2>
-      Start Your Motor Insurance<br>
-      Quote in KSA Today
-    </h2>
-
-    <p>
-      Get the best prices, trusted coverage, and instant policy issuance —
-      all in one place
-    </p>
-
-    <!-- Buttons -->
-    <div class="cta-section-buttons">
-      <a href="" class="cta-btn cta-btn-primary">Buy Insurance</a>
-      <a href="" class="cta-btn cta-btn-secondary">Get a Quote</a>
-    </div>
-
-  </div>
-
-  <!-- Image -->
-  <div class="cta-section-right-image">
-    <img src="media/images/Frame 1984078046.png" alt="Insurance Authority Card">
-  </div>
 </section>
+
+    
+    <!-- CTA SECTION -->
+   <section class="cta">
+      <div class="cta-content">
+        <div class="cta-logos">
+          <span><img src="media/svg/Mis_Logo.svg" alt="" /></span>
+          <span><img src="media/svg/Sadad_Logo.svg" alt="" /></span>
+          <span><img src="media/svg/Mastercard_logo.svg" alt="" /></span>
+          <span><img src="media/svg/Mada_Logo.svg" alt="" /></span>
+          <span><img src="media/svg/Morni_Logo.svg" alt="" /></span>
+          <span><img src="media/svg/Mastercard_logo.svg" alt="" /></span>
+          <span><img src="media/svg/Tabby_logo.svg" alt="" /></span>
+        </div>
+        <h2>
+          Start Your Motor Insurance<br />
+          Quote in KSA Today
+        </h2>
+ 
+        <p>
+          Get the best prices, trusted coverage, and instant policy issuance —
+          all in one place
+        </p>
+        <div class="cta-buttons">
+          <button href="" class="cta-btn cta-btn-primary">Buy Insurance</button>
+          <button href="" class="cta-btn cta-btn-secondary">Get a Quote</button>
+        </div>
+      </div>
+ 
+      <!-- '''''''''''''''''''''''''' -->
+      <img class="cta-img base" src="./assets/Mask group.png" />
+      <img class="cta-img layer-1" src="./assets/Group.png" />
+      <img class="cta-img layer-2" src="./assets/insuranceAuthority.png" />
+    </section>
 
     <!-- FOOTER SECTION  -->
      <footer class="footer">
@@ -658,7 +788,8 @@
                         <span><img src="media/icons/Text.svg"><img src="media/icons/Vector footer.svg">2025 - All rights reserved</span>
                     </div>
                     <div class="footer-bottom-links">
-                        <a href="#">Privacy Policy</a>
+                        <a href="#">Privacy Policy </a>
+                         <a href="#"> |</a>
                         <a href="#">T&C</a>
                     </div>
                 </div>
@@ -674,6 +805,6 @@
     <script src="after-insurance-services-section.js"></script>
     <script src="Licensed-section.js"></script>
     <script src="how-we-work.js"></script>
-
+    <script src="protection-section.js"></script>
 </body>
 </html>

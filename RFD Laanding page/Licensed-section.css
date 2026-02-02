@@ -1,182 +1,345 @@
- * {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-        .licensed-insurance-main-container {
-            padding: 40px 80px;
-        }
-
-        .licensed-insurance-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .licensed-insurance-carousel-section{
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-
-        .licensed-insurance-header h1 {
-            font-size: 42px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 12px;
-        }
-
-        .licensed-insurance-header p {
-            font-size: 18px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .licensed-insurance-content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        /* Left Static Card */
-        .licensed-insurance-static-card {
-        background: linear-gradient(-30deg, #667eea 40%, rgba(255, 255, 255, 1) 100%);
+.licensed-insurance-main-container {
+        padding: 40px 80px;
+        width: 1440px;
+        margin: auto;
+      }
+ 
+      .licensed-insurance-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+ 
+      .licensed-insurance-header h1 {
+        font-size: 42px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+      }
+ 
+      .licensed-insurance-header p {
+        font-size: 18px;
+        color: #666;
+        line-height: 1.6;
+      }
+ 
+      .licensed-insurance-content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+ 
+      /* Left Static Card */
+      .licensed-insurance-static-card {
+        background-image: url(./assets/license\ card.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
         border-radius: 24px;
         padding: 60px 40px;
         color: white;
         position: relative;
         overflow: hidden;
-        height: 100%;
-        width: 100%;
+        height: 445px;
+        width: 533px;
         display: flex;
         flex-direction: column;
         backdrop-filter: blur(150px);
         justify-content: space-between;
+      }
+ 
+      .licensed-insurance-verified-badge {
+        align-self: end;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+ 
+      .licensed-insurance-static-content {
+        margin-top: 80px;
+      }
+ 
+      .licensed-insurance-static-card h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+ 
+      .licensed-insurance-static-card p {
+        font-size: 16px;
+        line-height: 1.7;
+        opacity: 0.95;
+      }
+ 
+      /* Right Carousel Section */
+      .licensed-insurance-carousel-section {
+        perspective: 1000px;
+      }
+ 
+      .licensed-insurance-slide-container {
+        position: relative;
+        width: 100%;
+        height: 260px;
+      }
+ 
+      .licensed-insurance-slide {
+        position: absolute;
+        width: 223px;
+        height: 223px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 24px;
+        left: 0;
+        top: 0;
+        cursor: grab;
+        /* Base state: hidden behind */
+        transform: translate(18px, 12px) rotate(1.5deg) scale(0.94);
+        opacity: 0.7;
+        z-index: 1;
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform-style: preserve-3d;
+      }
+ 
+      .licensed-insurance-slide:active {
+        cursor: grabbing;
+      }
+ 
+      .licensed-insurance-slide::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.8) 0% rgba(255, 255, 255, 0) 50%
+        );
+        border-radius: 24px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+ 
+      .licensed-insurance-slide:hover::before {
+        opacity: 1;
+      }
+ 
+      .licensed-insurance-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 24px;
+        transition: transform 0.3s ease;
+      }
+ 
+      .licensed-insurance-slide:hover img {
+        transform: scale(1.02);
+      }
+ 
+      /* ─── Stacking positions applied via JS classes ─── */
+ 
+      /* Front: active slide */
+      .licensed-pos-front {
+        z-index: 3;
+        transform: translate(0px, 0px) rotate(-1.5deg) scale(1);
+        opacity: 1;
+      }
+ 
+      /* Back: idle slide */
+      .licensed-pos-back {
+        z-index: 1;
+        transform: translate(18px, 12px) rotate(1.5deg) scale(0.94);
+        opacity: 0.7;
+      }
+ 
+      /* ─── Exit / Enter animations ─── */
+ 
+      .licensed-slide-exit-left {
+        z-index: 4 !important;
+        animation: exitLeft 0.55s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+          forwards;
+      }
+ 
+      @keyframes exitLeft {
+        0% {
+          transform: translate(0px, 0px) rotate(-1.5deg) scale(1);
+          opacity: 1;
         }
-
-        .licensed-insurance-verified-badge {
-            align-self: end;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        100% {
+          transform: translate(-150%, -20px) rotate(-12deg) scale(0.75);
+          opacity: 0;
         }
-
-        
-
-        .licensed-insurance-static-content {
-            margin-top: 80px;
+      }
+ 
+      .licensed-slide-enter-right {
+        z-index: 0 !important;
+        animation: enterRight 0.55s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+          forwards;
+      }
+ 
+      @keyframes enterRight {
+        0% {
+          transform: translate(160%, 60px) rotate(8deg) scale(0.7);
+          opacity: 0;
         }
-
-        .licensed-insurance-static-card h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.3;
+        100% {
+          transform: translate(18px, 12px) rotate(1.5deg) scale(0.94);
+          opacity: 0.7;
         }
-
-        .licensed-insurance-static-card p {
-            font-size: 16px;
-            line-height: 1.7;
-            opacity: 0.95;
+      }
+ 
+      .licensed-slide-exit-right {
+        z-index: 0 !important;
+        animation: exitRight 0.55s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+          forwards;
+      }
+ 
+      @keyframes exitRight {
+        0% {
+          transform: translate(18px, 12px) rotate(1.5deg) scale(0.94);
+          opacity: 0.7;
         }
-
-        /* Right Carousel Section */
-        .licensed-insurance-slide-container {
-            position: relative;
-            width: 100%;
-            height: 320px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        100% {
+          transform: translate(160%, 60px) rotate(8deg) scale(0.7);
+          opacity: 0;
         }
-
-        .licensed-insurance-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            /* Simple fade transition */
-            transition: opacity 0.5s ease-in-out;
-            pointer-events: none;
-            display: flex;
-            justify-content: start;
-            align-items: center;
+      }
+ 
+      .licensed-slide-enter-left {
+        z-index: 4 !important;
+        animation: enterLeft 0.55s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+          forwards;
+      }
+ 
+      @keyframes enterLeft {
+        0% {
+          transform: translate(-150%, -20px) rotate(-12deg) scale(0.75);
+          opacity: 0;
         }
-
-        .licensed-insurance-slide.licensed-active {
-            opacity: 1;
-            pointer-events: auto;
-            z-index: 2;
+        100% {
+          transform: translate(0px, 0px) rotate(-1.5deg) scale(1);
+          opacity: 1;
         }
-
-        .licensed-insurance-slide img {
-            width: 300px;
-            height: 300px;
+      }
+ 
+      /* Info block below the stack */
+      .licensed-insurance-slide-info {
+        margin-top: 20px;
+        margin-bottom: 12px;
+        width: 90%;
+        animation: fadeInUp 0.4s ease-out;
+      }
+ 
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
         }
-
-        .licensed-insurance-slide-info {
-            margin-top: 30px;
-            margin-bottom: 60px;
-            width: 80%;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-
-        .licensed-insurance-title-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 12px;
-            width: 95%;
-        }
-
-        .licensed-insurance-slide-info h3 {
-            font-size: 24px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin: 0;
-        }
-
-        .licensed-insurance-slide-info p {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.6;
-            
-        }
-
-        .licensed-insurance-slide-info .licensed-certificate-number {
-            font-size: 14px;
-            color: #667eea;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .licensed-insurance-controls {
-            display: flex;
-            gap: 12px;
-            justify-content: flex-start;
-        }
-
-        .licensed-insurance-control-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border: 2px solid #e0e0e0;
-            background: white;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            font-size: 20px;
-            color: #666;
-        }
-
-        .licensed-insurance-control-btn:hover {
-            border-color: #667eea;
-            background: #667eea;
-            color: white;
-        }
+      }
+ 
+      .licensed-insurance-title-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+ 
+      .licensed-insurance-slide-info h3 {
+        font-size: 26px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin: 0;
+        line-height: 1.3;
+      }
+ 
+      .licensed-insurance-slide-info p {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.7;
+        margin: 0;
+      }
+ 
+      .licensed-insurance-slide-info .licensed-certificate-number {
+        font-size: 13px;
+        color: #667eea;
+        font-weight: 600;
+        white-space: nowrap;
+        background: rgba(102, 126, 234, 0.1);
+        padding: 6px 12px;
+        border-radius: 8px;
+      }
+ 
+      .licensed-insurance-controls {
+        display: flex;
+        gap: 16px;
+        justify-content: flex-start;
+        margin-top: 24px;
+      }
+ 
+      .licensed-insurance-control-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid #e5e7eb;
+        background: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 20px;
+        color: #666;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
+      }
+ 
+      .licensed-insurance-control-btn img {
+        width: 16px;
+        height: 16px;
+        position: relative;
+        z-index: 1;
+        transition: filter 0.3s ease;
+      }
+ 
+      .licensed-insurance-control-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+ 
+      .licensed-insurance-control-btn:hover {
+        border-color: #667eea;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+      }
+ 
+      .licensed-insurance-control-btn:hover::before {
+        opacity: 1;
+      }
+ 
+      .licensed-insurance-control-btn:hover img {
+        filter: brightness(0) invert(1);
+      }
+ 
+      .licensed-insurance-control-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+      }
+ 

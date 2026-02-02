@@ -1,124 +1,125 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .sectionthree {
   width: 100%;
   background: #ffffff;
-  padding: 40px 0px;
-}
-
-.firstcard {
-  background: linear-gradient(
-    135deg,
-    #9ff0ea 0%,
-    #d8fbff 30%,
-    #ffffff 55%,
-    #e9fff5 80%,
-    #bff5df 100%
-  );
-}
-
-.firstcard button {
-  background-color: #00AFA0;
-}
-
-.thirdcard button {
-  background: linear-gradient(90deg, #2ee9c6 0%, #1fd1b2 45%, #10bfa0 100%);
-}
-
-.secondcard {
+  padding-top: 56px;
+  padding-bottom: 56px;
   background:
-    radial-gradient(circle at left center, rgba(170,240,214,0.8), transparent 60%),
-    radial-gradient(circle at bottom right, rgba(160,235,210,0.8), transparent 55%),
-    #ffffff;
+    linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.85) 12%, rgba(255, 255, 255, 0.4) 30%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 70%, rgba(255, 255, 255, 0.5) 88%, rgba(255, 255, 255, 0.75) 100%),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.5) 12%, rgba(255, 255, 255, 0.25) 30%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.4) 70%, rgba(255, 255, 255, 0.85) 88%, rgba(255, 255, 255, 1) 100%);
 }
-
-.secondcard button {
-  background: rgba(2, 207, 114, 1);
+ 
+.glass-promo-p {
+  margin-left: 40px;
 }
-
-.three h1 {
+ 
+.glass-promo h1 {
   margin-left: 40px;
   font-size: 36px;
   font-weight: 700;
   color: #0b1c3f;
   margin-bottom: 15px;
 }
-
-.three p {
-  margin-left: 40px;
+ 
+.glass-promo p {
   color: #6b7a99;
-  margin-bottom: 15px;
 }
-
+ 
 /* CAROUSEL CONTAINER */
-.carousel-container {
+.glass-carousel-outer {
+  margin-left: 40px;
+  margin-right: 40px;
   overflow: hidden;
   position: relative;
-  padding: 0 40px;
-  margin-bottom: 30px;
 }
-
-/* CARD WRAPPER */
-.cards-wrapper {
+ 
+.glass-cards-track {
   display: flex;
-  gap: 30px;
-  width: max-content;
-  will-change: transform;
-}
+  gap: 5px;
+  padding-top: 20px;
 
-/* CARD */
-.cardss {
-  margin-top: 30px;
+  animation: glassInfiniteScroll 25s linear infinite;
+  width: max-content;
+}
+ 
+@keyframes glassInfiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+ 
+/* Pause animation on hover */
+.glass-carousel-outer:hover .glass-cards-track {
+  animation-play-state: paused;
+}
+ 
+/* GLASS MORPHISM CARD STYLES */
+.glass-card-item {
   width: 510px;
-  min-width: 510px;
-  height: 350px;
+  height: 301px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 40px 35px;
+  padding: 40px 45px;
+  text-align: center;
   border-radius: 24px;
-  background: linear-gradient(135deg, #e8fbff, #ffffff, #e8fff5);
+  /* Glass morphism effect */
+  /* background: rgba(255, 255, 255, 0.15); */
+  /* backdrop-filter: blur(20px); */
+  /* -webkit-backdrop-filter: blur(20px); */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* box-shadow: 
+    0 8px 32px rgba(31, 38, 135, 0.37),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3); */
   flex-shrink: 0;
-  box-sizing: border-box;
 }
-
-/* soft dots effect */
-.cardss::after {
+ 
+/* Enhanced glass dots effect */
+.glass-card-item::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(#cfe7ff 1px, transparent 1px);
-  background-size: 14px 14px;
-  opacity: 0.3;
   border-radius: 24px;
+  /* background-image: 
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.3) 1px, transparent 0),
+    radial-gradient(circle at 10px 5px, rgba(255, 255, 255, 0.2) 1.5px, transparent 0); */
+  background-size: 20px 20px;
   pointer-events: none;
+  z-index: 1;
 }
-
-.cardss img {
+ 
+.glass-card-item img {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
-
-.cardss h1 {
+ 
+.glass-card-item h1 {
   font-size: 22px;
   margin: 20px 0 12px;
   color: #0b1c3f;
   position: relative;
-  z-index: 2;
-  text-align: center;
+  z-index: 3;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
-
-.cardss p {
+ 
+.glass-card-item p {
   font-size: 15px;
   color: #5f6f91;
   line-height: 1.6;
   position: relative;
-  z-index: 2;
-  text-align: center;
+  z-index: 3;
 }
-
-/* BUTTON */
-.cardss button {
+ 
+.glass-card-item button {
   margin-top: auto;
   border: none;
   color: white;
@@ -130,20 +131,95 @@
   font-size: 14px;
   cursor: pointer;
   position: relative;
-  z-index: 2;
-  transition: transform 0.2s ease;
+  z-index: 3;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
-.cardss button:hover {
-  transform: scale(1.05);
+ 
+.glass-card-item button:hover {
+  transform: scale(1.05) translateY(-2px);
+  /* box-shadow: 0 10px 25px rgba(0, 175, 160, 0.4); */
 }
-
-.cardss button img {
+ 
+.glass-card-item button img {
   width: 14px;
 }
-
-/* HOVER EFFECT */
-.cardss:hover {
-  transform: translateY(-6px);
-  transition: transform 0.3s ease-out;
+ 
+.glass-card-item:hover {
+  transform: translateY(-8px);
+  transition: transform 0.4s ease;
+  /* box-shadow: 
+    0 12px 40px rgba(31, 38, 135, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4); */
+}
+ 
+/* Specific card backgrounds - now as overlays on glass */
+#glass-first-card::after,
+#glass-first-clone::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(./assets/ist\ card.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.7;
+  z-index: 2;
+  border-radius: 24px;
+}
+ 
+#glass-first-card button,
+#glass-first-clone button {
+  background: rgba(0, 175, 160, 0.9);
+  /* backdrop-filter: blur(15px); */
+}
+ 
+#glass-second-card::after,
+#glass-second-clone::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(./assets/second\ card.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.7;
+  z-index: 2;
+  border-radius: 24px;
+}
+ 
+#glass-second-card button,
+#glass-second-clone button {
+  background: rgba(2, 207, 114, 0.9);
+  /* backdrop-filter: blur(15px); */
+}
+ 
+#glass-third-card::after,
+#glass-third-clone::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(./assets/third\ card.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.7;
+  z-index: 2;
+  border-radius: 24px;
+}
+ 
+#glass-third-card button,
+#glass-third-clone button {
+  background: linear-gradient(90deg, rgba(46, 233, 198, 0.9) 0%, rgba(31, 209, 178, 0.9) 45%, rgba(16, 191, 160, 0.9) 100%);
+  backdrop-filter: blur(15px);
 }
